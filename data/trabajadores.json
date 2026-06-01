@@ -1,0 +1,4404 @@
+[{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ade"
+  },
+  "ci": "5544944",
+  "nomina": "Quispe Ramos Sonia",
+  "puesto": "Asistente Administrativo de Mantenimiento Planta",
+  "fecha_ingreso": {
+    "$date": "2006-01-24T00:00:00.000Z"
+  },
+  "superintendencia": "Gerencia de Mantenimiento Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68402778",
+  "area": "Superintendencia",
+  "jde": "61066",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae0"
+  },
+  "ci": "7277018",
+  "nomina": "Balladares Rocha Saul Ramiro",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72486808",
+  "area": "Instrumentacion",
+  "jde": "62597",
+  "residencia": "ORURO",
+  "no_bloque": "103",
+  "no_habitacion": "6"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae3"
+  },
+  "ci": "4884288",
+  "nomina": "Calle Choque Edgar Javier",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2008-09-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73250240",
+  "area": "Instrumentacion",
+  "jde": "62810",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "16"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae7"
+  },
+  "ci": "3552284",
+  "nomina": "Daga Canaviri Ramiro",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2008-09-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72474899 / 72335178",
+  "area": "Instrumentacion",
+  "jde": "62728",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "18"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aea"
+  },
+  "ci": "4774253",
+  "nomina": "Espinoza Quispe Esequio",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-09-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71582895",
+  "area": "Electrico",
+  "jde": "62944",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "2"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aeb"
+  },
+  "ci": "3530662",
+  "nomina": "Eugenio Choque Jhonny Elias",
+  "puesto": "Especialista en Instrumentación / Eléctrico",
+  "fecha_ingreso": {
+    "$date": "2007-07-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72300047",
+  "area": "Instrumentacion",
+  "jde": "62720",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "17"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aee"
+  },
+  "ci": "4312870",
+  "nomina": "Huaygua Gonzales Miguel Angel",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-08-27T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72059207",
+  "area": "Electrico",
+  "jde": "62837",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "3"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af7"
+  },
+  "ci": "4055544",
+  "nomina": "Mollo Mamani Juan Carlos",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2008-09-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67219559",
+  "area": "Instrumentacion",
+  "jde": "63920",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "19"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af9"
+  },
+  "ci": "3362983",
+  "nomina": "Quispe Chambi Samuel",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71729753",
+  "area": "Electrico",
+  "jde": "62623",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "5"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b00"
+  },
+  "ci": "2778891",
+  "nomina": "Salinas Navia Edwin Antonio",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b06"
+  },
+  "ci": "3961625",
+  "nomina": "Yañez Calcina Maximo",
+  "puesto": "Técnico Eléctrico B",
+  "fecha_ingreso": {
+    "$date": "2005-03-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72425577",
+  "area": "Electrico",
+  "jde": "10143",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b07"
+  },
+  "ci": "3993064",
+  "nomina": "Calcina Gonzales Urcino Sabad",
+  "puesto": "Técnico de Monitoreo Eléctrico",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71732497",
+  "area": "Confiabilidad",
+  "jde": "67071",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b09"
+  },
+  "ci": "5074704",
+  "nomina": "Cruz Rodriguez Wilmers",
+  "puesto": "Analista Sénior de Confiabilidad",
+  "fecha_ingreso": {
+    "$date": "2013-07-15T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72468452",
+  "area": "Confiabilidad",
+  "jde": "68191",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0c"
+  },
+  "ci": "4092568",
+  "nomina": "Ibañez Paicho Carlos",
+  "puesto": "Técnico Especialista de Monitoreo Mecánico",
+  "fecha_ingreso": {
+    "$date": "2011-03-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72890826",
+  "area": "Confiabilidad",
+  "jde": "66951",
+  "residencia": "SUCRE"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b12"
+  },
+  "ci": "3719164",
+  "nomina": "Ventura Castro Santos",
+  "puesto": "Técnico Especialista de Monitoreo Mecánico",
+  "fecha_ingreso": {
+    "$date": "2008-03-26T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72761767",
+  "area": "Confiabilidad",
+  "jde": "63129",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b14"
+  },
+  "ci": "2782777",
+  "nomina": "Ballesteros Gutierrez Benigno",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72724424",
+  "area": "Chancado",
+  "jde": "62694",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "143",
+  "no_habitacion": "18"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b18"
+  },
+  "ci": "6566809",
+  "nomina": "Calcina Muraña Ronald Elmer",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-01-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67535831",
+  "area": "Lubricacion",
+  "jde": "62177",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b21"
+  },
+  "ci": "4064625",
+  "nomina": "Diaz Perez Fernando",
+  "puesto": "Técnico Mecánico de Máquinas Herramientas A",
+  "fecha_ingreso": {
+    "$date": "2007-07-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72499053",
+  "area": "Maquinas herramientas",
+  "jde": "62692",
+  "residencia": "ORURO",
+  "no_bloque": "121",
+  "no_habitacion": "31"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b23"
+  },
+  "ci": "3559412",
+  "nomina": "Escobar Vasquez Valeriano",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72476861",
+  "area": "Molienda",
+  "jde": "63475",
+  "residencia": "ORURO",
+  "no_bloque": "120",
+  "no_habitacion": "19"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b24"
+  },
+  "ci": "4018212",
+  "nomina": "Flores Amador Basilio",
+  "puesto": "Técnico Mecánico / de Lubricación C",
+  "fecha_ingreso": {
+    "$date": "2006-10-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68409193",
+  "area": "Lubricacion",
+  "jde": "61877",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b26"
+  },
+  "ci": "4039341",
+  "nomina": "Garcia Mamani Vidal",
+  "puesto": "Técnico Mecánico de Máquinas Herramientas A",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73830892",
+  "area": "Maquinas herramientas",
+  "jde": "67070",
+  "residencia": "ORURO",
+  "no_bloque": "157",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b2d"
+  },
+  "ci": "3353246",
+  "nomina": "Muñoz Arandia Erick Ricardo",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2023-05-15T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72568277",
+  "area": "Chancado",
+  "jde": "71218",
+  "residencia": "LA PAZ",
+  "no_bloque": "83",
+  "no_habitacion": "10"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b39"
+  },
+  "ci": "2725065",
+  "nomina": "Valero Challapa Felipe",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72466044",
+  "area": "Molienda",
+  "jde": "62712",
+  "residencia": "ORURO",
+  "no_bloque": "120",
+  "no_habitacion": "18"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b3b"
+  },
+  "ci": "1329128",
+  "nomina": "Yañez Calcina Bartolome",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2005-09-14T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72277367",
+  "area": "Lubricacion",
+  "jde": "60688",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b3d"
+  },
+  "ci": "2777571",
+  "nomina": "Ajata Trigo Casto",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72464853",
+  "area": "Taller General",
+  "jde": "62680",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b43"
+  },
+  "ci": "7181033",
+  "nomina": "Ayala Mamani Adalid Cesar",
+  "puesto": "Técnico de Refrigeración y Aire Acondicionado B",
+  "fecha_ingreso": {
+    "$date": "2007-07-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72430671",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "62679",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b44"
+  },
+  "ci": "3111777",
+  "nomina": "Ayaviri Gutierrez Williams",
+  "puesto": "Técnico Mecánico",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72481793",
+  "area": "Recursos Hidricos",
+  "jde": "63476",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b46"
+  },
+  "ci": "8554327",
+  "nomina": "Barrios Muraña Oscar",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73872742",
+  "area": "Flotacion",
+  "jde": "60433",
+  "residencia": "SUCRE"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4b"
+  },
+  "ci": "6593859",
+  "nomina": "Calcina Quispe Franz Reynaldo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2007-01-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74245134",
+  "area": "Filtros",
+  "jde": "62178",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4d"
+  },
+  "ci": "1433556",
+  "nomina": "Calizaya Copa Alejandro",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72051088",
+  "area": "Filtros",
+  "jde": "62715",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4e"
+  },
+  "ci": "2735694",
+  "nomina": "Calle Crispin Irineo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2009-12-07T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72405846",
+  "area": "Recursos Hidricos",
+  "jde": "64976",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4f"
+  },
+  "ci": "2602454",
+  "nomina": "Calle Rodriguez Modesto Cresencio",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72052412",
+  "area": "Flotacion",
+  "jde": "62726",
+  "residencia": "LA PAZ",
+  "no_bloque": "145",
+  "no_habitacion": "21"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b53"
+  },
+  "ci": "4810771",
+  "nomina": "Canqui Huanca Reynaldo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2009-10-05T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71963971",
+  "area": "Recursos Hidricos",
+  "jde": "64829",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b56"
+  },
+  "ci": "3992907",
+  "nomina": "Cayo Bartolome Edwin Vidal",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2009-04-13T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72432963",
+  "area": "Flotacion",
+  "jde": "64335",
+  "residencia": "UYUNI",
+  "no_bloque": "146",
+  "no_habitacion": "20"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b5a"
+  },
+  "ci": "653997",
+  "nomina": "Choque Acha Eloy",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2008-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72495416",
+  "area": "Taller General",
+  "jde": "62939",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b5c"
+  },
+  "ci": "3701504",
+  "nomina": "Choque Cayo Emilio",
+  "puesto": "Chofer B",
+  "fecha_ingreso": {
+    "$date": "2006-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72407811",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "61426",
+  "residencia": "UYUNI",
+  "no_bloque": "122",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b5e"
+  },
+  "ci": "3994205-1B",
+  "nomina": "Choque Mamani Edgar",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72347872",
+  "area": "Recursos Hidricos",
+  "jde": "67086",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b5f"
+  },
+  "ci": "3520938",
+  "nomina": "Chugar Mamani Juan Carlos",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-08-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74240256",
+  "area": "Flotacion",
+  "jde": "63888",
+  "residencia": "ORURO",
+  "no_bloque": "121",
+  "no_habitacion": "35"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b60"
+  },
+  "ci": "4951098",
+  "nomina": "Chura Mamani Fausto",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72407291",
+  "area": "Taller General",
+  "jde": "67044",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6a"
+  },
+  "ci": "3483158",
+  "nomina": "Jemio Castro Javier Ernesto",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73836570",
+  "area": "Filtros",
+  "jde": "63132",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6b"
+  },
+  "ci": "6008854",
+  "nomina": "Jurado Bonifacio David",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-09-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73097684",
+  "area": "Flotacion",
+  "jde": "63927",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "10"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6c"
+  },
+  "ci": "4298833",
+  "nomina": "Layme Guaygua Julio",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73009049",
+  "area": "Confiabilidad",
+  "jde": "63472",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6f"
+  },
+  "ci": "4740374",
+  "nomina": "Lopez Quiroga Rossio Kattia",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2010-10-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-11T20:41:22.775Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69dab1f2bb069339a05173fc"
+  },
+  "username": "kattial",
+  "celular": "72017119",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "66494",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b71"
+  },
+  "ci": "2446104",
+  "nomina": "Mamani Apaza Wilfredo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72137081",
+  "area": "Flotacion",
+  "jde": "62697",
+  "residencia": "LA PAZ",
+  "no_bloque": "121",
+  "no_habitacion": "29"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b74"
+  },
+  "ci": "6068470",
+  "nomina": "Mamani Mamani Miguel Angel",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73238389",
+  "area": "Taller General",
+  "jde": "67110",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b75"
+  },
+  "ci": "5554123",
+  "nomina": "Mamani Mamani Roben",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73850342",
+  "area": "Taller General",
+  "jde": "67050",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b89"
+  },
+  "ci": "2767527",
+  "nomina": "Ramos Fernandez David Daniel",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72486135",
+  "area": "Taller General",
+  "jde": "67106",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8e"
+  },
+  "ci": "3062804",
+  "nomina": "Torrez Martinez Nicodemos",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2007-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72080332",
+  "area": "Taller General",
+  "jde": "62816",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b92"
+  },
+  "ci": "3559212",
+  "nomina": "Yucra Yucra Harold Zacarias",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2010-08-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72485158",
+  "area": "Taller General",
+  "jde": "65575",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72b9b"
+  },
+  "ci": "4295333",
+  "nomina": "Paucara Hilari Dionisio",
+  "puesto": "Planificador Sénior de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-06-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72587646",
+  "area": "Planificacion",
+  "jde": "62613",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72add"
+  },
+  "ci": "3711455",
+  "nomina": "Erquicia Landeau Natalia Sofia",
+  "puesto": "Analista Sénior de Gestión Operativa de Mantenimiento Planta",
+  "fecha_ingreso": {
+    "$date": "2005-11-08T00:00:00.000Z"
+  },
+  "superintendencia": "Gerencia de Mantenimiento Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-26T11:20:32.081Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69a02c7f9974835a960ec1cc"
+  },
+  "username": "natalia",
+  "celular": "73245320",
+  "area": "Superintendencia",
+  "jde": "60834",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "82",
+  "no_habitacion": "9"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72adf"
+  },
+  "ci": "3463906",
+  "nomina": "Aguilar Mayta Justino Raul",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-08-27T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72058729",
+  "area": "Electrico",
+  "jde": "62818",
+  "residencia": "LA PAZ",
+  "no_bloque": "121",
+  "no_habitacion": "9"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae1"
+  },
+  "ci": "2758794",
+  "nomina": "Bedoya Rocha Jose Luis",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-08-27T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72267066",
+  "area": "Electrico",
+  "jde": "62821",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "1"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae4"
+  },
+  "ci": "3514296",
+  "nomina": "Capurata Flores Ovidio",
+  "puesto": "Superintendente de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-03-26T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T19:21:55.966Z"
+  },
+  "keycloak_user_id": "fa3fb834-07a7-48f9-85d0-fc1b583aef67",
+  "tiene_acceso_sistema": false,
+  "updatedBy": "usuario1",
+  "username": "ovica",
+  "celular": "72475695",
+  "area": "Superintendencia",
+  "jde": "62324",
+  "residencia": "ORURO",
+  "no_bloque": "80",
+  "no_habitacion": "21"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae9"
+  },
+  "ci": "4892123",
+  "nomina": "Espejo Rospigliossi Edson Adhemar",
+  "puesto": "Técnico de Comunicación y Redes",
+  "fecha_ingreso": {
+    "$date": "2012-06-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73707111",
+  "area": "Instrumentacion",
+  "jde": "67638",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "15"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af0"
+  },
+  "ci": "3061608",
+  "nomina": "Hurtado Gutierrez Alcides",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72305725",
+  "area": "Electrico",
+  "jde": "62705",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "4"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af4"
+  },
+  "ci": "3541207",
+  "nomina": "Lopez Mendoza Oscar",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2008-09-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72450022",
+  "area": "Electrico",
+  "jde": "62852",
+  "residencia": "ORURO",
+  "no_bloque": "135",
+  "no_habitacion": "4"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72afe"
+  },
+  "ci": "7267014",
+  "nomina": "Salinas Lazo Ivan",
+  "puesto": "Técnico Eléctrico",
+  "fecha_ingreso": {
+    "$date": "2014-08-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74222247",
+  "area": "Electrico",
+  "jde": "68559",
+  "residencia": "CULPINA"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b08"
+  },
+  "ci": "3071866",
+  "nomina": "Choque Peñafiel Jhierman",
+  "puesto": "Técnico Especialista de Monitoreo Mecánico",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72468374",
+  "area": "Confiabilidad",
+  "jde": "62725",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0b"
+  },
+  "ci": "3992705",
+  "nomina": "Huayllani Delgado Juan de Dios",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2012-10-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T22:04:59.391Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69a4b80b55621292dc82a762"
+  },
+  "username": "juandh",
+  "celular": "72454038",
+  "area": "Confiabilidad",
+  "jde": "67819",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b10"
+  },
+  "ci": "3385809",
+  "nomina": "Ramirez Riveros Ruperto Juan",
+  "puesto": "Analista Sénior de Confiabilidad",
+  "fecha_ingreso": {
+    "$date": "2007-07-26T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72006428",
+  "area": "Confiabilidad",
+  "jde": "62683",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1a"
+  },
+  "ci": "1869030",
+  "nomina": "Cayo Bartolome Alfredo",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72494780",
+  "area": "Molienda",
+  "jde": "62716",
+  "residencia": "ORURO",
+  "no_bloque": "144",
+  "no_habitacion": "22"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b25"
+  },
+  "ci": "3073444",
+  "nomina": "Garcia Agreda Marco Antonio",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-11-24T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-30T15:01:53.735Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69ca9061bb069339a034d3dd"
+  },
+  "username": "marcog",
+  "celular": "72000761",
+  "area": "Lubricacion",
+  "jde": "63131",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "70",
+  "no_habitacion": "14"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b28"
+  },
+  "ci": "3534880",
+  "nomina": "Gutierrez Huarachi Marcelino",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72211420",
+  "area": "Molienda",
+  "jde": "62687",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "144",
+  "no_habitacion": "24"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b29"
+  },
+  "ci": "4832444",
+  "nomina": "Hidalgo Guzman Edwin Genaro",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73749141",
+  "area": "Lubricacion",
+  "jde": "67158",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "11"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b33"
+  },
+  "ci": "3078228",
+  "nomina": "Poma Quispe Jose",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72523865",
+  "area": "Lubricacion",
+  "jde": "62707",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b35"
+  },
+  "ci": "6566758",
+  "nomina": "Quispe Calcina Oscar Reynaldo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2006-09-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72379099",
+  "area": "Chancado",
+  "jde": "61797",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b41"
+  },
+  "ci": "3751042",
+  "nomina": "Arandia Coca Marco Antonio",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2009-11-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72286606",
+  "area": "Molienda",
+  "jde": "62523",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "101",
+  "no_habitacion": "5"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b42"
+  },
+  "ci": "5074237",
+  "nomina": "Ayala Garcia Walfred Orlando",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72414168",
+  "area": "Taller General",
+  "jde": "67069",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b48"
+  },
+  "ci": "5074618",
+  "nomina": "Belen Cayo Fernando",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2006-09-20T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74253573",
+  "area": "Filtros",
+  "jde": "61777",
+  "residencia": "TUPIZA"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b51"
+  },
+  "ci": "5122134",
+  "nomina": "Camata Quispe Edilber",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2005-07-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-02T17:28:12.512Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69a5c8ac55621292dc848ac1"
+  },
+  "username": "ecamata",
+  "celular": "72407829",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "60457",
+  "residencia": "UYUNI",
+  "no_bloque": "133",
+  "no_habitacion": "12"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b54"
+  },
+  "ci": "5079235",
+  "nomina": "Carlo Ayaviri Reynaldo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73875883",
+  "area": "Recursos Hidricos",
+  "jde": "67068",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b55"
+  },
+  "ci": "3088482",
+  "nomina": "Carrasco Flores Raul Pedro",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2009-06-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-28T15:11:42.953Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69a305aeab230ec69f0061ca"
+  },
+  "username": "raulc",
+  "celular": "72202760",
+  "area": "Taller General",
+  "jde": "64450",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b57"
+  },
+  "ci": "5840459",
+  "nomina": "Cayo Copa Osvaldo",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2008-02-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72397383",
+  "area": "Taller General",
+  "jde": "63368",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b63"
+  },
+  "ci": "5734618",
+  "nomina": "Huacaña Ajhuacho Ramiro Daniel",
+  "puesto": "Especialista Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2010-05-03T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68339749",
+  "area": "Flotacion",
+  "jde": "65258",
+  "residencia": "ORURO",
+  "no_bloque": "121",
+  "no_habitacion": "39"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b66"
+  },
+  "ci": "5479329",
+  "nomina": "Huaricallo Monasterios Ramiro Cesar",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74856179",
+  "area": "Filtros",
+  "jde": "67067",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b68"
+  },
+  "ci": "4013090",
+  "nomina": "Huayta Mendoza Elías",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2010-03-15T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72441168",
+  "area": "Recursos Hidricos",
+  "jde": "65184",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6e"
+  },
+  "ci": "6566065",
+  "nomina": "Llave Muraña Marcial Hipólito",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72430270",
+  "area": "Flotacion",
+  "jde": "60492",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b76"
+  },
+  "ci": "4368055",
+  "nomina": "Mamani Mamani Saul Favio",
+  "puesto": "Especialista Soldador/Tubero",
+  "fecha_ingreso": {
+    "$date": "2008-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72089029",
+  "area": "Taller General",
+  "jde": "62937",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b79"
+  },
+  "ci": "2876522",
+  "nomina": "Mercado Mendoza Elias",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2006-07-17T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72264521",
+  "area": "Taller General",
+  "jde": "61575",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b80"
+  },
+  "ci": "1362048",
+  "nomina": "Paredes Terrazas Ivan Alberto",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73842515",
+  "area": "Flotacion",
+  "jde": "63473",
+  "residencia": "ORURO",
+  "no_bloque": "145",
+  "no_habitacion": "14"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b82"
+  },
+  "ci": "5995805",
+  "nomina": "Quisbert Quispe Wenceslao",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68100066",
+  "area": "Taller General",
+  "jde": "67040",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b84"
+  },
+  "ci": "1286449",
+  "nomina": "Quispe Muraña Lucrecio",
+  "puesto": "Coordinador Técnico Operativo",
+  "fecha_ingreso": {
+    "$date": "2005-07-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72418123",
+  "area": "Recursos Hidricos",
+  "jde": "60545",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b86"
+  },
+  "ci": "2689327",
+  "nomina": "Ramos Apaza Walter",
+  "puesto": "Técnico de Refrigeración y Aire Acondicionado B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67021292",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "67041",
+  "residencia": "LA PAZ",
+  "no_bloque": "122",
+  "no_habitacion": "29"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b90"
+  },
+  "ci": "3433215",
+  "nomina": "Velasco Quiroga Ivan Luis",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2011-02-07T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71460875",
+  "area": "Filtros",
+  "jde": "66749",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b95"
+  },
+  "ci": "1411680",
+  "nomina": "Basilio Calcina Oscar",
+  "puesto": "Especialista de Planificación de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-05-27T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72893712",
+  "area": "Planificacion",
+  "jde": "63624",
+  "residencia": "SUCRE"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b97"
+  },
+  "ci": "2762672-1C",
+  "nomina": "Flores Gutierrez Nestor Roman",
+  "puesto": "Planificador Sénior de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-12-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72465603",
+  "area": "Planificacion",
+  "jde": "62297",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72b9e"
+  },
+  "ci": "5198834",
+  "nomina": "Quispe Choquetopa Juvenal Gustavo",
+  "puesto": "Planificador de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2010-09-20T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67545481",
+  "area": "Planificacion",
+  "jde": "65705",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae2"
+  },
+  "ci": "6638347",
+  "nomina": "Calcina Quispe Bonifacio",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2008-12-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67904887",
+  "area": "Instrumentacion",
+  "jde": "64115",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae8"
+  },
+  "ci": "3292210",
+  "nomina": "Equise Quichu Eugenio Adrian",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2010-08-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74222556",
+  "area": "Instrumentacion",
+  "jde": "65574",
+  "residencia": "POTOSI",
+  "no_bloque": "133",
+  "no_habitacion": "20"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aed"
+  },
+  "ci": "3557033",
+  "nomina": "Gomez Velasco Limbert",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67202457",
+  "area": "Electrico",
+  "jde": "62598",
+  "residencia": "ORURO",
+  "no_bloque": "102",
+  "no_habitacion": "2"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af3"
+  },
+  "ci": "3972104",
+  "nomina": "Loayza Gallardo Rolando Fabricio",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2008-09-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72463826",
+  "area": "Electrico",
+  "jde": "62899",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "1"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af8"
+  },
+  "ci": "6716420",
+  "nomina": "Perez Calcina Juan Fernando",
+  "puesto": "Técnico de Instrumentación B",
+  "fecha_ingreso": {
+    "$date": "2007-01-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72400239",
+  "area": "Instrumentacion",
+  "jde": "62179",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72afa"
+  },
+  "ci": "7137892",
+  "nomina": "Quispe Quispe Ovideo",
+  "puesto": "Técnico Eléctrico B",
+  "fecha_ingreso": {
+    "$date": "2005-12-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74214094",
+  "area": "Electrico",
+  "jde": "60932",
+  "residencia": "TARIJA",
+  "no_bloque": "133",
+  "no_habitacion": "6"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72afb"
+  },
+  "ci": "6637670",
+  "nomina": "Quispe Valda José Calasanz",
+  "puesto": "Técnico de Instrumentación B",
+  "fecha_ingreso": {
+    "$date": "2007-01-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73784867",
+  "area": "Instrumentacion",
+  "jde": "62184",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72afc"
+  },
+  "ci": "3102897",
+  "nomina": "Rodriguez Herbas Juan Rodo",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-09-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72069921",
+  "area": "Electrico",
+  "jde": "62931",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "6"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72afd"
+  },
+  "ci": "4800731",
+  "nomina": "Rojas Mamani Roman",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73839554",
+  "area": "Electrico",
+  "jde": "62604",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "4"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b02"
+  },
+  "ci": "3550699",
+  "nomina": "Torrico Morales Alexander Walby",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-09-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72485952",
+  "area": "Instrumentacion",
+  "jde": "62851",
+  "residencia": "ORURO",
+  "no_bloque": "103",
+  "no_habitacion": "4"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b04"
+  },
+  "ci": "3513273",
+  "nomina": "Vargas Mondocorre Wilson",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2005-11-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72351611",
+  "area": "Electrico",
+  "jde": "60884",
+  "residencia": "ORURO",
+  "no_bloque": "122",
+  "no_habitacion": "10"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0d"
+  },
+  "ci": "5532521",
+  "nomina": "Lazo Cayo Victor Freddo",
+  "puesto": "Técnico Especialista de Monitoreo Eléctrico",
+  "fecha_ingreso": {
+    "$date": "2007-07-10T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72625591",
+  "area": "Confiabilidad",
+  "jde": "62724",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0f"
+  },
+  "ci": "3117419",
+  "nomina": "Ponce Antequera Alain Rolando",
+  "puesto": "Ingeniero Sénior de Confiabilidad Eléctrica",
+  "fecha_ingreso": {
+    "$date": "2007-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72492790",
+  "area": "Confiabilidad",
+  "jde": "62612",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b11"
+  },
+  "ci": "3992832",
+  "nomina": "Ramos Mayorga Saul Cleto",
+  "puesto": "Técnico Especialista de Monitoreo Mecánico",
+  "fecha_ingreso": {
+    "$date": "2011-03-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72669077",
+  "area": "Confiabilidad",
+  "jde": "66953",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b15"
+  },
+  "ci": "5293323",
+  "nomina": "Baptista Huanca Macario Ismael",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2010-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72289923",
+  "area": "Chancado",
+  "jde": "63202",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "120",
+  "no_habitacion": "37"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b16"
+  },
+  "ci": "2738168",
+  "nomina": "Bartolome Cabrera Basilio Grover",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-02-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "7235764",
+  "area": "Chancado",
+  "jde": "60680",
+  "residencia": "ORURO",
+  "no_bloque": "123",
+  "no_habitacion": "39"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b17"
+  },
+  "ci": "8597404",
+  "nomina": "Bolivar Rocha Victor Hugo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-08-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b19"
+  },
+  "ci": "8578528",
+  "nomina": "Calcina Quispe Vladimir Elias",
+  "puesto": "Técnico Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2006-12-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72447153",
+  "area": "Lubricacion",
+  "jde": "62079",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1b"
+  },
+  "ci": "3660173",
+  "nomina": "Choque Callahuara Francisco",
+  "puesto": "Técnico Mecánico de Máquinas Herramientas B",
+  "fecha_ingreso": {
+    "$date": "2012-05-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72868584",
+  "area": "Maquinas herramientas",
+  "jde": "67589",
+  "residencia": "UYUNI",
+  "no_bloque": "157",
+  "no_habitacion": "17"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1c"
+  },
+  "ci": "3501072",
+  "nomina": "Choque Murillo Daniel",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-02-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73830809",
+  "area": "Molienda",
+  "jde": "63369",
+  "residencia": "ORURO",
+  "no_bloque": "120",
+  "no_habitacion": "34"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1d"
+  },
+  "ci": "5532639",
+  "nomina": "Choqueticlla Zarate Giovanni Enzo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2010-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72412635",
+  "area": "Molienda",
+  "jde": "64802",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1e"
+  },
+  "ci": "1326566",
+  "nomina": "Chuquisea Torrez Rodolfo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72210297",
+  "area": "Molienda",
+  "jde": "62689",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "120",
+  "no_habitacion": "27"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b1f"
+  },
+  "ci": "5544893",
+  "nomina": "Colque Cayo Carlos",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2006-05-15T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74836554",
+  "area": "Molienda",
+  "jde": "61428",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b20"
+  },
+  "ci": "3551788",
+  "nomina": "Cortez Flores Teodoro Rene",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72488422",
+  "area": "Chancado",
+  "jde": "62713",
+  "residencia": "ORURO",
+  "no_bloque": "123",
+  "no_habitacion": "23"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b27"
+  },
+  "ci": "3976717",
+  "nomina": "Gonzales Cordova Moises Rogelio",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2006-09-20T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72431193",
+  "area": "Lubricacion",
+  "jde": "60775",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b2b"
+  },
+  "ci": "2446095",
+  "nomina": "Mamani Apaza Hugo",
+  "puesto": "Especialista Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73022750",
+  "area": "Lubricacion",
+  "jde": "62696",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "120",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b2c"
+  },
+  "ci": "3428659",
+  "nomina": "Mamani Calcina Gilberto",
+  "puesto": "Técnico Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2006-08-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72425846",
+  "area": "Lubricacion",
+  "jde": "60712",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b32"
+  },
+  "ci": "2724496",
+  "nomina": "Paredes Mamani Pedro",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74900683",
+  "area": "Chancado",
+  "jde": "62709",
+  "residencia": "ORURO",
+  "no_bloque": "145",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b36"
+  },
+  "ci": "3107286",
+  "nomina": "Quispe Challapa Gil Grover",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72447481",
+  "area": "Chancado",
+  "jde": "62703",
+  "residencia": "UYUNI",
+  "no_bloque": "120",
+  "no_habitacion": "39"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b3e"
+  },
+  "ci": "3832333",
+  "nomina": "Alba Antelo Emil",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72127890",
+  "area": "Filtros",
+  "jde": "62819",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b45"
+  },
+  "ci": "4999590",
+  "nomina": "Balboa Patty Juan Carlos",
+  "puesto": "Especialista Soldador/Tubero",
+  "fecha_ingreso": {
+    "$date": "2009-11-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67144094",
+  "area": "Taller General",
+  "jde": "64875",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b49"
+  },
+  "ci": "3056393",
+  "nomina": "Cabrera Cabrera Edgar",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73836384",
+  "area": "Flotacion",
+  "jde": "62684",
+  "residencia": "ORURO",
+  "no_bloque": "143",
+  "no_habitacion": "5"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b50"
+  },
+  "ci": "2675632",
+  "nomina": "Callisaya Flores Victor",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-08-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72512626",
+  "area": "Filtros",
+  "jde": "63882",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b61"
+  },
+  "ci": "3663195-1D",
+  "nomina": "Colque Cordova Ramon",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-02-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72428304",
+  "area": "Flotacion",
+  "jde": "60923",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b64"
+  },
+  "ci": "2489889",
+  "nomina": "Huallpara Gironda Nicanor Guillermo",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-23T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72517386",
+  "area": "Flotacion",
+  "jde": "62721",
+  "residencia": "LA PAZ",
+  "no_bloque": "121",
+  "no_habitacion": "32"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b69"
+  },
+  "ci": "3530606",
+  "nomina": "Hurtado Velasquez Pedro Felix",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-03-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72472381",
+  "area": "Recursos Hidricos",
+  "jde": "63116",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b73"
+  },
+  "ci": "6681592",
+  "nomina": "Mamani Donaire Martin Roberto",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71176452",
+  "area": "Taller General",
+  "jde": "67073",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b77"
+  },
+  "ci": "3498772",
+  "nomina": "Mamani Pacasi Etson Omar",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68078884",
+  "area": "Recursos Hidricos",
+  "jde": "67055",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7b"
+  },
+  "ci": "3693252",
+  "nomina": "Molina Morales Vladimir David",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-01-27T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71535697",
+  "area": "Recursos Hidricos",
+  "jde": "61049",
+  "residencia": "SUCRE"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7d"
+  },
+  "ci": "2723813",
+  "nomina": "Navarro Loroño Julio David",
+  "puesto": "Superintendente de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2006-01-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72426185",
+  "area": "Superintendencia",
+  "jde": "61048",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "80",
+  "no_habitacion": "2"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7e"
+  },
+  "ci": "1392871",
+  "nomina": "Ojeda Lovera Juan",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2009-11-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72423345",
+  "area": "Taller General",
+  "jde": "64874",
+  "residencia": "POTOSI"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7f"
+  },
+  "ci": "3505970",
+  "nomina": "Paco Ramos Erick Miroslav",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-05-03T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T15:45:48.852Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69c554acbb069339a0240c5c"
+  },
+  "username": "miroslav",
+  "celular": "72455965",
+  "area": "Flotacion",
+  "jde": "62518",
+  "residencia": "ORURO",
+  "no_bloque": "144",
+  "no_habitacion": "14"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b83"
+  },
+  "ci": "3973483",
+  "nomina": "Quispe Calcina Narciso",
+  "puesto": "Coordinador Técnico Operativo",
+  "fecha_ingreso": {
+    "$date": "2005-03-10T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72364417",
+  "area": "Recursos Hidricos",
+  "jde": "10131",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b85"
+  },
+  "ci": "6715581",
+  "nomina": "Quispe Ramos Luis Adrian",
+  "puesto": "Técnico de Grupos Electrógenos B",
+  "fecha_ingreso": {
+    "$date": "2007-11-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67177495",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "62168",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b88"
+  },
+  "ci": "5532625",
+  "nomina": "Ramos Choque Máximo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-04-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72371950",
+  "area": "Filtros",
+  "jde": "63238",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8a"
+  },
+  "ci": "3103604",
+  "nomina": "Roman Velasquez Maximo",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2007-07-17T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72467574",
+  "area": "Taller General",
+  "jde": "62695",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8c"
+  },
+  "ci": "4889779",
+  "nomina": "Tarqui Cocarapi Victor Orlando",
+  "puesto": "Técnico Mecánico Soldador/Tubero B",
+  "fecha_ingreso": {
+    "$date": "2011-08-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72502812",
+  "area": "Taller General",
+  "jde": "67109",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b93"
+  },
+  "ci": "2727680",
+  "nomina": "Aguayo Rojas Victor Hugo",
+  "puesto": "Planificador Sénior de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72704133",
+  "area": "Planificacion",
+  "jde": "62155",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b94"
+  },
+  "ci": "3713287",
+  "nomina": "Barrios Gonzales Rosemary Cristina",
+  "puesto": "Analista de Planificación",
+  "fecha_ingreso": {
+    "$date": "2007-05-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72088127",
+  "area": "Planificacion",
+  "jde": "62524",
+  "residencia": "POTOSI"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72b9d"
+  },
+  "ci": "3355358",
+  "nomina": "Quinteros Saucedo Roberto",
+  "puesto": "Planificador Sénior de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2010-05-03T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74084091",
+  "area": "Planificacion",
+  "jde": "65262",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72b9f"
+  },
+  "ci": "3359364",
+  "nomina": "Sandoval José Luis",
+  "puesto": "Planificador de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-09-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71575412",
+  "area": "Planificacion",
+  "jde": "62560",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72ba0"
+  },
+  "ci": "3434334",
+  "nomina": "Thompson Velásquez Erik Eduardo",
+  "puesto": "Superintendente de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-02-26T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72061172",
+  "area": "Superintendencia",
+  "jde": "62260",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae5"
+  },
+  "ci": "3663053",
+  "nomina": "Copa Cabrera Serapio",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72176934",
+  "area": "Electrico",
+  "jde": "62714",
+  "residencia": "SANTA CRUZ",
+  "no_bloque": "134",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72ae6"
+  },
+  "ci": "6593122",
+  "nomina": "Cordova Ramos Felix",
+  "puesto": "Técnico de Instrumentación B",
+  "fecha_ingreso": {
+    "$date": "2005-12-07T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68646089",
+  "area": "Instrumentacion",
+  "jde": "60926",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aec"
+  },
+  "ci": "3559290",
+  "nomina": "Flores Choque José Alfredo",
+  "puesto": "Técnico de Instrumentación C",
+  "fecha_ingreso": {
+    "$date": "2015-02-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72452204",
+  "area": "Instrumentacion",
+  "jde": "68735",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "20"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72aef"
+  },
+  "ci": "3559236",
+  "nomina": "Huayllas Esquivel Erwin",
+  "puesto": "Especialista en Instrumentación / Eléctrico",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72359875",
+  "area": "Instrumentacion",
+  "jde": "62599",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "17"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af1"
+  },
+  "ci": "3397222",
+  "nomina": "Janco Choquecallo Rene",
+  "puesto": "Técnico Eléctrico A",
+  "fecha_ingreso": {
+    "$date": "2010-07-19T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72088502",
+  "area": "Electrico",
+  "jde": "62869",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af2"
+  },
+  "ci": "2782954",
+  "nomina": "Llanque Choque Jorge",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2008-09-04T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72479416",
+  "area": "Instrumentacion",
+  "jde": "62729",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "19"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af5"
+  },
+  "ci": "4926247",
+  "nomina": "Mamani Alcon Oscar Elias",
+  "puesto": "Técnico Eléctrico B",
+  "fecha_ingreso": {
+    "$date": "2011-06-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73546541",
+  "area": "Electrico",
+  "jde": "67061",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "5"
+},
+{
+  "_id": {
+    "$oid": "67dc1471dba23dd5e9b72af6"
+  },
+  "ci": "4878715",
+  "nomina": "Mendoza Velasco Marco Vladimir",
+  "puesto": "Técnico de Instrumentación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "63774911 / 76199805",
+  "area": "Instrumentacion",
+  "jde": "62682",
+  "residencia": "LA PAZ",
+  "no_bloque": "133",
+  "no_habitacion": "16"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b01"
+  },
+  "ci": "3110968",
+  "nomina": "Taquichiri Mamani Sabino",
+  "puesto": "Técnico de Instrumentación B",
+  "fecha_ingreso": {
+    "$date": "2010-08-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68764022",
+  "area": "Instrumentacion",
+  "jde": "65577",
+  "residencia": "ORURO",
+  "no_bloque": "133",
+  "no_habitacion": "18"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b03"
+  },
+  "ci": "5544929",
+  "nomina": "Valencia Camata Edgar",
+  "puesto": "Técnico de Instrumentación B",
+  "fecha_ingreso": {
+    "$date": "2008-12-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68388363",
+  "area": "Instrumentacion",
+  "jde": "64114",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b05"
+  },
+  "ci": "3099477",
+  "nomina": "Viñola Vargas Jose Luis",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-09-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72735650",
+  "area": "Electrico",
+  "jde": "63954",
+  "residencia": "ORURO",
+  "no_bloque": "70",
+  "no_habitacion": "7"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0a"
+  },
+  "ci": "3515120",
+  "nomina": "Herbas Torrez Henry",
+  "puesto": "Supervisor de Análisis de Confiabilidad",
+  "fecha_ingreso": {
+    "$date": "2007-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72498300",
+  "area": "Confiabilidad",
+  "jde": "62156",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b0e"
+  },
+  "ci": "3973725",
+  "nomina": "Lazo Cayo Wilson Vicente",
+  "puesto": "Superintendente de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-05-26T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72014956",
+  "area": "Superintendencia",
+  "jde": "62510",
+  "residencia": "SUCRE"
+},
+{
+  "_id": {
+    "$oid": "67dc15bcdba23dd5e9b72b13"
+  },
+  "ci": "3507129",
+  "nomina": "Aduana Rocabado Oscar",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2009-09-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-15T14:49:51.570Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69dfa58fbb069339a05d7d35"
+  },
+  "username": "oscara",
+  "celular": "72459772",
+  "area": "Molienda",
+  "jde": "63222",
+  "residencia": "ORURO",
+  "no_bloque": "103",
+  "no_habitacion": "1"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b2a"
+  },
+  "ci": "3513007",
+  "nomina": "Lopez Diego Enrrique",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72308847",
+  "area": "Molienda",
+  "jde": "62688",
+  "residencia": "ORURO",
+  "no_bloque": "120",
+  "no_habitacion": "3"
+},
+{
+  "_id": {
+    "$oid": "67dc1977dba23dd5e9b72b2e"
+  },
+  "ci": "5134471",
+  "nomina": "Nuñez Tapia Juan Pablo",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-04-07T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72419171",
+  "area": "Chancado",
+  "jde": "63247",
+  "residencia": "UYUNI",
+  "no_bloque": "120",
+  "no_habitacion": "38"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b34"
+  },
+  "ci": "6667826",
+  "nomina": "Quispe Calcina Alex Alejandro",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2007-01-22T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68398555",
+  "area": "Chancado",
+  "jde": "62180",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b37"
+  },
+  "ci": "5117631",
+  "nomina": "Ramos Córdova Simeón",
+  "puesto": "Técnico Mecánico de Máquinas Herramientas A",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72798184",
+  "area": "Maquinas herramientas",
+  "jde": "60553",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b38"
+  },
+  "ci": "2272001",
+  "nomina": "Rubin de Celis Candia Miguel Martin",
+  "puesto": "Superintendente de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2007-08-13T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72271766",
+  "area": "Superintendencia",
+  "jde": "62842",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "80",
+  "no_habitacion": "8"
+},
+{
+  "_id": {
+    "$oid": "67dc1a09dba23dd5e9b72b3a"
+  },
+  "ci": "3507013",
+  "nomina": "Velasquez Huanca Jhonny Joaquín",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2008-08-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72470529",
+  "area": "Molienda",
+  "jde": "63883",
+  "residencia": "ORURO",
+  "no_bloque": "120",
+  "no_habitacion": "2"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b3f"
+  },
+  "ci": "5532657",
+  "nomina": "Ali Salgado Jhonny Agustin",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2009-04-13T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-28T13:36:23.475Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69c7d957bb069339a026b4e3"
+  },
+  "username": "jhonnya",
+  "celular": "72888989",
+  "area": "Filtros",
+  "jde": "64336",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1a67dba23dd5e9b72b40"
+  },
+  "ci": "5548587-1F",
+  "nomina": "Amador Muraña Cristian",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2006-07-06T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73880652",
+  "area": "Flotacion",
+  "jde": "61568",
+  "residencia": "UYUNI",
+  "no_bloque": "121",
+  "no_habitacion": "36"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4a"
+  },
+  "ci": "1429790",
+  "nomina": "Calcina Muraña Silverio",
+  "puesto": "Chofer B",
+  "fecha_ingreso": {
+    "$date": "2005-12-08T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72420893",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "60920",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1aa6dba23dd5e9b72b4c"
+  },
+  "ci": "3993008",
+  "nomina": "Calcina Quispe Inocencio",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2005-07-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73755525",
+  "area": "Taller General",
+  "jde": "60452",
+  "residencia": "CULPINA K"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b58"
+  },
+  "ci": "5097371",
+  "nomina": "Cayo Lázaro Diego Max",
+  "puesto": "Técnico de Grupos Electrógenos B",
+  "fecha_ingreso": {
+    "$date": "2008-03-03T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72876000",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "63427",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b59"
+  },
+  "ci": "10521966",
+  "nomina": "Cayo López Santos Tomas",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2010-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73877739",
+  "area": "Filtros",
+  "jde": "65163",
+  "residencia": "POTOSI"
+},
+{
+  "_id": {
+    "$oid": "67dc1aecdba23dd5e9b72b5b"
+  },
+  "ci": "6686317",
+  "nomina": "Choque Cardozo Jose Luis",
+  "puesto": "Técnico Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2019-10-21T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "68383522",
+  "area": "Flotacion",
+  "jde": "670712",
+  "residencia": "POTOSI",
+  "no_bloque": "121",
+  "no_habitacion": "34"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b62"
+  },
+  "ci": "3116339",
+  "nomina": "Condarco Fuentes Jhony",
+  "puesto": "Supervisor de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2010-11-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-27T12:38:14.102Z"
+  },
+  "tiene_acceso_sistema": true,
+  "userId": {
+    "$oid": "69a19035ab230ec69ffc3df4"
+  },
+  "username": "jhonycon",
+  "celular": "72773270",
+  "area": "Recursos Hidricos",
+  "jde": "66504",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b65"
+  },
+  "ci": "3059890",
+  "nomina": "Huarachi Boyan Marco Antonio",
+  "puesto": "Técnico Mecánico / de Lubricación A",
+  "fecha_ingreso": {
+    "$date": "2008-09-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "67409956",
+  "area": "Flotacion",
+  "jde": "63917",
+  "residencia": "COCHABAMBA",
+  "no_bloque": "121",
+  "no_habitacion": "33"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b67"
+  },
+  "ci": "5122117",
+  "nomina": "Huayta Genaro",
+  "puesto": "Técnico Mecánico / de Lubricación B",
+  "fecha_ingreso": {
+    "$date": "2010-03-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72411292",
+  "area": "Flotacion",
+  "jde": "65162",
+  "residencia": "UYUNI"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b6d"
+  },
+  "ci": "7706183",
+  "nomina": "Lima Caro Freddy",
+  "puesto": "Especialista de Mantenimiento Mecánico / Lubricación",
+  "fecha_ingreso": {
+    "$date": "2007-07-24T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72669505",
+  "area": "Filtros",
+  "jde": "62711",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1b6bdba23dd5e9b72b70"
+  },
+  "ci": "3103741",
+  "nomina": "Machaca Martínez Freddy Gustavo Juvenal",
+  "puesto": "Especialista en Grupos Electrógenos",
+  "fecha_ingreso": {
+    "$date": "2011-07-18T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72352988",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "67042",
+  "residencia": "ORURO",
+  "no_bloque": "157",
+  "no_habitacion": "13"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b78"
+  },
+  "ci": "2790618",
+  "nomina": "Mamani Vasco Bernardino",
+  "puesto": "Especialista Soldador/Tubero",
+  "fecha_ingreso": {
+    "$date": "2007-07-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72477647",
+  "area": "Taller General",
+  "jde": "62704",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7a"
+  },
+  "ci": "1338316",
+  "nomina": "Miranda Tejerina Pablo",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2007-09-13T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "71894534",
+  "area": "Taller General",
+  "jde": "62947",
+  "residencia": "UYUNI",
+  "no_bloque": "141",
+  "no_habitacion": "14"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b7c"
+  },
+  "ci": "3098070",
+  "nomina": "Muraña Mercado Pascual",
+  "puesto": "Chofer B",
+  "fecha_ingreso": {
+    "$date": "2005-12-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72469115",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "60931",
+  "residencia": "UYUNI",
+  "no_bloque": "122",
+  "no_habitacion": "3"
+},
+{
+  "_id": {
+    "$oid": "67dc1c1bdba23dd5e9b72b81"
+  },
+  "ci": "4915889",
+  "nomina": "Poma Mendoza Ausberto",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2007-07-09T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72086591",
+  "area": "Taller General",
+  "jde": "62708",
+  "residencia": "LA PAZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8b"
+  },
+  "ci": "3972058",
+  "nomina": "Soliz Mariscal Javier",
+  "puesto": "Especialista en Grupos Electrógenos",
+  "fecha_ingreso": {
+    "$date": "2005-06-16T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72415579",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "60559",
+  "residencia": "LA PAZ",
+  "no_bloque": "143",
+  "no_habitacion": "16"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8d"
+  },
+  "ci": "3093579",
+  "nomina": "Toledo Rios Freddy",
+  "puesto": "Técnico de Grupos Electrógenos B",
+  "fecha_ingreso": {
+    "$date": "2007-06-11T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "73846081",
+  "area": "Equipos Industriales y Equipos Auxiliares",
+  "jde": "62602",
+  "residencia": "ORURO",
+  "no_bloque": "157",
+  "no_habitacion": "18"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b8f"
+  },
+  "ci": "8546508",
+  "nomina": "Valencia Amador Clemente",
+  "puesto": "Especialista Soldador/Tubero",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72418764",
+  "area": "Taller General",
+  "jde": "60563",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b91"
+  },
+  "ci": "8627146",
+  "nomina": "Yañez Calcina Agustín",
+  "puesto": "Técnico Mecánico Soldador/Tubero A",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "74042336",
+  "area": "Taller General",
+  "jde": "60567",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b96"
+  },
+  "ci": "5544902",
+  "nomina": "Colque Yudy Soledad",
+  "puesto": "Analista Junior de Planificación",
+  "fecha_ingreso": {
+    "$date": "2007-07-07T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72405872",
+  "area": "Planificacion",
+  "jde": "62722",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b98"
+  },
+  "ci": "2159562",
+  "nomina": "Guzman Soliz Mauro",
+  "puesto": "Planificador de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-06-02T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72626275",
+  "area": "Planificacion",
+  "jde": "63654",
+  "residencia": "SANTA CRUZ"
+},
+{
+  "_id": {
+    "$oid": "67dc1d57dba23dd5e9b72b99"
+  },
+  "ci": "3965040",
+  "nomina": "Lazo Cayo Bernardo",
+  "puesto": "Planificador de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2005-05-01T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72433642",
+  "area": "Planificacion",
+  "jde": "60489",
+  "residencia": "SAN CRISTOBAL"
+},
+{
+  "_id": {
+    "$oid": "67dc1d85dba23dd5e9b72b9c"
+  },
+  "ci": "3119970",
+  "nomina": "Poquechoque Meneses Jhonny",
+  "puesto": "Planificador Sénior de Mantenimiento",
+  "fecha_ingreso": {
+    "$date": "2008-03-06T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Planificación",
+  "createdAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-20T15:17:23.117Z"
+  },
+  "celular": "72472595",
+  "area": "Planificacion",
+  "jde": "63403",
+  "residencia": "COCHABAMBA"
+},
+{
+  "_id": {
+    "$oid": "67f12f582202262803d6a5a7"
+  },
+  "ci": "5487321-inventado",
+  "nomina": "Soria Aramayo Javier",
+  "puesto": "Ingeniero",
+  "fecha_ingreso": "2020-03-15T00:00:00.000Z",
+  "superintendencia": "Superintendencia de Mantenimiento - Ingeniería de Confiabilidad",
+  "celular": "71880851",
+  "area": "Confiabilidad",
+  "jde": "11380",
+  "residencia": "ORURO"
+},
+{
+  "_id": {
+    "$oid": "67f130052202262803d6a5bc"
+  },
+  "ci": "9123456-inventado",
+  "nomina": "Zubieta Osvaldo",
+  "puesto": "actualizar",
+  "fecha_ingreso": "2022-01-18T00:00:00.000Z",
+  "superintendencia": "Superintendencia TO"
+},
+{
+  "_id": {
+    "$oid": "67f130052202262803d6a5b8"
+  },
+  "ci": "5487322-inventado",
+  "nomina": "Soria Marco",
+  "puesto": "actualizar",
+  "fecha_ingreso": "2019-05-10T00:00:00.000Z",
+  "superintendencia": "Superintendencia TO"
+},
+{
+  "_id": {
+    "$oid": "67f130052202262803d6a5b9"
+  },
+  "ci": "6235478-inventado",
+  "nomina": "Maldonado Oscar",
+  "puesto": "actualizar",
+  "fecha_ingreso": "2018-02-22T00:00:00.000Z",
+  "superintendencia": "Superintendencia TO"
+},
+{
+  "_id": {
+    "$oid": "67f130052202262803d6a5ba"
+  },
+  "ci": "7654321-inventado",
+  "nomina": "Tola Edwin",
+  "puesto": "actualizar",
+  "fecha_ingreso": "2021-03-15T00:00:00.000Z",
+  "superintendencia": "Superintendencia TO"
+},
+{
+  "_id": {
+    "$oid": "67f130052202262803d6a5bb"
+  },
+  "ci": "8432156-inventado",
+  "nomina": "Basilio Alex",
+  "puesto": "actualizar",
+  "fecha_ingreso": "2017-11-05T00:00:00.000Z",
+  "superintendencia": "Superintendencia TO"
+},
+{
+  "_id": {
+    "$oid": "69c93986bb069339a029ad3b"
+  },
+  "ci": "8537425",
+  "nomina": "Rosas Ayala Brayan Fernando",
+  "puesto": "Técnico Mecánico / de Lubricación",
+  "fecha_ingreso": {
+    "$date": "2025-06-25T00:00:00.000Z"
+  },
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+  "tiene_acceso_sistema": false,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-03-29T14:39:02.342Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-29T14:39:02.342Z"
+  },
+  "__v": 0,
+  "celular": "68328438",
+  "area": "Filtros",
+  "jde": "70653",
+  "residencia": "VILA VILA"
+},
+{
+  "_id": {
+    "$oid": "69e7c18fbb069339a062b14d"
+  },
+  "ci": "006591",
+  "nomina": "Philippe Guyon",
+  "puesto": "Gerente Mantenimiento Planta",
+  "fecha_ingreso": {
+    "$date": "2007-02-07T00:00:00.000Z"
+  },
+  "superintendencia": "Gerencia",
+  "tiene_acceso_sistema": true,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-04-21T18:27:27.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-21T18:29:30.157Z"
+  },
+  "__v": 0,
+  "userId": {
+    "$oid": "69e7c1f4bb069339a062b15e"
+  },
+  "username": "philippe"
+},
+{
+  "_id": {
+    "$oid": "6a1456f9ef1df580a812db23"
+  },
+  "ci": "6566757",
+  "nomina": "Quispe Miranda James Chanel",
+  "puesto": "Técnico de Instrumentación",
+  "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+  "celular": "72777506",
+  "area": "Instrumentacion",
+  "jde": "42084",
+  "residencia": "SAN CRISTOBAL",
+  "createdAt": {
+    "$date": "2026-05-23T15:02:04.568Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-23T15:02:04.568Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a1456f9ef1df580a812db24"
+  },
+  "ci": "8537392",
+  "nomina": "Colque Ramos Angel Eusebio",
+  "puesto": "Técnico Mecánico / de Lubricación",
+  "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+  "celular": "73323879",
+  "area": "Molienda",
+  "jde": "71907",
+  "residencia": "VILA VILA",
+  "createdAt": {
+    "$date": "2026-05-23T15:02:04.568Z"
+  },
+  "updatedAt": {
+    "$date": "2026-05-23T15:02:04.568Z"
+  }
+}]

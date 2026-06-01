@@ -1,0 +1,33 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+
+# Variables de entorno — NUNCA commitear
+.env
+.env.local
+.env.production
+
+# Claves RSA — NUNCA commitear la privada
+keys/private.pem
+# keys/public.pem — SÍ puede commitearse (es pública)
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Tests
+coverage/

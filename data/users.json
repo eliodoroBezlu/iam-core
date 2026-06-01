@@ -1,0 +1,312 @@
+[{
+  "_id": {
+    "$oid": "698ce91e28bec1a8d875709c"
+  },
+  "username": "eliodoro",
+  "email": null,
+  "password": "$2b$10$FhMo.px0TwMZZtsb0moDqOrxMJmco.bdncdPYKcZgKektbFDz5ZIy",
+  "roles": [
+    "user",
+    "admin"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": null,
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-02-11T20:39:59.002Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T20:39:59.002Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69924915a58c3a2877f1f10d"
+  },
+  "username": "inspector_tecnico",
+  "email": "inspector@sistema.local",
+  "password": "$2b$10$E2LV97N7Epzm2hRhU5oaU.4JPGusRFyVjg2/u0prnhJUsqdAms.fK",
+  "roles": [
+    "user",
+    "inspector"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Inspector Técnico",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-02-15T22:30:45.211Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-15T22:30:45.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a02c7f9974835a960ec1cc"
+  },
+  "username": "natalia",
+  "email": "natalia@temp.local",
+  "password": "$2b$10$CMdIKjCtGf3BiJFgHA6Xju4m/QUopQFPbFVbnxEej1NbudvX4J4ui",
+  "roles": [
+    "user",
+    "admin"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Erquicia Landeau Natalia Sofia",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-02-26T11:20:31.932Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-26T11:20:31.932Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a19035ab230ec69ffc3df4"
+  },
+  "username": "jhonycon",
+  "email": "jhonycon@temp.local",
+  "password": "$2b$10$.GSF1G2cQko5QwyzMQbLI.ZHpsBLcqcrrwgH5BhixU/bZ9UcKdjaq",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Condarco Fuentes Jhony",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-02-27T12:38:13.979Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-27T12:38:13.979Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a305aeab230ec69f0061ca"
+  },
+  "username": "raulc",
+  "email": "raulc@temp.local",
+  "password": "$2b$10$ntWZX0YRpaUSwsOCR4KAd.8TXEomvHbZH8hGpo6WaYLIeOnH8diMi",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Carrasco Flores Raul Pedro",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-02-28T15:11:42.827Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-29T13:28:33.377Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a4b80b55621292dc82a762"
+  },
+  "username": "juandh",
+  "email": "juandh@temp.local",
+  "password": "$2b$10$3xyXtktCXnodOrlWah5Ps.YQnn4drdUqhtbFgm1zdE69AabKkvhTq",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Huayllani Delgado Juan de Dios",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-03-01T22:04:59.256Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-19T12:17:35.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a5c8ac55621292dc848ac1"
+  },
+  "username": "ecamata",
+  "email": "ecamata@temp.local",
+  "password": "$2b$10$B/Oc1hBtrTGfYDmlfyWea.SJFc.Lp/w1dyghNzgPVjgTsvbQAiX6m",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Camata Quispe Edilber",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-03-02T17:28:12.388Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-02T17:28:12.388Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c554acbb069339a0240c5c"
+  },
+  "username": "miroslav",
+  "email": "miroslav@temp.local",
+  "password": "$2b$10$5b608jOFZEOGazPA9a3bUuFdldJzNYVfhJ06tEbHewRf4wcn22H7u",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Paco Ramos Erick Miroslav",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-03-26T15:45:48.723Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T15:45:48.723Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7d957bb069339a026b4e3"
+  },
+  "username": "jhonnya",
+  "email": "jhonnya@temp.local",
+  "password": "$2b$10$e51Bxhp1urrPZhLKBqqOE.yxG2R1Y./ptxjNDsxIpRge2DhgK/9Qy",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Ali Salgado Jhonny Agustin",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-03-28T13:36:23.332Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-28T13:36:23.332Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ca9061bb069339a034d3dd"
+  },
+  "username": "marcog",
+  "email": "marcog@temp.local",
+  "password": "$2b$10$L7IM5F/a/ZGq0k4wZ3fvWOWwJrFvR7K6fxvYzFPvMJVQHJF0oMc6e",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Garcia Agreda Marco Antonio",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-03-30T15:01:53.606Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-11T14:16:14.262Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69dab1f2bb069339a05173fc"
+  },
+  "username": "kattial",
+  "email": "kattialopezquiroga@minerasancristobal.com",
+  "password": "$2b$10$qYY5T2aaEBgtc0G9WzmRk.a0OUFfTicW1U5sKsZCGVeZt/jTcHccu",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Lopez Quiroga Rossio Kattia",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-04-11T20:41:22.636Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-30T13:53:46.236Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69dfa58fbb069339a05d7d35"
+  },
+  "username": "oscara",
+  "email": "oscara@temp.local",
+  "password": "$2b$10$Qbwn7BAYtehRvrsE/BKnwuZKcFXaJpExHIFl7SAj5ky1tOzyipgHq",
+  "roles": [
+    "user",
+    "supervisor"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Aduana Rocabado Oscar",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-04-15T14:49:51.447Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-15T14:49:51.447Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69e7c1f4bb069339a062b15e"
+  },
+  "username": "philippe",
+  "email": "philippe@temp.local",
+  "password": "$2b$10$luBIJmG.1pY0dOcW5jatu.0cgxH/iGxchfM6lrKhbKnDCrqTmvOoW",
+  "roles": [
+    "user",
+    "admin"
+  ],
+  "isTwoFactorEnabled": false,
+  "backupCodes": [],
+  "isActive": true,
+  "fullName": "Philippe Guyon",
+  "avatarUrl": null,
+  "createdAt": {
+    "$date": "2026-04-21T18:29:08.971Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-21T18:29:08.971Z"
+  },
+  "__v": 0
+}]

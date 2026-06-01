@@ -1,0 +1,292 @@
+// ══════════════════════════════════════════════════════════════════
+// IAM Core — Schema Prisma
+// Diseñado para ser compatible con la estructura de roles/permisos
+// del Forms Service existente (MongoDB) sin chocar con ella.
+// PostgreSQL garantiza integridad referencial para datos de identidad.
+// ══════════════════════════════════════════════════════════════════
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// MODELO DE USUARIO
+// Campos compatibles con user.schema.ts (MongoDB) del Forms Service
+// ──────────────────────────────────────────────────────────────────
+model User {
+  id            String    @id @default(uuid())
+
+  // Identidad — mismos campos que el schema de MongoDB existente
+  username      String    @unique
+  email         String?   @unique
+  passwordHash  String
+
+  fullName      String?
+  avatarUrl     String?
+
+  // Estado
+  isActive      Boolean   @default(true)
+  isAdmin       Boolean   @default(false)  // Acceso al Admin Console del IAM
+
+  // Roles del sistema — compatible con Role enum del forms service
+  // String[] para no acoplar el IAM a un enum rígido de Postgres
+  // Valores: 'user' | 'admin' | 'moderator' | 'super_admin' |
+  //          'inspector' | 'tecnico' | 'supervisor' | 'superintendente'
+  roles         String[]  @default(["user"])
+
+  // Permisos directos adicionales (sobre los del rol)
+  // Compatible con el campo permissions[] del schema MongoDB
+  permissions   String[]  @default([])
+
+  // 2FA — TOTP
+  totpSecret    String?   // Cifrado con TOTP_ENCRYPTION_KEY — null si no tiene 2FA
+  totpEnabled   Boolean   @default(false)
+  preferBiometric Boolean @default(false)
+  backupCodes   String[]  @default([])  // SHA-256 hashes de los códigos de recuperación
+
+  // Protección fuerza bruta — lockout tras múltiples intentos fallidos
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+
+  // Auditoría
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime?
+
+  // Relaciones
+  sessions      Session[]
+  serviceAccess UserServiceAccess[]
+  auditLogs     AuditLog[]          @relation("UserAuditLogs")
+  grantedAccess UserServiceAccess[] @relation("GrantedByUser")
+  webAuthnCredentials WebAuthnCredential[]
+  trabajador    Trabajador?
+
+  @@index([username])
+  @@index([email])
+  @@index([isActive])
+  @@map("users")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// SESIONES — Refresh Tokens como UUID opacos (no JWT)
+// Mejora crítica respecto al Forms Service que usa JWT como refresh
+// ──────────────────────────────────────────────────────────────────
+model Session {
+  id                String    @id @default(uuid())
+  userId            String
+
+  // El refresh token real NUNCA se almacena — solo su SHA-256
+  tokenHash         String    @unique
+
+  // Metadata del dispositivo
+  userAgent         String?
+  ipAddress         String?
+  deviceFingerprint String?
+
+  // Control de vida
+  expiresAt         DateTime
+  revokedAt         DateTime? // null = activa; fecha = revocada en ese momento
+
+  // Auditoría interna de la sesión
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  lastRefreshedAt   DateTime?
+
+  // Relaciones
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tokenHash])
+  @@index([expiresAt])
+  @@index([revokedAt])
+  @@map("sessions")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// REGISTRO DE SERVICIOS
+// Cada servicio que usa el IAM debe estar registrado aquí
+// ──────────────────────────────────────────────────────────────────
+model Service {
+  id          String    @id @default(uuid())
+  key         String    @unique   // 'forms', 'iro-service', etc.
+  displayName String
+  baseUrl     String
+  isActive    Boolean   @default(true)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relaciones
+  userAccess  UserServiceAccess[]
+  apiKeys     ApiKey[]
+  auditLogs   AuditLog[]
+
+  @@index([key])
+  @@index([isActive])
+  @@map("services")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// CONTROL DE ACCESO — Qué usuario puede usar qué servicio con qué roles
+// ──────────────────────────────────────────────────────────────────
+model UserServiceAccess {
+  id          String    @id @default(uuid())
+  userId      String
+  serviceId   String
+
+  // Roles del usuario en ESTE servicio específico
+  // Ej: ['forms:supervisor', 'forms:inspector']
+  roles       String[]  @default([])
+
+  // Trazabilidad del grant
+  grantedById String
+  grantedAt   DateTime  @default(now())
+
+  // Control de vigencia
+  expiresAt   DateTime?
+  revokedAt   DateTime?
+
+  // Relaciones
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  grantedBy   User      @relation("GrantedByUser", fields: [grantedById], references: [id])
+
+  @@unique([userId, serviceId])
+  @@index([userId])
+  @@index([serviceId])
+  @@index([revokedAt])
+  @@map("user_service_access")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// API KEYS — Para autenticación service-to-service
+// ──────────────────────────────────────────────────────────────────
+model ApiKey {
+  id          String    @id @default(uuid())
+  serviceId   String
+  keyHash     String    @unique   // SHA-256 de la key real (nunca se almacena en claro)
+  description String?
+  isActive    Boolean   @default(true)
+
+  // Control de vida
+  expiresAt   DateTime?
+  revokedAt   DateTime?
+  lastUsedAt  DateTime?
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relaciones
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@index([serviceId])
+  @@index([isActive])
+  @@map("api_keys")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// AUDIT LOG — Inmutable, append-only
+// Registra todos los eventos de autenticación y autorización
+// ──────────────────────────────────────────────────────────────────
+model AuditLog {
+  id         String    @id @default(uuid())
+
+  // Actor — puede ser null en intentos de login fallidos con username inválido
+  userId     String?
+
+  // Evento — ver AuditEvent enum en el código
+  event      String
+
+  // Contexto del request
+  serviceKey String?
+  ipAddress  String?
+  userAgent  String?
+
+  // Datos adicionales del evento (JSON libre)
+  metadata   Json?
+
+  createdAt  DateTime  @default(now())
+
+  // Relaciones
+  user       User?     @relation("UserAuditLogs", fields: [userId], references: [id], onDelete: SetNull)
+  service    Service?  @relation(fields: [serviceKey], references: [key], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([event])
+  @@index([createdAt])
+  @@index([serviceKey])
+  @@map("audit_logs")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// WEBAUTHN CREDENTIALS — Para autenticación biométrica / Passkeys
+// ──────────────────────────────────────────────────────────────────
+model WebAuthnCredential {
+  id            String    @id @default(uuid())
+  userId        String
+  credentialId  String    @unique
+  publicKey     Bytes
+  counter       BigInt
+  deviceType    String               // 'platform' | 'cross-platform'
+  deviceName    String?
+  transports    String[]
+  createdAt     DateTime  @default(now())
+  lastUsedAt    DateTime?
+
+  // Relaciones
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([credentialId])
+  @@map("webauthn_credentials")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// TRABAJADORES — Personal operativo de Minera San Cristóbal
+// Migrado desde MongoDB (BackendForm) hacia el IAM centralizado
+// ──────────────────────────────────────────────────────────────────
+model Trabajador {
+  id               String    @id @default(uuid())
+
+  // Identidad laboral
+  ci               String    @unique   // Cédula de identidad
+  nomina           String              // Nombre completo (Apellido Nombre)
+  puesto           String              // Cargo / puesto
+  superintendencia String              // Gerencia / Superintendencia
+  area             String?             // Área específica
+  jde              String?             // Código JDE (sistema ERP)
+
+  // Contacto
+  celular          String?
+  residencia       String?
+
+  // Datos de campamento (opcional)
+  noBloque         String?
+  noHabitacion     String?
+
+  // Fechas
+  fechaIngreso     DateTime?
+
+  // Estado
+  tieneAccesoSistema Boolean @default(false)
+  activo           Boolean   @default(true)
+
+  // Vínculo opcional con usuario IAM (si tiene acceso al sistema)
+  userId           String?   @unique
+  user             User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([ci])
+  @@index([nomina])
+  @@index([superintendencia])
+  @@index([area])
+  @@index([userId])
+  @@map("trabajadores")
+}

@@ -1,0 +1,37 @@
+/**
+ * Eventos auditables — todos los eventos de auth se registran en AuditLog.
+ * Diseñados para ser inmutables y consultables.
+ */
+export enum AuditEvent {
+  // Autenticación
+  LOGIN_SUCCESS         = 'LOGIN_SUCCESS',
+  LOGIN_FAILED          = 'LOGIN_FAILED',
+  LOGOUT                = 'LOGOUT',
+  TOKEN_REFRESHED       = 'TOKEN_REFRESHED',
+  SESSION_REVOKED       = 'SESSION_REVOKED',
+  ALL_SESSIONS_REVOKED  = 'ALL_SESSIONS_REVOKED',
+
+  // 2FA
+  TOTP_SETUP_INITIATED  = 'TOTP_SETUP_INITIATED',
+  TOTP_ENABLED          = 'TOTP_ENABLED',
+  TOTP_DISABLED         = 'TOTP_DISABLED',
+  TOTP_VERIFY_SUCCESS   = 'TOTP_VERIFY_SUCCESS',
+  TOTP_VERIFY_FAILED    = 'TOTP_VERIFY_FAILED',
+  RECOVERY_CODE_USED    = 'RECOVERY_CODE_USED',
+
+  // Gestión de usuarios (admin)
+  USER_CREATED          = 'USER_CREATED',
+  USER_UPDATED          = 'USER_UPDATED',
+  USER_DEACTIVATED      = 'USER_DEACTIVATED',
+  USER_ACTIVATED        = 'USER_ACTIVATED',
+  PASSWORD_CHANGED      = 'PASSWORD_CHANGED',
+
+  // Control de acceso a servicios (admin)
+  SERVICE_ACCESS_GRANTED  = 'SERVICE_ACCESS_GRANTED',
+  SERVICE_ACCESS_REVOKED  = 'SERVICE_ACCESS_REVOKED',
+  SERVICE_ACCESS_UPDATED  = 'SERVICE_ACCESS_UPDATED',
+
+  // API Keys
+  API_KEY_CREATED       = 'API_KEY_CREATED',
+  API_KEY_REVOKED       = 'API_KEY_REVOKED',
+}
