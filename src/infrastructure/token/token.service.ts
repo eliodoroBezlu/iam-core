@@ -35,47 +35,49 @@ export class TokenService {
 
   private loadKeys() {
     try {
-      // ── Prioridad 1: variables de entorno inline (Railway, Docker, CI) ──
-      const inlinePrivate = this.config.get<string>('JWT_PRIVATE_KEY');
-      const inlinePublic  = this.config.get<string>('JWT_PUBLIC_KEY');
-
-      if (inlinePrivate && inlinePublic) {
-        // Railway/Docker: los saltos de línea llegan como \n literal → restaurar
-        this.privateKey = inlinePrivate.replace(/\\n/g, '\n');
-        this.publicKey  = inlinePublic.replace(/\\n/g, '\n');
-        this.logger.log('Claves RSA cargadas desde variables de entorno (modo cloud)');
-        return;
-      }
-
-      // ── Prioridad 2: archivos en disco (desarrollo local) ───────────────
-      const privatePath = this.config.get<string>('JWT_PRIVATE_KEY_PATH');
-      const publicPath  = this.config.get<string>('JWT_PUBLIC_KEY_PATH');
-
-      if (!privatePath || !publicPath) {
-        throw new Error(
-          'Se requiere JWT_PRIVATE_KEY + JWT_PUBLIC_KEY (cloud) ' +
-          'o JWT_PRIVATE_KEY_PATH + JWT_PUBLIC_KEY_PATH (local)',
-        );
-      }
-
-      const resolvedPrivate = path.resolve(privatePath);
-      const resolvedPublic  = path.resolve(publicPath);
-
-      if (!fs.existsSync(resolvedPrivate)) {
-        throw new Error(`Clave privada no encontrada: ${resolvedPrivate}. Ejecutar: yarn keys:generate`);
-      }
-      if (!fs.existsSync(resolvedPublic)) {
-        throw new Error(`Clave pública no encontrada: ${resolvedPublic}. Ejecutar: yarn keys:generate`);
-      }
-
-      this.privateKey = fs.readFileSync(resolvedPrivate, 'utf8');
-      this.publicKey  = fs.readFileSync(resolvedPublic, 'utf8');
-
-      this.logger.log('Claves RSA cargadas desde archivos (modo local)');
+      this.privateKey = this.resolveKey('JWT_PRIVATE_KEY', 'JWT_PRIVATE_KEY_PATH', 'privada');
+      this.publicKey  = this.resolveKey('JWT_PUBLIC_KEY',  'JWT_PUBLIC_KEY_PATH',  'pública');
+      this.logger.log('Claves RSA cargadas correctamente');
     } catch (error) {
       this.logger.error('Error cargando claves RSA:', error.message);
       throw error;
     }
+  }
+
+  /**
+   * Resuelve una clave RSA de forma robusta:
+   *  1. Si la variable inline (ej. JWT_PRIVATE_KEY) contiene un PEM → se usa directo.
+   *  2. Si la variable _PATH contiene un PEM (mal configurado) → también se usa directo.
+   *  3. Si la variable _PATH es una ruta a archivo → se lee del disco (modo local).
+   *
+   * Los saltos de línea `\n` literales (típico en env vars de Railway/Docker)
+   * se restauran a saltos reales.
+   */
+  private resolveKey(inlineVar: string, pathVar: string, label: string): string {
+    const inline = this.config.get<string>(inlineVar);
+    if (inline && inline.includes('BEGIN')) {
+      return inline.replace(/\\n/g, '\n');
+    }
+
+    const pathValue = this.config.get<string>(pathVar);
+
+    // Caso: el usuario pegó el contenido PEM dentro de la variable _PATH
+    if (pathValue && pathValue.includes('BEGIN')) {
+      return pathValue.replace(/\\n/g, '\n');
+    }
+
+    // Caso: ruta a un archivo en disco (desarrollo local)
+    if (pathValue) {
+      const resolved = path.resolve(pathValue);
+      if (!fs.existsSync(resolved)) {
+        throw new Error(`Clave ${label} no encontrada: ${resolved}. Ejecutar: yarn keys:generate`);
+      }
+      return fs.readFileSync(resolved, 'utf8');
+    }
+
+    throw new Error(
+      `Falta la clave ${label}: define ${inlineVar} (contenido PEM) o ${pathVar} (ruta al archivo .pem)`,
+    );
   }
 
   /**
