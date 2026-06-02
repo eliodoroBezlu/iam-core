@@ -1,5 +1,8 @@
 FROM node:22-alpine AS builder
 
+# OpenSSL requerido por Prisma (no viene en alpine por defecto)
+RUN apk add --no-cache openssl
+
 WORKDIR /app
 
 # Instalar dependencias
@@ -13,6 +16,9 @@ RUN yarn build
 
 # ── Imagen de producción ──────────────────────────────────────────────
 FROM node:22-alpine AS runner
+
+# OpenSSL requerido por Prisma en runtime (migrate deploy + queries)
+RUN apk add --no-cache openssl
 
 WORKDIR /app
 
