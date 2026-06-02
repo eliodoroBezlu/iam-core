@@ -15,14 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     private readonly prisma:  PrismaService,
     private readonly config:  ConfigService,
   ) {
-    const publicKeyPath = config.get<string>('JWT_PUBLIC_KEY_PATH');
-    const resolvedPath  = path.resolve(publicKeyPath!);
-
-    if (!fs.existsSync(resolvedPath)) {
-      throw new Error(`Clave pública RSA no encontrada: ${resolvedPath}. Ejecutar: yarn keys:generate`);
-    }
-
-    const publicKey = fs.readFileSync(resolvedPath, 'utf8');
+    const publicKey = JwtStrategy.resolvePublicKey(config);
 
     super({
       // Extraer JWT desde cookie access_token — compatible con el Forms Service
@@ -35,6 +28,38 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       algorithms:        ['RS256'],
       issuer:            config.get<string>('JWT_ISSUER', 'iam-core'),
     });
+  }
+
+  /**
+   * Resuelve la clave pública RSA de forma robusta:
+   *  1. JWT_PUBLIC_KEY con contenido PEM → se usa directo (cloud).
+   *  2. JWT_PUBLIC_KEY_PATH con contenido PEM → también directo (mal configurado).
+   *  3. JWT_PUBLIC_KEY_PATH como ruta a archivo → se lee del disco (local).
+   * Los `\n` literales (env vars de Railway/Docker) se restauran.
+   */
+  private static resolvePublicKey(config: ConfigService): string {
+    const inline = config.get<string>('JWT_PUBLIC_KEY');
+    if (inline && inline.includes('BEGIN')) {
+      return inline.replace(/\\n/g, '\n');
+    }
+
+    const pathValue = config.get<string>('JWT_PUBLIC_KEY_PATH');
+
+    if (pathValue && pathValue.includes('BEGIN')) {
+      return pathValue.replace(/\\n/g, '\n');
+    }
+
+    if (pathValue) {
+      const resolved = path.resolve(pathValue);
+      if (!fs.existsSync(resolved)) {
+        throw new Error(`Clave pública RSA no encontrada: ${resolved}. Ejecutar: yarn keys:generate`);
+      }
+      return fs.readFileSync(resolved, 'utf8');
+    }
+
+    throw new Error(
+      'Falta la clave pública: define JWT_PUBLIC_KEY (contenido PEM) o JWT_PUBLIC_KEY_PATH (ruta al archivo .pem)',
+    );
   }
 
   /**
