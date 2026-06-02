@@ -1,4 +1,4 @@
-FROM node:22-alpine AS builder
+FROM node:22-alpine
 
 # OpenSSL requerido por Prisma (no viene en alpine por defecto)
 RUN apk add --no-cache openssl
@@ -9,28 +9,11 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-# Copiar fuentes y compilar
+# Copiar fuentes
 COPY . .
-RUN yarn prisma:generate
-RUN yarn build
 
-# ── Imagen de producción ──────────────────────────────────────────────
-FROM node:22-alpine AS runner
-
-# OpenSSL requerido por Prisma en runtime (migrate deploy + queries)
-RUN apk add --no-cache openssl
-
-WORKDIR /app
-
-# Sólo dependencias de producción
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile --production
-
-# Copiar artefactos del builder
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
-COPY prisma ./prisma
+# Generar Prisma client y compilar TypeScript
+RUN npx prisma generate && yarn build
 
 EXPOSE 4000
 
