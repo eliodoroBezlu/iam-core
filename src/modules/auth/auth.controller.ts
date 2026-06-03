@@ -119,6 +119,46 @@ export class AuthController {
   }
 
   // ────────────────────────────────────────────────────────────────
+  // SERVICE LOGIN — Login servicio-a-servicio (sin contraseña)
+  // ────────────────────────────────────────────────────────────────
+  // Protegido por X-Api-Key. Permite a un servicio de confianza obtener
+  // tokens de una cuenta de servicio en la allowlist (ej. inspector_tecnico)
+  // sin conocer su contraseña. Restringido para que la API Key no pueda
+  // impersonar usuarios reales/admins.
+
+  @Post('service-login')
+  @Public()
+  @UseGuards(ApiKeyGuard)
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Login servicio-a-servicio para cuentas de servicio (requiere X-Api-Key)' })
+  async serviceLogin(
+    @Body() body: { username?: string },
+    @Req() req: any,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const username = (body.username ?? '').toLowerCase().trim();
+
+    // Allowlist de cuentas de servicio permitidas (nunca usuarios reales)
+    const allowed = (process.env.SERVICE_LOGIN_USERNAMES ??
+      process.env.INSPECTOR_USERNAME ??
+      'inspector_tecnico')
+      .split(',')
+      .map((u) => u.toLowerCase().trim());
+
+    if (!username || !allowed.includes(username)) {
+      throw new UnauthorizedException('Cuenta no permitida para service-login');
+    }
+
+    const ip        = this.getIp(req);
+    const userAgent = this.getUserAgent(req);
+
+    const result = await this.authService.serviceLogin(username, userAgent, ip);
+
+    this.setTokenCookies(res, result.accessToken, result.refreshToken);
+    return { user: result.user };
+  }
+
+  // ────────────────────────────────────────────────────────────────
   // REFRESH — Rota los tokens
   // ────────────────────────────────────────────────────────────────
 

@@ -94,6 +94,28 @@ export class AuthService {
   }
 
   // ────────────────────────────────────────────────────────────────
+  // SERVICE LOGIN — Login servicio-a-servicio (sin contraseña)
+  // ────────────────────────────────────────────────────────────────
+  // Usado por servicios de confianza (autenticados con X-Api-Key) para
+  // obtener tokens de una cuenta de servicio sin conocer su contraseña.
+  // No verifica password ni 2FA — la confianza recae en la API Key.
+
+  async serviceLogin(
+    username:  string,
+    userAgent: string,
+    ip:        string,
+  ): Promise<LoginSuccess> {
+    const found = await this.users.findByUsernameForAuth(username);
+
+    if (!found || !found.isActive) {
+      throw new UnauthorizedException('Cuenta de servicio no disponible');
+    }
+
+    const user = await this.users.findById(found.id);
+    return this.issueTokenPair(user, userAgent, ip);
+  }
+
+  // ────────────────────────────────────────────────────────────────
   // LOGIN 2FA — Segundo factor
   // ────────────────────────────────────────────────────────────────
 
