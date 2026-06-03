@@ -38,7 +38,9 @@ export class UsersService {
     await this.assertUsernameAvailable(dto.username);
     if (dto.email) await this.assertEmailAvailable(dto.email);
 
-    const rounds      = this.config.get<number>('BCRYPT_ROUNDS', 12);
+    // Coercionar a Number: ConfigService.get<number>() es solo type-cast TS;
+    // process.env.* siempre es string y bcrypt interpreta strings como salt.
+    const rounds      = Number(this.config.get('BCRYPT_ROUNDS')) || 12;
     const passwordHash = await bcrypt.hash(dto.password, rounds);
 
     const user = await this.prisma.user.create({
@@ -150,7 +152,7 @@ export class UsersService {
       }
     }
 
-    const rounds      = this.config.get<number>('BCRYPT_ROUNDS', 12);
+    const rounds      = Number(this.config.get('BCRYPT_ROUNDS')) || 12;
     const newHash     = await bcrypt.hash(dto.newPassword, rounds);
 
     await this.prisma.user.update({

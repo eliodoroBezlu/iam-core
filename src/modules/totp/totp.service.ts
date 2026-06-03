@@ -182,7 +182,8 @@ export class TotpService {
   }
 
   private async generateBackupCodes(count: number) {
-    const bcryptRounds = this.config.get<number>('BCRYPT_ROUNDS', 12);
+    // Coercionar a Number: process.env.* es string y bcrypt lo interpreta como salt.
+    const bcryptRounds = Number(this.config.get('BCRYPT_ROUNDS')) || 12;
     const plainCodes   = Array.from({ length: count }, () =>
       randomBytes(4).toString('hex').toUpperCase(), // Ej: "3F4A8B2C"
     );
