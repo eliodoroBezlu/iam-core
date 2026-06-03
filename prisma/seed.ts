@@ -82,7 +82,14 @@ async function main() {
 
     const inspector = await prisma.user.upsert({
       where:  { username: INSPECTOR_USERNAME },
-      update: { passwordHash: inspectorHash, isActive: true },
+      // Cuenta de servicio: en cada deploy re-sincroniza el hash y limpia
+      // cualquier bloqueo por intentos fallidos.
+      update: {
+        passwordHash:        inspectorHash,
+        isActive:            true,
+        failedLoginAttempts: 0,
+        lockedUntil:         null,
+      },
       create: {
         username:     INSPECTOR_USERNAME,
         email:        'inspector@sistema.local',
