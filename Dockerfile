@@ -17,7 +17,8 @@ RUN npx prisma generate && yarn build
 
 EXPOSE 4000
 
-# Ejecutar migraciones y arrancar
+# Ejecutar migraciones, seed (idempotente) y arrancar.
 # Nota: el build genera dist/src/main.js (no dist/main.js) porque
 # scripts/*.ts y prisma/seed.ts se incluyen en la compilación.
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/src/main"]
+# El seed usa upsert → seguro correrlo en cada arranque.
+CMD ["sh", "-c", "npx prisma migrate deploy && node dist/prisma/seed.js && node dist/src/main"]

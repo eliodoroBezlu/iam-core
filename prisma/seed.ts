@@ -70,6 +70,50 @@ async function main() {
 
   console.log(`✅ Acceso concedido: ${admin.username} → forms [forms:admin]`);
 
+  // ── 3b. Usuario inspector técnico (acceso legacy temporal) ─────
+  // Acceso directo de inspector mientras se migran los trabajadores a
+  // usuarios con passkey. BackendForm hace login server-to-server con
+  // estas credenciales cuando recibe la INSPECTOR_API_KEY válida.
+  const INSPECTOR_USERNAME = process.env.INSPECTOR_USERNAME ?? 'inspector_tecnico';
+  const INSPECTOR_PASSWORD = process.env.INSPECTOR_PASSWORD;
+
+  if (INSPECTOR_PASSWORD) {
+    const inspectorHash = await bcrypt.hash(INSPECTOR_PASSWORD, BCRYPT_ROUNDS);
+
+    const inspector = await prisma.user.upsert({
+      where:  { username: INSPECTOR_USERNAME },
+      update: { passwordHash: inspectorHash, isActive: true },
+      create: {
+        username:     INSPECTOR_USERNAME,
+        email:        'inspector@sistema.local',
+        passwordHash: inspectorHash,
+        fullName:     'Inspector Técnico',
+        roles:        ['user', 'inspector'],
+        isActive:     true,
+      },
+    });
+
+    await prisma.userServiceAccess.upsert({
+      where: {
+        userId_serviceId: {
+          userId:    inspector.id,
+          serviceId: formsService.id,
+        },
+      },
+      update: {},
+      create: {
+        userId:      inspector.id,
+        serviceId:   formsService.id,
+        roles:       ['forms:inspector'],
+        grantedById: admin.id,
+      },
+    });
+
+    console.log(`✅ Inspector técnico creado: ${inspector.username} → forms`);
+  } else {
+    console.log('⏭️  INSPECTOR_PASSWORD no definido — se omite el usuario inspector');
+  }
+
   // ── 4. Registrar IRO Service (si aplica) ──────────────────────
   const iroService = await prisma.service.upsert({
     where:  { key: 'iro-service' },
