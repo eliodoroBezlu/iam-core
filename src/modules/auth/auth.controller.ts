@@ -358,8 +358,19 @@ export class AuthController {
   // Helpers privados
   // ────────────────────────────────────────────────────────────────
 
+  /**
+   * Dominio de las cookies de sesión.
+   * Si COOKIE_DOMAIN está definido (ej. ".miempresa.com"), las cookies se
+   * comparten entre subdominios (SSO real cross-subdominio). Si no está,
+   * devuelve undefined → cookies host-only (comportamiento actual en Railway).
+   */
+  private cookieDomain(): string | undefined {
+    return process.env.COOKIE_DOMAIN || undefined;
+  }
+
   private setTokenCookies(res: Response, accessToken: string, refreshToken: string) {
     const isProd = process.env.NODE_ENV === 'production';
+    const domain = this.cookieDomain();
 
     res.cookie('access_token', accessToken, {
       httpOnly: true,
@@ -367,6 +378,7 @@ export class AuthController {
       sameSite: isProd ? 'strict' : 'lax',
       maxAge:   15 * 60 * 1000,      // 15 minutos
       path:     '/',
+      domain,                         // SSO cross-subdominio si COOKIE_DOMAIN está set
     });
 
     res.cookie('refresh_token', refreshToken, {
@@ -374,13 +386,16 @@ export class AuthController {
       secure:   isProd,
       sameSite: isProd ? 'strict' : 'lax',
       maxAge:   8 * 60 * 60 * 1000,  // 8 horas
-      path:     '/',                  // Accesible globalmente para que el proxy del portal lo reenvíe
+      path:     '/',
+      domain,
     });
   }
 
   private clearTokenCookies(res: Response) {
-    res.clearCookie('access_token',  { path: '/' });
-    res.clearCookie('refresh_token', { path: '/' });
+    // El domain debe coincidir con el de seteo para que el borrado aplique
+    const domain = this.cookieDomain();
+    res.clearCookie('access_token',  { path: '/', domain });
+    res.clearCookie('refresh_token', { path: '/', domain });
   }
 
   private getIp(req: any): string {
