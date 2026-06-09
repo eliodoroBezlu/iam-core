@@ -19,52 +19,53 @@ datasource db {
 // Campos compatibles con user.schema.ts (MongoDB) del Forms Service
 // ──────────────────────────────────────────────────────────────────
 model User {
-  id            String    @id @default(uuid())
+  id String @id @default(uuid())
 
   // Identidad — mismos campos que el schema de MongoDB existente
-  username      String    @unique
-  email         String?   @unique
-  passwordHash  String
+  username     String  @unique
+  email        String? @unique
+  passwordHash String
 
-  fullName      String?
-  avatarUrl     String?
+  fullName  String?
+  avatarUrl String?
 
   // Estado
-  isActive      Boolean   @default(true)
-  isAdmin       Boolean   @default(false)  // Acceso al Admin Console del IAM
+  isActive Boolean @default(true)
+  isAdmin  Boolean @default(false) // Acceso al Admin Console del IAM
 
   // Roles del sistema — compatible con Role enum del forms service
   // String[] para no acoplar el IAM a un enum rígido de Postgres
   // Valores: 'user' | 'admin' | 'moderator' | 'super_admin' |
   //          'inspector' | 'tecnico' | 'supervisor' | 'superintendente'
-  roles         String[]  @default(["user"])
+  roles String[] @default(["user"])
 
   // Permisos directos adicionales (sobre los del rol)
   // Compatible con el campo permissions[] del schema MongoDB
-  permissions   String[]  @default([])
+  permissions String[] @default([])
 
   // 2FA — TOTP
-  totpSecret    String?   // Cifrado con TOTP_ENCRYPTION_KEY — null si no tiene 2FA
-  totpEnabled   Boolean   @default(false)
-  preferBiometric Boolean @default(false)
-  backupCodes   String[]  @default([])  // SHA-256 hashes de los códigos de recuperación
+  totpSecret      String? // Cifrado con TOTP_ENCRYPTION_KEY — null si no tiene 2FA
+  totpEnabled     Boolean  @default(false)
+  preferBiometric Boolean  @default(false)
+  backupCodes     String[] @default([]) // SHA-256 hashes de los códigos de recuperación
 
   // Protección fuerza bruta — lockout tras múltiples intentos fallidos
   failedLoginAttempts Int       @default(0)
   lockedUntil         DateTime?
 
   // Auditoría
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  lastLoginAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLoginAt DateTime?
 
   // Relaciones
-  sessions      Session[]
-  serviceAccess UserServiceAccess[]
-  auditLogs     AuditLog[]          @relation("UserAuditLogs")
-  grantedAccess UserServiceAccess[] @relation("GrantedByUser")
+  sessions            Session[]
+  serviceAccess       UserServiceAccess[]
+  auditLogs           AuditLog[]           @relation("UserAuditLogs")
+  grantedAccess       UserServiceAccess[]  @relation("GrantedByUser")
   webAuthnCredentials WebAuthnCredential[]
-  trabajador    Trabajador?
+  trabajador          Trabajador?
+  authorizationCodes  AuthorizationCode[]
 
   @@index([username])
   @@index([email])
@@ -77,11 +78,11 @@ model User {
 // Mejora crítica respecto al Forms Service que usa JWT como refresh
 // ──────────────────────────────────────────────────────────────────
 model Session {
-  id                String    @id @default(uuid())
-  userId            String
+  id     String @id @default(uuid())
+  userId String
 
   // El refresh token real NUNCA se almacena — solo su SHA-256
-  tokenHash         String    @unique
+  tokenHash String @unique
 
   // Metadata del dispositivo
   userAgent         String?
@@ -89,16 +90,16 @@ model Session {
   deviceFingerprint String?
 
   // Control de vida
-  expiresAt         DateTime
-  revokedAt         DateTime? // null = activa; fecha = revocada en ese momento
+  expiresAt DateTime
+  revokedAt DateTime? // null = activa; fecha = revocada en ese momento
 
   // Auditoría interna de la sesión
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
-  lastRefreshedAt   DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  lastRefreshedAt DateTime?
 
   // Relaciones
-  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([tokenHash])
@@ -112,19 +113,20 @@ model Session {
 // Cada servicio que usa el IAM debe estar registrado aquí
 // ──────────────────────────────────────────────────────────────────
 model Service {
-  id          String    @id @default(uuid())
-  key         String    @unique   // 'forms', 'iro-service', etc.
+  id          String  @id @default(uuid())
+  key         String  @unique // 'forms', 'iro-service', etc.
   displayName String
   baseUrl     String
-  isActive    Boolean   @default(true)
+  isActive    Boolean @default(true)
 
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relaciones
-  userAccess  UserServiceAccess[]
-  apiKeys     ApiKey[]
-  auditLogs   AuditLog[]
+  userAccess   UserServiceAccess[]
+  apiKeys      ApiKey[]
+  auditLogs    AuditLog[]
+  oauthClients OAuthClient[]
 
   @@index([key])
   @@index([isActive])
@@ -135,26 +137,26 @@ model Service {
 // CONTROL DE ACCESO — Qué usuario puede usar qué servicio con qué roles
 // ──────────────────────────────────────────────────────────────────
 model UserServiceAccess {
-  id          String    @id @default(uuid())
-  userId      String
-  serviceId   String
+  id        String @id @default(uuid())
+  userId    String
+  serviceId String
 
   // Roles del usuario en ESTE servicio específico
   // Ej: ['forms:supervisor', 'forms:inspector']
-  roles       String[]  @default([])
+  roles String[] @default([])
 
   // Trazabilidad del grant
   grantedById String
-  grantedAt   DateTime  @default(now())
+  grantedAt   DateTime @default(now())
 
   // Control de vigencia
-  expiresAt   DateTime?
-  revokedAt   DateTime?
+  expiresAt DateTime?
+  revokedAt DateTime?
 
   // Relaciones
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
-  grantedBy   User      @relation("GrantedByUser", fields: [grantedById], references: [id])
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  grantedBy User    @relation("GrantedByUser", fields: [grantedById], references: [id])
 
   @@unique([userId, serviceId])
   @@index([userId])
@@ -167,22 +169,22 @@ model UserServiceAccess {
 // API KEYS — Para autenticación service-to-service
 // ──────────────────────────────────────────────────────────────────
 model ApiKey {
-  id          String    @id @default(uuid())
+  id          String  @id @default(uuid())
   serviceId   String
-  keyHash     String    @unique   // SHA-256 de la key real (nunca se almacena en claro)
+  keyHash     String  @unique // SHA-256 de la key real (nunca se almacena en claro)
   description String?
-  isActive    Boolean   @default(true)
+  isActive    Boolean @default(true)
 
   // Control de vida
-  expiresAt   DateTime?
-  revokedAt   DateTime?
-  lastUsedAt  DateTime?
+  expiresAt  DateTime?
+  revokedAt  DateTime?
+  lastUsedAt DateTime?
 
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relaciones
-  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
 
   @@index([serviceId])
   @@index([isActive])
@@ -194,13 +196,13 @@ model ApiKey {
 // Registra todos los eventos de autenticación y autorización
 // ──────────────────────────────────────────────────────────────────
 model AuditLog {
-  id         String    @id @default(uuid())
+  id String @id @default(uuid())
 
   // Actor — puede ser null en intentos de login fallidos con username inválido
-  userId     String?
+  userId String?
 
   // Evento — ver AuditEvent enum en el código
-  event      String
+  event String
 
   // Contexto del request
   serviceKey String?
@@ -208,13 +210,13 @@ model AuditLog {
   userAgent  String?
 
   // Datos adicionales del evento (JSON libre)
-  metadata   Json?
+  metadata Json?
 
-  createdAt  DateTime  @default(now())
+  createdAt DateTime @default(now())
 
   // Relaciones
-  user       User?     @relation("UserAuditLogs", fields: [userId], references: [id], onDelete: SetNull)
-  service    Service?  @relation(fields: [serviceKey], references: [key], onDelete: SetNull)
+  user    User?    @relation("UserAuditLogs", fields: [userId], references: [id], onDelete: SetNull)
+  service Service? @relation(fields: [serviceKey], references: [key], onDelete: SetNull)
 
   @@index([userId])
   @@index([event])
@@ -227,19 +229,19 @@ model AuditLog {
 // WEBAUTHN CREDENTIALS — Para autenticación biométrica / Passkeys
 // ──────────────────────────────────────────────────────────────────
 model WebAuthnCredential {
-  id            String    @id @default(uuid())
-  userId        String
-  credentialId  String    @unique
-  publicKey     Bytes
-  counter       BigInt
-  deviceType    String               // 'platform' | 'cross-platform'
-  deviceName    String?
-  transports    String[]
-  createdAt     DateTime  @default(now())
-  lastUsedAt    DateTime?
+  id           String    @id @default(uuid())
+  userId       String
+  credentialId String    @unique
+  publicKey    Bytes
+  counter      BigInt
+  deviceType   String // 'platform' | 'cross-platform'
+  deviceName   String?
+  transports   String[]
+  createdAt    DateTime  @default(now())
+  lastUsedAt   DateTime?
 
   // Relaciones
-  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([credentialId])
@@ -251,37 +253,37 @@ model WebAuthnCredential {
 // Migrado desde MongoDB (BackendForm) hacia el IAM centralizado
 // ──────────────────────────────────────────────────────────────────
 model Trabajador {
-  id               String    @id @default(uuid())
+  id String @id @default(uuid())
 
   // Identidad laboral
-  ci               String    @unique   // Cédula de identidad
-  nomina           String              // Nombre completo (Apellido Nombre)
-  puesto           String              // Cargo / puesto
-  superintendencia String              // Gerencia / Superintendencia
-  area             String?             // Área específica
-  jde              String?             // Código JDE (sistema ERP)
+  ci               String  @unique // Cédula de identidad
+  nomina           String // Nombre completo (Apellido Nombre)
+  puesto           String // Cargo / puesto
+  superintendencia String // Gerencia / Superintendencia
+  area             String? // Área específica
+  jde              String? // Código JDE (sistema ERP)
 
   // Contacto
-  celular          String?
-  residencia       String?
+  celular    String?
+  residencia String?
 
   // Datos de campamento (opcional)
-  noBloque         String?
-  noHabitacion     String?
+  noBloque     String?
+  noHabitacion String?
 
   // Fechas
-  fechaIngreso     DateTime?
+  fechaIngreso DateTime?
 
   // Estado
   tieneAccesoSistema Boolean @default(false)
-  activo           Boolean   @default(true)
+  activo             Boolean @default(true)
 
   // Vínculo opcional con usuario IAM (si tiene acceso al sistema)
-  userId           String?   @unique
-  user             User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userId String? @unique
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
 
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([ci])
   @@index([nomina])
@@ -289,4 +291,92 @@ model Trabajador {
   @@index([area])
   @@index([userId])
   @@map("trabajadores")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// OAUTH / OIDC CLIENTS — Apps registradas que usan el flujo
+// Authorization Code + PKCE (estilo Keycloak). El client_secret NUNCA
+// se almacena en claro — solo su SHA-256.
+// ──────────────────────────────────────────────────────────────────
+model OAuthClient {
+  id String @id @default(uuid())
+
+  // Identificador público del client (ej. 'forms')
+  clientId String @unique
+
+  // SHA-256 del client_secret — null para clients públicos (solo PKCE)
+  clientSecretHash String?
+
+  name String
+
+  // Allowlist de redirect URIs — match EXACTO (defensa open-redirect)
+  redirectUris           String[] @default([])
+  postLogoutRedirectUris String[] @default([])
+
+  // Scopes que el client puede solicitar
+  allowedScopes String[] @default(["openid", "profile", "email"])
+
+  // Confidential (con secret) vs público (solo PKCE)
+  isConfidential Boolean @default(true)
+  isActive       Boolean @default(true)
+
+  // Vínculo opcional con el Service del IAM
+  serviceId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  service            Service?            @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+  authorizationCodes AuthorizationCode[]
+
+  @@index([clientId])
+  @@index([isActive])
+  @@map("oauth_clients")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// AUTHORIZATION CODES — Códigos de un solo uso del flujo OIDC.
+// Solo se almacena el SHA-256 del código (mismo patrón que Session).
+// TTL corto (60s) + single-use con detección de reuso.
+// ──────────────────────────────────────────────────────────────────
+model AuthorizationCode {
+  id String @id @default(uuid())
+
+  // SHA-256 del código opaco — nunca el código en claro
+  codeHash String @unique
+
+  // Client y usuario asociados
+  clientId String // OAuthClient.clientId (string) para lookup rápido
+  userId   String
+
+  // Parámetros del request a /authorize
+  redirectUri String
+  scope       String // scopes concedidos, separados por espacio
+
+  // PKCE
+  codeChallenge       String
+  codeChallengeMethod String @default("S256")
+
+  // OIDC
+  nonce    String?
+  authTime DateTime
+
+  // Sesión emitida en el canje — para revocar tokens derivados si hay reuso
+  sessionId String?
+
+  // Control de vida / single-use
+  expiresAt  DateTime
+  consumedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  oauthClient OAuthClient @relation(fields: [clientId], references: [clientId], onDelete: Cascade)
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([codeHash])
+  @@index([clientId])
+  @@index([expiresAt])
+  @@map("authorization_codes")
 }

@@ -45,6 +45,45 @@ export class SessionsService {
   }
 
   /**
+   * Igual que create() pero devuelve también el id de la sesión creada.
+   * Usado por el flujo OIDC para poder revocar la sesión derivada si se
+   * detecta reuso del authorization code.
+   */
+  async createWithId(params: {
+    userId:             string;
+    userAgent?:         string;
+    ipAddress?:         string;
+    deviceFingerprint?: string;
+  }): Promise<{ token: string; sessionId: string }> {
+    const opaqueToken   = this.token.generateOpaqueToken();
+    const tokenHash     = this.token.hashToken(opaqueToken);
+    const expirySeconds = Number(this.config.get('JWT_REFRESH_EXPIRY')) || 28800;
+
+    const session = await this.prisma.session.create({
+      data: {
+        userId:            params.userId,
+        tokenHash,
+        userAgent:         params.userAgent        ?? null,
+        ipAddress:         params.ipAddress         ?? null,
+        deviceFingerprint: params.deviceFingerprint ?? null,
+        expiresAt:         addSeconds(new Date(), expirySeconds),
+      },
+    });
+
+    return { token: opaqueToken, sessionId: session.id };
+  }
+
+  /**
+   * Revoca una sesión específica por su id (logout / reuso de code OIDC).
+   */
+  async revokeById(sessionId: string): Promise<void> {
+    await this.prisma.session.updateMany({
+      where: { id: sessionId, revokedAt: null },
+      data:  { revokedAt: new Date() },
+    });
+  }
+
+  /**
    * Valida un refresh token opaco y devuelve la sesión si es válida.
    * O(1) — busca directamente por hash.
    */

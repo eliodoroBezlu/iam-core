@@ -6,6 +6,7 @@
  */
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
+import { createHash } from 'crypto';
 
 const prisma = new PrismaClient();
 
@@ -69,6 +70,42 @@ async function main() {
   });
 
   console.log(`✅ Acceso concedido: ${admin.username} → forms [forms:admin]`);
+
+  // ── 3a. OAuth client OIDC para FormNext ────────────────────────
+  // Cliente del flujo Authorization Code + PKCE. El secret se hashea
+  // (SHA-256) y debe configurarse en FormNext como OIDC_CLIENT_SECRET.
+  const FORMS_CLIENT_ID     = process.env.SEED_FORMS_CLIENT_ID ?? 'forms';
+  const FORMS_CLIENT_SECRET = process.env.SEED_FORMS_CLIENT_SECRET;
+  const FORMS_REDIRECT_URIS = (process.env.SEED_FORMS_REDIRECT_URIS
+    ?? 'http://localhost:3001/api/auth/callback').split(',').map((u) => u.trim());
+  const FORMS_POST_LOGOUT   = (process.env.SEED_FORMS_POST_LOGOUT_URIS
+    ?? 'http://localhost:3001/').split(',').map((u) => u.trim());
+
+  if (FORMS_CLIENT_SECRET) {
+    const secretHash = createHash('sha256').update(FORMS_CLIENT_SECRET).digest('hex');
+    await prisma.oAuthClient.upsert({
+      where:  { clientId: FORMS_CLIENT_ID },
+      update: {
+        clientSecretHash:       secretHash,
+        redirectUris:           FORMS_REDIRECT_URIS,
+        postLogoutRedirectUris: FORMS_POST_LOGOUT,
+        isActive:               true,
+      },
+      create: {
+        clientId:               FORMS_CLIENT_ID,
+        clientSecretHash:       secretHash,
+        name:                   'FormNext (Formularios)',
+        redirectUris:           FORMS_REDIRECT_URIS,
+        postLogoutRedirectUris: FORMS_POST_LOGOUT,
+        allowedScopes:          ['openid', 'profile', 'email'],
+        isConfidential:         true,
+        serviceId:              formsService.id,
+      },
+    });
+    console.log(`✅ OAuth client OIDC creado: ${FORMS_CLIENT_ID} → forms`);
+  } else {
+    console.log('⏭️  SEED_FORMS_CLIENT_SECRET no definido — se omite el OAuth client');
+  }
 
   // ── 3b. Usuario inspector técnico (acceso legacy temporal) ─────
   // Acceso directo de inspector mientras se migran los trabajadores a

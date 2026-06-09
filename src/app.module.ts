@@ -16,6 +16,7 @@ import { TotpModule }     from './modules/totp/totp.module';
 import { AuditModule }    from './modules/audit/audit.module';
 import { AdminModule }    from './modules/admin/admin.module';
 import { WebAuthnModule } from './modules/webauthn/webauthn.module';
+import { OidcModule }     from './modules/oidc/oidc.module';
 
 // Common
 import { JwtGuard }             from './common/guards/jwt.guard';
@@ -65,6 +66,7 @@ import configuration from './config/configuration';
     AuthModule,
     AdminModule,
     WebAuthnModule,
+    OidcModule,
   ],
   providers: [
     // JwtGuard global — protege todas las rutas excepto las marcadas con @Public()

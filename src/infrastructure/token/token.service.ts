@@ -20,6 +20,31 @@ export interface TokenPair {
   refreshToken: string; // UUID opaco — nunca un JWT
 }
 
+/** Claims para el ID Token OIDC. `aud` es el clientId del cliente. */
+export interface IdTokenClaims {
+  sub: string;
+  aud: string;          // clientId del cliente OIDC
+  email?: string;
+  name?: string;
+  roles: string[];
+  services: string[];
+  nonce?: string;
+  authTime: number;     // epoch segundos del momento de autenticación
+}
+
+/** Claims verificados de un access token RS256 de este IAM. */
+export interface AccessTokenClaims {
+  sub: string;
+  username: string;
+  email?: string;
+  roles: string[];
+  services: string[];
+  iss: string;
+  aud: string | string[];
+  iat: number;
+  exp: number;
+}
+
 @Injectable()
 export class TokenService {
   private readonly logger = new Logger(TokenService.name);
@@ -119,6 +144,48 @@ export class TokenService {
         keyid:       'iam-key-v1',
       },
     );
+  }
+
+  /**
+   * Firma un ID Token OIDC (RS256).
+   * A diferencia del access token, su `aud` es el clientId del cliente OIDC
+   * e incluye los claims de identidad estándar de OpenID Connect.
+   */
+  signIdToken(claims: IdTokenClaims): string {
+    const expiresIn = Number(this.config.get('OIDC_ID_TOKEN_EXPIRY')) || 900;
+
+    return this.jwtService.sign(
+      {
+        sub:       claims.sub,
+        email:     claims.email,
+        name:      claims.name,
+        roles:     claims.roles,
+        services:  claims.services,
+        nonce:     claims.nonce,
+        auth_time: claims.authTime,
+      },
+      {
+        privateKey: this.privateKey,
+        algorithm:  'RS256',
+        expiresIn,
+        issuer:     this.config.get<string>('JWT_ISSUER', 'iam-core'),
+        audience:   claims.aud,            // aud = clientId del cliente OIDC
+        keyid:      'iam-key-v1',
+      },
+    );
+  }
+
+  /**
+   * Verifica y decodifica un access token RS256 emitido por este IAM.
+   * Usado para el check de sesión SSO en /oidc/authorize y en /oidc/userinfo.
+   * Lanza si la firma/issuer/expiración no son válidas.
+   */
+  verifyAccessToken(token: string): AccessTokenClaims {
+    return this.jwtService.verify(token, {
+      publicKey:  this.publicKey,
+      algorithms: ['RS256'],
+      issuer:     this.config.get<string>('JWT_ISSUER', 'iam-core'),
+    });
   }
 
   /**
