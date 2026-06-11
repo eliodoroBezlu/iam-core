@@ -81,8 +81,10 @@ export class OidcController {
     if (!sso) {
       // No logueado → mandar al login del IAM Portal, que vuelve a /authorize
       const portal = (this.config.get<string>('IAM_PORTAL_URL') || '').replace(/\/+$/, '');
+      // base = origen público de la API del IdP (incluye prefijo: /api en directo,
+      // /api/iam cuando se sirve a través del proxy del portal — modelo Keycloak).
       const base   = (this.config.get<string>('IAM_CORE_PUBLIC_URL') || '').replace(/\/+$/, '');
-      const selfUrl = `${base}/api/oidc/authorize?${this.originalQuery(params)}`;
+      const selfUrl = `${base}/oidc/authorize?${this.originalQuery(params)}`;
       const loginUrl = `${portal}/login?redirect=${encodeURIComponent(selfUrl)}`;
       return res.redirect(loginUrl);
     }

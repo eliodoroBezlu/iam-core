@@ -408,15 +408,17 @@ export class OidcService {
 
   getDiscoveryDocument(): Record<string, unknown> {
     const issuer = this.config.get<string>('JWT_ISSUER', 'iam-core');
+    // base = origen público de la API del IdP (ya incluye el prefijo: /api directo
+    // o /api/iam vía proxy del portal — modelo Keycloak de un solo origen).
     const base   = (this.config.get<string>('IAM_CORE_PUBLIC_URL') || '').replace(/\/+$/, '');
 
     return {
       issuer,
-      authorization_endpoint: `${base}/api/oidc/authorize`,
-      token_endpoint:         `${base}/api/oidc/token`,
-      userinfo_endpoint:      `${base}/api/oidc/userinfo`,
-      end_session_endpoint:   `${base}/api/oidc/logout`,
-      jwks_uri:               `${base}/api/auth/.well-known/jwks.json`,
+      authorization_endpoint: `${base}/oidc/authorize`,
+      token_endpoint:         `${base}/oidc/token`,
+      userinfo_endpoint:      `${base}/oidc/userinfo`,
+      end_session_endpoint:   `${base}/oidc/logout`,
+      jwks_uri:               `${base}/auth/.well-known/jwks.json`,
       response_types_supported: ['code'],
       grant_types_supported:    ['authorization_code', 'refresh_token'],
       subject_types_supported:  ['public'],

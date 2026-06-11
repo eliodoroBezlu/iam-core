@@ -10,19 +10,24 @@
  *  4. Verifica que la key esté activa y no expirada.
  *  5. Actualiza lastUsedAt (fire-and-forget).
  *
- * Los endpoints marcados con @Public() quedan excluidos automáticamente
- * (JWKS, public-key, etc. no necesitan API Key).
+ * NOTA: Este guard NO omite rutas @Public() cuando se aplica
+ * explícitamente en un endpoint (ej. service-login). Solo omite
+ * la validación cuando se usa como guard global y la ruta es pública.
  */
 import {
   Injectable,
   CanActivate,
   ExecutionContext,
   UnauthorizedException,
+  SetMetadata,
 } from '@nestjs/common';
 import { Reflector }    from '@nestjs/core';
 import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 import { createHash }   from 'crypto';
-import { IS_PUBLIC_KEY } from '../decorators/public.decorator';
+
+/** Marca un handler para que ApiKeyGuard lo omita (rutas realmente abiertas) */
+export const SKIP_API_KEY = 'skipApiKey';
+export const SkipApiKey = () => SetMetadata(SKIP_API_KEY, true);
 
 @Injectable()
 export class ApiKeyGuard implements CanActivate {
@@ -32,12 +37,12 @@ export class ApiKeyGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    // Rutas públicas (JWKS, public-key) → saltar validación
-    const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
+    // Solo saltar si el handler está explícitamente marcado con @SkipApiKey()
+    const skip = this.reflector.getAllAndOverride<boolean>(SKIP_API_KEY, [
       context.getHandler(),
       context.getClass(),
     ]);
-    if (isPublic) return true;
+    if (skip) return true;
 
     const request = context.switchToHttp().getRequest();
     const rawKey  = request.headers['x-api-key'] as string | undefined;

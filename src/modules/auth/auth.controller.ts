@@ -13,7 +13,7 @@ import { TotpService }   from '../totp/totp.service';
 import { SessionsService } from '../sessions/sessions.service';
 import { UsersService }  from '../users/users.service';
 import { JwtGuard }      from '../../common/guards/jwt.guard';
-import { ApiKeyGuard }   from '../../common/guards/api-key.guard';
+import { ApiKeyGuard, SkipApiKey } from '../../common/guards/api-key.guard';
 import { Public }        from '../../common/decorators/public.decorator';
 import { CurrentUser }   from '../../common/decorators/current-user.decorator';
 import { LoginDto }      from './dto/login.dto';
@@ -61,10 +61,11 @@ export class AuthController {
 
   @Post('login')
   @Public()
-  @UseGuards(ApiKeyGuard, AuthGuard('local'))
+  @SkipApiKey()
+  @UseGuards(AuthGuard('local'))
   @HttpCode(HttpStatus.OK)
   @Throttle({ strict: { limit: 10, ttl: 300_000 } })
-  @ApiOperation({ summary: 'Login con username y contraseña (requiere X-Api-Key)' })
+  @ApiOperation({ summary: 'Login con username y contraseña' })
   async login(
     @CurrentUser() user: any,
     @Req() req: any,
@@ -95,10 +96,10 @@ export class AuthController {
 
   @Post('login/2fa')
   @Public()
-  @UseGuards(ApiKeyGuard)
+  @SkipApiKey()
   @HttpCode(HttpStatus.OK)
   @Throttle({ strict: { limit: 10, ttl: 300_000 } })
-  @ApiOperation({ summary: 'Verificación del segundo factor TOTP (requiere X-Api-Key)' })
+  @ApiOperation({ summary: 'Verificación del segundo factor TOTP (requiere tempToken válido)' })
   async verify2FA(
     @Body() dto: Verify2faDto,
     @Req() req: any,
