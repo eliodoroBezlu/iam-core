@@ -27,6 +27,21 @@ export class UpdateTrabajadorDto {
   @IsString()
   area?: string;
 
+  @ApiPropertyOptional({ example: '3320' })
+  @IsOptional()
+  @IsString()
+  areaCodigo?: string;
+
+  @ApiPropertyOptional({ example: 'MEC' })
+  @IsOptional()
+  @IsString()
+  disciplina?: string;
+
+  @ApiPropertyOptional({ example: false })
+  @IsOptional()
+  @IsBoolean()
+  esContratista?: boolean;
+
   @ApiPropertyOptional({ example: '2020-01-15' })
   @IsOptional()
   @IsDateString()

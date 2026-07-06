@@ -13,6 +13,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto, ChangePasswordDto } from './dto/update-user.dto';
 import { Role } from '../../common/enums/role.enum';
 import * as bcrypt from 'bcrypt';
+import { createHash, timingSafeEqual } from 'crypto';
 
 // Tipo seguro — nunca exponer campos sensibles en respuestas de API
 export type SafeUser = Omit<User, 'passwordHash' | 'totpSecret' | 'backupCodes' | 'failedLoginAttempts' | 'lockedUntil'>;
@@ -20,6 +21,12 @@ export type SafeUser = Omit<User, 'passwordHash' | 'totpSecret' | 'backupCodes' 
 const MAX_FAILED_ATTEMPTS    = 5;
 const LOCKOUT_MINUTES        = 15;
 const DUMMY_HASH = '$2b$12$invalidhashtopreventtimingattacks.padding00000000000';
+
+// Migración de contraseñas legacy de Sync-MSC.
+// Sync hasheaba con SHA-256(password + salt). Esos hashes se importan
+// marcados con este prefijo; al primer login válido se re-hashean a bcrypt.
+const LEGACY_SYNC_PREFIX = 'sync-sha256$';
+const LEGACY_SYNC_SALT   = process.env.SYNC_LEGACY_SALT ?? 'syncmsc-salt-v1';
 
 @Injectable()
 export class UsersService {
@@ -68,10 +75,15 @@ export class UsersService {
     return this.toSafe(user);
   }
 
-  /** Solo para uso interno (autenticación) — devuelve passwordHash */
-  async findByUsernameForAuth(username: string): Promise<User | null> {
-    return this.prisma.user.findUnique({
-      where: { username: username.toLowerCase().trim() },
+  /**
+   * Solo para uso interno (autenticación) — devuelve passwordHash.
+   * Acepta el identificador de login como username O email (ambos @unique),
+   * para que el usuario pueda iniciar sesión con cualquiera de los dos.
+   */
+  async findByUsernameForAuth(login: string): Promise<User | null> {
+    const value = login.toLowerCase().trim();
+    return this.prisma.user.findFirst({
+      where: { OR: [{ username: value }, { email: value }] },
     });
   }
 
@@ -184,7 +196,10 @@ export class UsersService {
       );
     }
 
-    const isValid = await bcrypt.compare(password, user.passwordHash);
+    const isLegacy = user.passwordHash.startsWith(LEGACY_SYNC_PREFIX);
+    const isValid = isLegacy
+      ? this.verifyLegacySync(password, user.passwordHash)
+      : await bcrypt.compare(password, user.passwordHash);
 
     if (!isValid) {
       const attempts = (user.failedLoginAttempts ?? 0) + 1;
@@ -208,6 +223,19 @@ export class UsersService {
       return null;
     }
 
+    // Migración transparente de hash: si la contraseña legacy de Sync es
+    // válida, re-hashear a bcrypt para que el siguiente login ya use bcrypt.
+    if (isLegacy) {
+      const rounds = Number(this.config.get('BCRYPT_ROUNDS')) || 12;
+      const rehashed = await bcrypt.hash(password, rounds);
+      await this.prisma.user.update({
+        where: { id: user.id },
+        data:  { passwordHash: rehashed, failedLoginAttempts: 0, lockedUntil: null },
+      });
+      this.logger.log(`🔐 Contraseña legacy migrada a bcrypt: ${user.username}`);
+      return this.toSafe(user);
+    }
+
     // Login exitoso — resetear contador
     if (user.failedLoginAttempts > 0 || user.lockedUntil) {
       await this.prisma.user.update({
@@ -217,6 +245,17 @@ export class UsersService {
     }
 
     return this.toSafe(user);
+  }
+
+  /** Verifica una contraseña contra un hash legacy de Sync (SHA-256 + salt). */
+  private verifyLegacySync(password: string, storedHash: string): boolean {
+    const expectedHex = storedHash.slice(LEGACY_SYNC_PREFIX.length);
+    const actualHex = createHash('sha256')
+      .update(password + LEGACY_SYNC_SALT)
+      .digest('hex');
+    const a = Buffer.from(actualHex, 'hex');
+    const b = Buffer.from(expectedHex, 'hex');
+    return a.length === b.length && timingSafeEqual(a, b);
   }
 
   // ────────────────────────────────────────────────────────────────

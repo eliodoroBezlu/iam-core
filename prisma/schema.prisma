@@ -119,6 +119,17 @@ model Service {
   baseUrl     String
   isActive    Boolean @default(true)
 
+  // Roles genéricos que este servicio ofrece (sin prefijo).
+  // Ej. forms: ['admin','supervisor','inspector'] · sync-msc: ['admin','supervisor','tecnico',...]
+  availableRoles String[] @default([])
+
+  // Catálogo de permisos que ofrece el servicio (ej. 'create:form', 'sync:close_ot')
+  permissionCatalog String[] @default([])
+
+  // Mapa rol→permisos de ESTE servicio (fuente de verdad, editable por GUI).
+  // Ej. { "admin": ["create:form", ...], "supervisor": [...] }
+  rolePermissions Json?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -142,8 +153,13 @@ model UserServiceAccess {
   serviceId String
 
   // Roles del usuario en ESTE servicio específico
-  // Ej: ['forms:supervisor', 'forms:inspector']
+  // Ej: ['forms:supervisor', 'forms:inspector', 'sync-msc:supervisor']
   roles String[] @default([])
+
+  // Metadata libre de autorización por-servicio (JSON).
+  // Ej. para sync-msc: { "areas": ["3320", "3330"] }
+  // Permite centralizar atributos finos sin acoplar el IAM al dominio del servicio.
+  metadata Json?
 
   // Trazabilidad del grant
   grantedById String
@@ -259,9 +275,17 @@ model Trabajador {
   ci               String  @unique // Cédula de identidad
   nomina           String // Nombre completo (Apellido Nombre)
   puesto           String // Cargo / puesto
-  superintendencia String // Gerencia / Superintendencia
-  area             String? // Área específica
+  superintendencia String // Nombre denormalizado (display) — se deriva del área
+  area             String? // Nombre de área denormalizado (display)
   jde              String? // Código JDE (sistema ERP)
+  disciplina       String? // Especialidad técnica: GENERAL | MEC | ELEC | INST (usado por sync-msc)
+
+  // FK al área maestra (fuente de verdad; la superintendencia se deriva del área)
+  areaCodigo  String?
+  areaEntidad Area?   @relation(fields: [areaCodigo], references: [codigo], onDelete: SetNull)
+
+  // Contratista (dato de la persona; cada servicio decide qué puede hacer)
+  esContratista Boolean @default(false)
 
   // Contacto
   celular    String?
@@ -289,8 +313,53 @@ model Trabajador {
   @@index([nomina])
   @@index([superintendencia])
   @@index([area])
+  @@index([areaCodigo])
   @@index([userId])
   @@map("trabajadores")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// SUPERINTENDENCIAS — Datos maestros centralizados (gerencias)
+// Fuente de verdad única; áreas y trabajadores la referencian.
+// ──────────────────────────────────────────────────────────────────
+model Superintendencia {
+  id     String  @id @default(uuid())
+  nombre String  @unique
+  activo Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  areas Area[]
+
+  @@index([activo])
+  @@map("superintendencias")
+}
+
+// ──────────────────────────────────────────────────────────────────
+// ÁREAS — Catálogo maestro de áreas operativas (planta)
+// Cada área pertenece a una superintendencia (FK). La config privada
+// de cada servicio (ej. tieneCalibracion en sync-msc) vive en el servicio.
+// ──────────────────────────────────────────────────────────────────
+model Area {
+  codigo           String  @id // Código de área (ej. "3320")
+  nombre           String // Nombre (ej. "Molienda")
+  superintendencia String // Nombre denormalizado (display rápido)
+  activo           Boolean @default(true)
+
+  // FK a la superintendencia maestra (fuente de verdad)
+  superintendenciaId      String?
+  superintendenciaEntidad Superintendencia? @relation(fields: [superintendenciaId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  trabajadores Trabajador[]
+
+  @@index([superintendencia])
+  @@index([superintendenciaId])
+  @@index([activo])
+  @@map("areas")
 }
 
 // ──────────────────────────────────────────────────────────────────

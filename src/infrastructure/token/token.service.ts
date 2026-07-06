@@ -11,6 +11,7 @@ export interface JwtPayload {
   email?: string;
   roles: string[];
   services: string[]; // keys de servicios accesibles
+  service_roles?: Record<string, string[]>; // roles genéricos por servicio (RBAC)
   iss: string;
   aud: string[];
 }
@@ -134,6 +135,7 @@ export class TokenService {
         email:    payload.email,
         roles:    payload.roles,
         services: payload.services,
+        ...(payload.service_roles && { service_roles: payload.service_roles }),
       },
       {
         privateKey:  this.privateKey,

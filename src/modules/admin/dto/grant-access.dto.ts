@@ -1,4 +1,4 @@
-import { IsString, IsArray, IsOptional, IsDateString } from 'class-validator';
+import { IsString, IsArray, IsOptional, IsDateString, IsObject } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class GrantServiceAccessDto {
@@ -15,6 +15,13 @@ export class GrantServiceAccessDto {
   @IsOptional()
   @IsDateString()
   expiresAt?: string;
+
+  // Metadata libre de autorización por-servicio.
+  // Ej. para sync-msc: { "areas": ["3320", "3330"], "disciplina": "MEC" }
+  @ApiPropertyOptional({ example: { areas: ['3320', '3330'], disciplina: 'MEC' } })
+  @IsOptional()
+  @IsObject()
+  metadata?: Record<string, unknown>;
 }
 
 export class UpdateServiceRolesDto {
@@ -22,4 +29,9 @@ export class UpdateServiceRolesDto {
   @IsArray()
   @IsString({ each: true })
   roles: string[];
+
+  @ApiPropertyOptional({ example: { areas: ['3320'], disciplina: 'MEC' } })
+  @IsOptional()
+  @IsObject()
+  metadata?: Record<string, unknown>;
 }

@@ -2,6 +2,7 @@ import {
   Injectable, NotFoundException, ConflictException,
   BadRequestException, Logger,
 } from '@nestjs/common';
+import { Prisma }         from '@prisma/client';
 import { PrismaService }  from '../../infrastructure/prisma/prisma.service';
 import { AuditService }   from '../audit/audit.service';
 import { SessionsService } from '../sessions/sessions.service';
@@ -142,9 +143,14 @@ export class AdminService {
     return this.prisma.service.update({
       where: { id: serviceId },
       data: {
-        displayName: dto.displayName ?? undefined,
-        baseUrl:     dto.baseUrl     ?? undefined,
-        isActive:    dto.isActive    ?? undefined,
+        displayName:       dto.displayName ?? undefined,
+        baseUrl:           dto.baseUrl     ?? undefined,
+        isActive:          dto.isActive    ?? undefined,
+        availableRoles:    dto.availableRoles ?? undefined,
+        permissionCatalog: dto.permissionCatalog ?? undefined,
+        ...(dto.rolePermissions !== undefined && {
+          rolePermissions: dto.rolePermissions as Prisma.InputJsonValue,
+        }),
       },
     });
   }
@@ -178,6 +184,9 @@ export class AdminService {
       where: { userId_serviceId: { userId, serviceId: service.id } },
     });
 
+    // metadata: solo se actualiza si viene en el DTO (no se borra al re-conceder)
+    const metadata = dto.metadata as Prisma.InputJsonValue | undefined;
+
     let access;
     if (existing) {
       // Si ya existe, re-activar y actualizar roles
@@ -189,6 +198,7 @@ export class AdminService {
           expiresAt:  dto.expiresAt ? new Date(dto.expiresAt) : null,
           grantedById: actorId,
           grantedAt:  new Date(),
+          ...(metadata !== undefined && { metadata }),
         },
       });
     } else {
@@ -199,6 +209,7 @@ export class AdminService {
           roles:       dto.roles,
           grantedById: actorId,
           expiresAt:   dto.expiresAt ? new Date(dto.expiresAt) : null,
+          ...(metadata !== undefined && { metadata }),
         },
       });
     }
@@ -286,17 +297,35 @@ export class AdminService {
     };
   }
 
+  /**
+   * Si se envía areaCodigo, deriva los campos denormalizados (area, superintendencia)
+   * desde el catálogo maestro. Devuelve los overrides a aplicar.
+   */
+  private async deriveFromArea(areaCodigo?: string): Promise<{
+    areaCodigo?: string; area?: string; superintendencia?: string;
+  }> {
+    if (!areaCodigo) return {};
+    const area = await this.prisma.area.findUnique({ where: { codigo: areaCodigo } });
+    if (!area) throw new BadRequestException(`Área '${areaCodigo}' no existe en el catálogo`);
+    return { areaCodigo: area.codigo, area: area.nombre, superintendencia: area.superintendencia };
+  }
+
   async createTrabajador(dto: CreateTrabajadorDto, actorId: string) {
     const existing = await this.prisma.trabajador.findUnique({ where: { ci: dto.ci } });
     if (existing) throw new ConflictException(`Ya existe un trabajador con CI '${dto.ci}'`);
+
+    const derived = await this.deriveFromArea(dto.areaCodigo);
 
     const trabajador = await this.prisma.trabajador.create({
       data: {
         ci:               dto.ci,
         nomina:           dto.nomina,
         puesto:           dto.puesto,
-        superintendencia: dto.superintendencia,
-        area:             dto.area        ?? null,
+        superintendencia: derived.superintendencia ?? dto.superintendencia ?? '',
+        area:             derived.area ?? dto.area ?? null,
+        areaCodigo:       derived.areaCodigo ?? null,
+        disciplina:       dto.disciplina    ?? null,
+        esContratista:    dto.esContratista ?? false,
         fechaIngreso:     dto.fechaIngreso ? new Date(dto.fechaIngreso) : null,
         jde:              dto.jde         ?? null,
         noBloque:         dto.noBloque    ?? null,
@@ -319,13 +348,18 @@ export class AdminService {
     const t = await this.prisma.trabajador.findUnique({ where: { id } });
     if (!t) throw new NotFoundException('Trabajador no encontrado');
 
+    const derived = await this.deriveFromArea(dto.areaCodigo);
+
     const updated = await this.prisma.trabajador.update({
       where: { id },
       data: {
         nomina:           dto.nomina           ?? undefined,
         puesto:           dto.puesto           ?? undefined,
-        superintendencia: dto.superintendencia  ?? undefined,
-        area:             dto.area             ?? undefined,
+        superintendencia: derived.superintendencia ?? dto.superintendencia ?? undefined,
+        area:             derived.area ?? dto.area ?? undefined,
+        areaCodigo:       derived.areaCodigo   ?? undefined,
+        disciplina:       dto.disciplina       ?? undefined,
+        esContratista:    dto.esContratista    ?? undefined,
         fechaIngreso:     dto.fechaIngreso     ? new Date(dto.fechaIngreso) : undefined,
         jde:              dto.jde              ?? undefined,
         noBloque:         dto.noBloque         ?? undefined,
@@ -436,6 +470,86 @@ export class AdminService {
       where:   { userId, revokedAt: null },
       include: { service: { select: { key: true, displayName: true } } },
       orderBy: { grantedAt: 'desc' },
+    });
+  }
+
+  // ────────────────────────────────────────────────────────────────
+  // CATÁLOGO MAESTRO — Superintendencias y Áreas (fuente de verdad)
+  // ────────────────────────────────────────────────────────────────
+
+  /** Áreas (para asignar áreas al conceder acceso a sync-msc y para gestión). */
+  async listAreas() {
+    return this.prisma.area.findMany({
+      orderBy: { codigo: 'asc' },
+      select: {
+        codigo: true, nombre: true, superintendencia: true,
+        superintendenciaId: true, activo: true,
+      },
+    });
+  }
+
+  async listSuperintendencias() {
+    return this.prisma.superintendencia.findMany({
+      orderBy: { nombre: 'asc' },
+      include: { _count: { select: { areas: true } } },
+    });
+  }
+
+  async createSuperintendencia(nombre: string) {
+    const exists = await this.prisma.superintendencia.findUnique({ where: { nombre } });
+    if (exists) throw new ConflictException(`Ya existe la superintendencia '${nombre}'`);
+    return this.prisma.superintendencia.create({ data: { nombre } });
+  }
+
+  async updateSuperintendencia(id: string, dto: { nombre?: string; activo?: boolean }) {
+    const sup = await this.prisma.superintendencia.findUnique({ where: { id } });
+    if (!sup) throw new NotFoundException('Superintendencia no encontrada');
+    const updated = await this.prisma.superintendencia.update({
+      where: { id },
+      data: { nombre: dto.nombre ?? undefined, activo: dto.activo ?? undefined },
+    });
+    // Si cambió el nombre, re-denormalizar en las áreas hijas
+    if (dto.nombre && dto.nombre !== sup.nombre) {
+      await this.prisma.area.updateMany({
+        where: { superintendenciaId: id },
+        data:  { superintendencia: dto.nombre },
+      });
+    }
+    return updated;
+  }
+
+  async createArea(dto: { codigo: string; nombre: string; superintendenciaId: string }) {
+    const exists = await this.prisma.area.findUnique({ where: { codigo: dto.codigo } });
+    if (exists) throw new ConflictException(`Ya existe el área '${dto.codigo}'`);
+    const sup = await this.prisma.superintendencia.findUnique({ where: { id: dto.superintendenciaId } });
+    if (!sup) throw new BadRequestException('Superintendencia no válida');
+    return this.prisma.area.create({
+      data: {
+        codigo:             dto.codigo,
+        nombre:             dto.nombre,
+        superintendenciaId: sup.id,
+        superintendencia:   sup.nombre,
+      },
+    });
+  }
+
+  async updateArea(codigo: string, dto: { nombre?: string; superintendenciaId?: string; activo?: boolean }) {
+    const area = await this.prisma.area.findUnique({ where: { codigo } });
+    if (!area) throw new NotFoundException('Área no encontrada');
+    let supNombre: string | undefined;
+    if (dto.superintendenciaId) {
+      const sup = await this.prisma.superintendencia.findUnique({ where: { id: dto.superintendenciaId } });
+      if (!sup) throw new BadRequestException('Superintendencia no válida');
+      supNombre = sup.nombre;
+    }
+    return this.prisma.area.update({
+      where: { codigo },
+      data: {
+        nombre:             dto.nombre ?? undefined,
+        activo:             dto.activo ?? undefined,
+        superintendenciaId: dto.superintendenciaId ?? undefined,
+        superintendencia:   supNombre ?? undefined,
+      },
     });
   }
 

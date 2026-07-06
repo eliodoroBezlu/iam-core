@@ -263,6 +263,7 @@ export class OidcService {
       email:    user.email ?? undefined,
       roles:    user.roles,
       services,
+      service_roles: await this.auth.getUserServiceRoles(user.id),
       iss:      'iam-core',
       aud:      [],
     });
@@ -355,6 +356,7 @@ export class OidcService {
       email:    user.email ?? undefined,
       roles:    user.roles,
       services,
+      service_roles: await this.auth.getUserServiceRoles(user.id),
       iss:      'iam-core',
       aud:      [],
     });
@@ -392,13 +394,37 @@ export class OidcService {
     }
 
     const user = await this.users.findById(claims.sub);
+
+    // Trabajador vinculado (datos de la persona, centralizados en el IAM)
+    const trab = await this.prisma.trabajador.findUnique({
+      where: { userId: user.id },
+    });
+    const trabajador = trab
+      ? {
+          ci:               trab.ci,
+          jde:              trab.jde ?? undefined,
+          nomina:           trab.nomina,
+          puesto:           trab.puesto,
+          area:             trab.area ?? undefined,
+          superintendencia: trab.superintendencia,
+          disciplina:       trab.disciplina ?? undefined,
+        }
+      : undefined;
+
+    // Detalle de acceso por servicio (roles + metadata, ej. áreas asignadas).
+    // `services` (solo keys) se mantiene para compatibilidad; `service_access`
+    // es el detalle que consumen los clientes que centralizan autorización.
+    const serviceAccess = await this.auth.getUserServicesDetails(user.id);
+
     return {
       sub:                user.id,
       preferred_username: user.username,
       email:              user.email ?? undefined,
       name:               user.fullName ?? undefined,
       roles:              user.roles,
-      services:           await this.servicesFor(user.id),
+      services:           serviceAccess.map((s) => s.serviceKey),
+      service_access:     serviceAccess,
+      trabajador,
     };
   }
 

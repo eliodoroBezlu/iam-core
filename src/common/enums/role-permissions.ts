@@ -74,6 +74,20 @@ export const RolePermissions: Record<Role, Permission[]> = {
     Permission.READ_WORKER,
     Permission.READ_FORM,
   ],
+
+  [Role.PLANIFICADOR]: [
+    Permission.READ_WORKER,
+    Permission.READ_FORM,
+    Permission.VIEW_REPORTS,
+    Permission.DOWNLOAD_EXCEL,
+    Permission.DOWNLOAD_PDF,
+  ],
+
+  [Role.CONTRATISTA]: [
+    Permission.READ_WORKER,
+    Permission.CREATE_FORM,
+    Permission.READ_FORM,
+  ],
 };
 
 export function getPermissionsForRoles(roles: string[]): Permission[] {

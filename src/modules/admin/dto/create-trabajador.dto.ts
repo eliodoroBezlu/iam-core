@@ -1,5 +1,5 @@
 import {
-  IsString, IsOptional, IsDateString,
+  IsString, IsOptional, IsDateString, IsBoolean,
   MinLength, MaxLength, Matches,
 } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
@@ -22,14 +22,33 @@ export class CreateTrabajadorDto {
   @MinLength(2)
   puesto: string;
 
-  @ApiProperty({ example: 'Superintendencia de Operaciones' })
+  // Superintendencia denormalizada — opcional; se deriva del área si se envía areaCodigo.
+  @ApiPropertyOptional({ example: 'Superintendencia de Operaciones' })
+  @IsOptional()
   @IsString()
-  superintendencia: string;
+  superintendencia?: string;
 
   @ApiPropertyOptional({ example: 'Área Norte' })
   @IsOptional()
   @IsString()
   area?: string;
+
+  // Código del área maestra (fuente de verdad; deriva área + superintendencia)
+  @ApiPropertyOptional({ example: '3320' })
+  @IsOptional()
+  @IsString()
+  areaCodigo?: string;
+
+  // Especialidad técnica (usada por sync-msc)
+  @ApiPropertyOptional({ example: 'MEC' })
+  @IsOptional()
+  @IsString()
+  disciplina?: string;
+
+  @ApiPropertyOptional({ example: false })
+  @IsOptional()
+  @IsBoolean()
+  esContratista?: boolean;
 
   @ApiPropertyOptional({ example: '2020-01-15' })
   @IsOptional()

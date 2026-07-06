@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsBoolean } from 'class-validator';
+import { IsString, IsOptional, IsBoolean, IsArray, IsObject } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateServiceDto {
@@ -16,4 +16,21 @@ export class UpdateServiceDto {
   @IsOptional()
   @IsBoolean()
   isActive?: boolean;
+
+  @ApiPropertyOptional({ example: ['admin', 'supervisor', 'inspector'] })
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  availableRoles?: string[];
+
+  @ApiPropertyOptional({ example: ['create:form', 'approve:form'] })
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  permissionCatalog?: string[];
+
+  @ApiPropertyOptional({ example: { admin: ['create:form'], supervisor: ['read:form'] } })
+  @IsOptional()
+  @IsObject()
+  rolePermissions?: Record<string, string[]>;
 }

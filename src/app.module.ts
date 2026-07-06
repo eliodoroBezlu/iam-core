@@ -17,6 +17,7 @@ import { AuditModule }    from './modules/audit/audit.module';
 import { AdminModule }    from './modules/admin/admin.module';
 import { WebAuthnModule } from './modules/webauthn/webauthn.module';
 import { OidcModule }     from './modules/oidc/oidc.module';
+import { RbacModule }     from './modules/rbac/rbac.module';
 
 // Common
 import { JwtGuard }             from './common/guards/jwt.guard';
@@ -67,6 +68,7 @@ import configuration from './config/configuration';
     AdminModule,
     WebAuthnModule,
     OidcModule,
+    RbacModule,
   ],
   providers: [
     // JwtGuard global — protege todas las rutas excepto las marcadas con @Public()

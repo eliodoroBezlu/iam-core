@@ -261,6 +261,8 @@ export class WebAuthnService {
       where:   { userId: user.id, revokedAt: null },
       include: { service: { select: { key: true } } },
     });
+    const serviceRoles: Record<string, string[]> = {};
+    for (const a of serviceAccesses) serviceRoles[a.service.key] = a.roles;
 
     const accessToken = this.token.signAccessToken({
       sub:      user.id,
@@ -268,6 +270,7 @@ export class WebAuthnService {
       email:    user.email ?? undefined,
       roles:    user.roles,
       services: serviceAccesses.map((a) => a.service.key),
+      service_roles: serviceRoles,
       iss:      'iam-core',
       aud:      ['forms-service'],
     });

@@ -7,8 +7,10 @@ export enum Role {
   ADMIN          = 'admin',
   MODERATOR      = 'moderator',
   SUPER_ADMIN    = 'super_admin',
-  INSPECTOR      = 'inspector',
+  INSPECTOR      = 'inspector',      // legacy — unificado con TECNICO
   TECNICO        = 'tecnico',
   SUPERVISOR     = 'supervisor',
   SUPERINTENDENTE = 'superintendente',
+  PLANIFICADOR   = 'planificador',
+  CONTRATISTA    = 'contratista',
 }

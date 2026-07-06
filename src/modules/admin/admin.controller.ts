@@ -17,6 +17,10 @@ import { GrantServiceAccessDto } from './dto/grant-access.dto';
 import { AssignUserToTrabajadorDto } from './dto/assign-user.dto';
 import { UpdateTrabajadorDto } from './dto/update-trabajador.dto';
 import { CreateTrabajadorDto } from './dto/create-trabajador.dto';
+import {
+  CreateSuperintendenciaDto, UpdateSuperintendenciaDto,
+  CreateAreaDto, UpdateAreaDto,
+} from './dto/catalog.dto';
 
 @ApiTags('admin')
 @Controller('admin')
@@ -150,6 +154,46 @@ export class AdminController {
   @ApiOperation({ summary: 'Lista los servicios registrados en el IAM' })
   async listServices() {
     return this.adminService.listServices();
+  }
+
+  // ── Catálogo maestro: Superintendencias y Áreas ──────────────────
+
+  @Get('areas')
+  @ApiOperation({ summary: 'Lista las áreas del catálogo maestro' })
+  async listAreas() {
+    return this.adminService.listAreas();
+  }
+
+  @Post('areas')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'Crea un área en el catálogo maestro' })
+  async createArea(@Body() dto: CreateAreaDto) {
+    return this.adminService.createArea(dto);
+  }
+
+  @Patch('areas/:codigo')
+  @ApiOperation({ summary: 'Actualiza un área (nombre, superintendencia, activo)' })
+  async updateArea(@Param('codigo') codigo: string, @Body() dto: UpdateAreaDto) {
+    return this.adminService.updateArea(codigo, dto);
+  }
+
+  @Get('superintendencias')
+  @ApiOperation({ summary: 'Lista las superintendencias' })
+  async listSuperintendencias() {
+    return this.adminService.listSuperintendencias();
+  }
+
+  @Post('superintendencias')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'Crea una superintendencia' })
+  async createSuperintendencia(@Body() dto: CreateSuperintendenciaDto) {
+    return this.adminService.createSuperintendencia(dto.nombre);
+  }
+
+  @Patch('superintendencias/:id')
+  @ApiOperation({ summary: 'Actualiza una superintendencia' })
+  async updateSuperintendencia(@Param('id') id: string, @Body() dto: UpdateSuperintendenciaDto) {
+    return this.adminService.updateSuperintendencia(id, dto);
   }
 
   @Post('services')

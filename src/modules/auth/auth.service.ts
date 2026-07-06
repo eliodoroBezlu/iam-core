@@ -12,6 +12,7 @@ import { TotpService }     from '../totp/totp.service';
 import { UsersService, SafeUser } from '../users/users.service';
 import { AuditEvent }      from '../../common/enums/audit-event.enum';
 import { getPermissionsForRoles } from '../../common/enums/role-permissions';
+import { computeServicePermissions } from '../../common/utils/rbac.util';
 
 // ──────────────────────────────────────────────────────────────────
 // Tipos de respuesta — compatible con el Forms Service existente
@@ -189,6 +190,7 @@ export class AuthService {
       email:    user.email ?? undefined,
       roles:    user.roles,
       services,
+      service_roles: await this.getUserServiceRoles(user.id),
       iss:      'iam-core',
       aud:      [],
     });
@@ -275,6 +277,7 @@ export class AuthService {
       email:    user.email ?? undefined,
       roles:    user.roles,
       services,
+      service_roles: await this.getUserServiceRoles(user.id),
       iss:      'iam-core',
       aud:      [],
     });
@@ -329,12 +332,29 @@ export class AuthService {
    * Obtiene los servicios accesibles con metadatos completos
    * (para el endpoint GET /auth/me del portal).
    */
+  /** Mapa serviceKey → roles genéricos del usuario en ese servicio (para el token). */
+  async getUserServiceRoles(userId: string): Promise<Record<string, string[]>> {
+    const details = await this.getUserServicesDetails(userId);
+    const out: Record<string, string[]> = {};
+    for (const d of details) out[d.serviceKey] = d.roles;
+    return out;
+  }
+
   async getUserServicesDetails(userId: string): Promise<Array<{
     serviceKey:  string;
     displayName: string;
     baseUrl?:    string;
     roles:       string[];
+    permissions: string[];
+    metadata?:   unknown;
   }>> {
+    // El rol es GLOBAL (User.roles) y aplica a todos los servicios;
+    // los permisos se computan por servicio desde ese rol + el mapa del servicio.
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId }, select: { roles: true },
+    });
+    const userRoles = user?.roles ?? [];
+
     const accesses = await this.prisma.userServiceAccess.findMany({
       where: {
         userId,
@@ -347,7 +367,7 @@ export class AuthService {
       },
       include: {
         service: {
-          select: { key: true, displayName: true, baseUrl: true },
+          select: { key: true, displayName: true, baseUrl: true, rolePermissions: true },
         },
       },
     });
@@ -356,7 +376,9 @@ export class AuthService {
       serviceKey:  a.service.key,
       displayName: a.service.displayName,
       baseUrl:     a.service.baseUrl ?? undefined,
-      roles:       a.roles,
+      roles:       userRoles,
+      permissions: computeServicePermissions(a.service.rolePermissions, userRoles),
+      metadata:    a.metadata ?? undefined,
     }));
   }
 
