@@ -1,9 +1,8 @@
 import {
   IsString, IsEmail, IsOptional, IsArray, IsBoolean,
-  MinLength, MaxLength, Matches, IsEnum,
+  MinLength, MaxLength, Matches,
 } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { Role } from '../../../common/enums/role.enum';
 
 export class AssignUserToTrabajadorDto {
   @ApiProperty({ example: 'juan_perez' })
@@ -34,11 +33,12 @@ export class AssignUserToTrabajadorDto {
   @IsEmail()
   email?: string;
 
-  @ApiPropertyOptional({ enum: Role, isArray: true })
+  // Catálogo dinámico — ver nota en UpdateUserDto.
+  @ApiPropertyOptional({ isArray: true, example: ['inspector_asignado'] })
   @IsOptional()
   @IsArray()
-  @IsEnum(Role, { each: true })
-  roles?: Role[];
+  @IsString({ each: true })
+  roles?: string[];
 
   @ApiPropertyOptional({ example: true })
   @IsOptional()

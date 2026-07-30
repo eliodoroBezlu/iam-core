@@ -88,6 +88,26 @@ export const RolePermissions: Record<Role, Permission[]> = {
     Permission.CREATE_FORM,
     Permission.READ_FORM,
   ],
+
+  /**
+   * Mismo set que TECNICO más VIEW_REPORTS: llena inspecciones y consulta los
+   * reportes de sus plantillas. Sin UPDATE/DELETE/APPROVE ni ningún MANAGE_*.
+   *
+   * `CREATE_FORM` habilita llenar una inspección, no crear la estructura de un
+   * formulario: eso está restringido a admin por `@Roles()` en el controller de
+   * plantillas del forms service.
+   *
+   * Debe coincidir con `Service.rolePermissions['inspector_asignado']` del
+   * servicio `forms` (ver scripts/create-role-inspector-asignado.cjs).
+   */
+  [Role.INSPECTOR_ASIGNADO]: [
+    Permission.READ_WORKER,
+    Permission.CREATE_FORM,
+    Permission.READ_FORM,
+    Permission.VIEW_REPORTS,
+    Permission.DOWNLOAD_EXCEL,
+    Permission.DOWNLOAD_PDF,
+  ],
 };
 
 export function getPermissionsForRoles(roles: string[]): Permission[] {

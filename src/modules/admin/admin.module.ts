@@ -4,9 +4,10 @@ import { AdminService }    from './admin.service';
 import { AuditModule }     from '../audit/audit.module';
 import { SessionsModule }  from '../sessions/sessions.module';
 import { UsersModule }     from '../users/users.module';
+import { RoleCatalogModule } from '../../common/services/role-catalog.module';
 
 @Module({
-  imports:     [AuditModule, SessionsModule, UsersModule],
+  imports:     [AuditModule, SessionsModule, UsersModule, RoleCatalogModule],
   controllers: [AdminController],
   providers:   [AdminService],
 })

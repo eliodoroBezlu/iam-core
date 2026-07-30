@@ -1,8 +1,7 @@
 import {
-  IsString, IsEmail, IsOptional, IsEnum, IsArray, IsBoolean,
+  IsString, IsEmail, IsOptional, IsArray, IsBoolean,
   MinLength, Matches,
 } from 'class-validator';
-import { Role } from '../../../common/enums/role.enum';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class UpdateUserDto {
@@ -16,11 +15,14 @@ export class UpdateUserDto {
   @IsString()
   fullName?: string;
 
-  @ApiPropertyOptional({ enum: Role, isArray: true })
+  // El catálogo de roles es dinámico (`Service.availableRoles`, editable por
+  // GUI), así que aquí sólo se valida la forma. La existencia la comprueba
+  // `RoleCatalogService.assertRolesExisten` en UsersService.
+  @ApiPropertyOptional({ isArray: true, example: ['inspector_asignado'] })
   @IsOptional()
   @IsArray()
-  @IsEnum(Role, { each: true })
-  roles?: Role[];
+  @IsString({ each: true })
+  roles?: string[];
 
   @ApiPropertyOptional()
   @IsOptional()

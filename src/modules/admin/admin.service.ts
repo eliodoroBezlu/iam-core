@@ -16,6 +16,7 @@ import { AssignUserToTrabajadorDto } from './dto/assign-user.dto';
 import { UpdateTrabajadorDto } from './dto/update-trabajador.dto';
 import { CreateTrabajadorDto } from './dto/create-trabajador.dto';
 import { Role } from '../../common/enums/role.enum';
+import { RoleCatalogService } from '../../common/services/role-catalog.service';
 import { createHash, randomBytes }  from 'crypto';
 
 @Injectable()
@@ -27,6 +28,7 @@ export class AdminService {
     private readonly audit:     AuditService,
     private readonly sessions:  SessionsService,
     private readonly users:     UsersService,
+    private readonly roleCatalog: RoleCatalogService,
   ) {}
 
   // ────────────────────────────────────────────────────────────────
@@ -140,19 +142,56 @@ export class AdminService {
     const svc = await this.prisma.service.findUnique({ where: { id: serviceId } });
     if (!svc) throw new NotFoundException(`Servicio '${serviceId}' no encontrado`);
 
-    return this.prisma.service.update({
+    let availableRoles = dto.availableRoles;
+    let rolePermissions = dto.rolePermissions;
+
+    if (availableRoles) {
+      availableRoles = this.roleCatalog.normalizarCatalogo(availableRoles);
+
+      // Quitar un rol del catálogo dejaría a sus usuarios con un rol
+      // inexistente: ni asignable ni visible en la GUI para poder quitarlo.
+      for (const eliminado of svc.availableRoles) {
+        if (!availableRoles.includes(eliminado)) {
+          await this.roleCatalog.assertRolSinUso(eliminado);
+        }
+      }
+
+      // El mapa rol→permisos sigue al catálogo: alta con permisos vacíos y
+      // baja de las claves huérfanas, para que no se desincronicen.
+      const base =
+        rolePermissions ??
+        ((svc.rolePermissions as Record<string, string[]> | null) ?? {});
+      rolePermissions = Object.fromEntries(
+        availableRoles.map((rol) => [rol, base[rol] ?? []]),
+      );
+    }
+
+    const actualizado = await this.prisma.service.update({
       where: { id: serviceId },
       data: {
         displayName:       dto.displayName ?? undefined,
         baseUrl:           dto.baseUrl     ?? undefined,
         isActive:          dto.isActive    ?? undefined,
-        availableRoles:    dto.availableRoles ?? undefined,
+        availableRoles:    availableRoles ?? undefined,
         permissionCatalog: dto.permissionCatalog ?? undefined,
-        ...(dto.rolePermissions !== undefined && {
-          rolePermissions: dto.rolePermissions as Prisma.InputJsonValue,
+        ...(rolePermissions !== undefined && {
+          rolePermissions: rolePermissions as Prisma.InputJsonValue,
         }),
       },
     });
+
+    if (availableRoles) {
+      this.logger.log(
+        `Catálogo de roles de '${svc.key}': ${availableRoles.join(', ')}`,
+      );
+    }
+
+    return actualizado;
+  }
+
+  /** Catálogo global de roles asignables (unión de todos los servicios). */
+  async listRoles() {
+    return this.roleCatalog.listarRoles();
   }
 
   async deleteService(serviceId: string) {
@@ -179,6 +218,10 @@ export class AdminService {
 
     const user = await this.prisma.user.findUnique({ where: { id: userId }, select: { id: true } });
     if (!user) throw new NotFoundException('Usuario no encontrado');
+
+    // Los roles concedidos deben existir en el catálogo de ESE servicio: un
+    // typo aquí deja un acceso que no otorga ningún permiso y no da error.
+    await this.roleCatalog.assertRolesDeServicio(dto.serviceKey, dto.roles);
 
     const existing = await this.prisma.userServiceAccess.findUnique({
       where: { userId_serviceId: { userId, serviceId: service.id } },
