@@ -1,0 +1,1232 @@
+{
+  "generatedAt": "2026-07-06T21:48:36.550Z",
+  "areas": [
+    {
+      "codigo": "3310",
+      "nombre": "Chancado",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3311",
+      "nombre": "Recursos Hídricos",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3312",
+      "nombre": "Flotacion",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3313",
+      "nombre": "Filtros",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3315",
+      "nombre": "Taller General",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3316",
+      "nombre": "Equipos Industriales y Equipos Auxiliares",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3318",
+      "nombre": "Contratista TTMB",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3319",
+      "nombre": "Electrico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3320",
+      "nombre": "Instrumentación",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "tieneCalibracion": true,
+      "activo": true
+    },
+    {
+      "codigo": "3321",
+      "nombre": "Ingeniería",
+      "superintendencia": "Superintendente Ingeniería",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3338",
+      "nombre": "Molienda",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3339",
+      "nombre": "Lubricacion",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3348",
+      "nombre": "Contratista TESA",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3332",
+      "nombre": "Maquinas herramientas",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Chancado, Molienda y Lubricación",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3351",
+      "nombre": "Contratista Telecomunicación",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3368",
+      "nombre": "Generación",
+      "superintendencia": "Superintendencia de Mantenimiento - Mec. Plta. Flot., Filtros, Taller Gral. y RH",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3343",
+      "nombre": "Confiabilidad",
+      "superintendencia": "Superintendencia de Confiabilidad",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3213",
+      "nombre": "P-Reactivos",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3212",
+      "nombre": "P-Flotación",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3214",
+      "nombre": "P-Manejo de Concentrados",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3215",
+      "nombre": "P- Relaves",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3217",
+      "nombre": "P- Utilitarios",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3216",
+      "nombre": "P- Suministro de Energía",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3110",
+      "nombre": "Mina",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3111",
+      "nombre": "Planta de Proceso",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": true
+    },
+    {
+      "codigo": "3117",
+      "nombre": "HSE",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3118",
+      "nombre": "MSC",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3120",
+      "nombre": "Comercial",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3210",
+      "nombre": "P-Chancadora & Apiladora",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "3211",
+      "nombre": "P-Molienda",
+      "superintendencia": "PLANTA",
+      "tieneCalibracion": false,
+      "activo": false
+    },
+    {
+      "codigo": "0000",
+      "nombre": "Sin área",
+      "superintendencia": null,
+      "tieneCalibracion": false,
+      "activo": false
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "cmpu6mcc9000pb4tp3jnm8s1q",
+      "nombre": "Calcina Quispe Bonifacio",
+      "apellido": null,
+      "email": "calcina_4@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "64115",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mbhe0002b4tpb6wthbht",
+      "nombre": "Aguilar Mayta Justino Raul",
+      "apellido": null,
+      "email": "aguilar@minera.com",
+      "passwordHash": "2a8f3263c4f023733b4026f69f555478d7503fe78cf873f66cdbfad6104cb75b",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62818",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mc3m000jb4tpvv5wuwmo",
+      "nombre": "Bedoya Rocha Jose Luis",
+      "apellido": null,
+      "email": "bedoya@minera.com",
+      "passwordHash": "e7561f81b45d807724b1d812324f84425292cbd34be51259dba9d949d5357193",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62821",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mcjd000ub4tp46crw021",
+      "nombre": "Calle Choque Edgar Javier",
+      "apellido": null,
+      "email": "calle@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62810",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mdu8001sb4tpxc5dm2vj",
+      "nombre": "Daga Canaviri Ramiro",
+      "apellido": null,
+      "email": "daga@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62728",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mdxc001ub4tpg63hzc90",
+      "nombre": "Equise Quichu Eugenio Adrian",
+      "apellido": null,
+      "email": "equise@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "65574",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6me1o001xb4tpy4elie9f",
+      "nombre": "Espejo Rospigliossi Edson Adhemar",
+      "apellido": null,
+      "email": "espejo@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "67638",
+      "puesto": "Técnico de Comunicación y Redes",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6me45001zb4tp4lhe4pob",
+      "nombre": "Eugenio Choque Jhonny Elias",
+      "apellido": null,
+      "email": "eugenio@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62720",
+      "puesto": "Especialista en Instrumentación / Eléctrico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mdo3001ob4tpmoyt2su4",
+      "nombre": "Copa Cabrera Serapio",
+      "apellido": null,
+      "email": "copa@minera.com",
+      "passwordHash": "84db1887f45ecabc73b5aeb93de4772fc007a5f45d6d054bc87c5db5cbe352cc",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62714",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mev2002gb4tp5u98n1c5",
+      "nombre": "Huaygua Gonzales Miguel Angel",
+      "apellido": null,
+      "email": "huaygua@minera.com",
+      "passwordHash": "47cbe9b7064f4500f0baf4c62f51cceb53e08c32afe7e0679157ef0c2afb89b9",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62837",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mf0b002ib4tpvsire9x6",
+      "nombre": "Huayllas Esquivel Erwin",
+      "apellido": null,
+      "email": "ehuayllas@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62599",
+      "puesto": "Especialista en Instrumentación / Eléctrico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mg27002wb4tpuwiqxxvh",
+      "nombre": "Llanque Choque Jorge",
+      "apellido": null,
+      "email": "llanque@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62729",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mfii002ob4tpimz0ttuu",
+      "nombre": "Janco Choquecallo Rene",
+      "apellido": null,
+      "email": "janco@minera.com",
+      "passwordHash": "60887abbdf14e13e921d860a7e4260bc40944483625b801991091353671710c9",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62869",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mg4o002yb4tptoyfz4du",
+      "nombre": "Loayza Gallardo Rolando Fabricio",
+      "apellido": null,
+      "email": "loayza@minera.com",
+      "passwordHash": "a0f8b3852c8e1372f93e6ca53d3dffa5738ea6fcd121d74cad99be25da9649f1",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62899",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mgau0033b4tpg2szq0me",
+      "nombre": "Mamani Alcon Oscar Elias",
+      "apellido": null,
+      "email": "mamani@minera.com",
+      "passwordHash": "bd30e6e679c924a6f089544759bd7c2c089e72643f89a58c3f83020fe51b3859",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "67061",
+      "puesto": "Técnico Eléctrico B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mgul003db4tpj31mtnfx",
+      "nombre": "Mendoza Velasco Marco Vladimir",
+      "apellido": null,
+      "email": "mendoza@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62682",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mgzj003hb4tpcrgktrsm",
+      "nombre": "Mollo Mamani Juan Carlos",
+      "apellido": null,
+      "email": "mollo@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "63920",
+      "puesto": "Técnico de Instrumentación A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mhb9003rb4tp9j9jp34l",
+      "nombre": "Perez Calcina Juan Fernando",
+      "apellido": null,
+      "email": "perez@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62179",
+      "puesto": "Técnico de Instrumentación B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mhz00049b4tpv2d2stm7",
+      "nombre": "Quispe Valda José Calasanz",
+      "apellido": null,
+      "email": "quispe_12@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62184",
+      "puesto": "Técnico de Instrumentación B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mik0004pb4tpfn89xvvr",
+      "nombre": "Taquichiri Mamani Sabino",
+      "apellido": null,
+      "email": "taquichiri@minera.com",
+      "passwordHash": "33532a3e20e49c4b20626746128238cfa777046d605a4095dfe619d0064c5686",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "65577",
+      "puesto": "Técnico de Instrumentación B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mi9t004gb4tpvjvor7y0",
+      "nombre": "Rodriguez Herbas Juan Rodo",
+      "apellido": null,
+      "email": "rodriguez@minera.com",
+      "passwordHash": "3a547f1e479b69a57fd497353c4dbe56ee11fe2b05fc13a252e844daabfef75f",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62931",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mhv10046b4tpd7na68m4",
+      "nombre": "Quispe Quispe Ovideo",
+      "apellido": null,
+      "email": "quispe_9@minera.com",
+      "passwordHash": "542db915206ccb14d323f8050dee5ba208fd55e3fbdcde54eaf41fa2a4e46f38",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "60932",
+      "puesto": "Técnico Eléctrico B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mifp004lb4tp9grx2fda",
+      "nombre": "Salinas Lazo Ivan",
+      "apellido": null,
+      "email": "salinas@minera.com",
+      "passwordHash": "207f49c82fdac8dec81e79c6b7c005143ad299604b9201f7dec200178d35746a",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "68559",
+      "puesto": "Técnico Eléctrico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mj8q0057b4tpygtogmtn",
+      "nombre": "Ovidio",
+      "apellido": "Capurata",
+      "email": "ovidio.capurata@gmail.com",
+      "passwordHash": "6b9c52d20759d7d874bbf62f1c40690972338ff0e5d40aa68961d7584be70525",
+      "rol": 1,
+      "disciplina": "GENERAL",
+      "areaTrabajo": null,
+      "jde": null,
+      "puesto": "Administrador del Sistema",
+      "superintendencia": null,
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": []
+    },
+    {
+      "id": "cmpvkg0ja000301ns5ikxgrd8",
+      "nombre": "Valdez Zambrana Mijail Oscar",
+      "apellido": null,
+      "email": "zambranami@minera.com",
+      "passwordHash": "eab70575a675cc43eb60e39cfa3c19cf8cf6a06bf1aa5d0222e6795b3be49701",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Contratista Telecomunicación",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": null,
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3351"
+      ]
+    },
+    {
+      "id": "cmpvki5nh000401nscfeed85n",
+      "nombre": "Aspiazu Catavill Alvaro Alfredo",
+      "apellido": null,
+      "email": "catavil@minera.com",
+      "passwordHash": "a489d253e4b1cecc334ca23b4e6edf406b7813c6271193c14874b8796a83916c",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Contratista Telecomunicación",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": null,
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3351"
+      ]
+    },
+    {
+      "id": "cmpu6miui004wb4tpa2aai02h",
+      "nombre": "Valencia Camata Edgar",
+      "apellido": null,
+      "email": "valencia_2@minera.com",
+      "passwordHash": "74a4b839cd448dbb8dd85b8fecee24221103ee3cb775c820ecd35f3b9a016f63",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "64114",
+      "puesto": "Técnico de Instrumentación B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mhsk0044b4tp4t1ivoec",
+      "nombre": "Quispe Miranda James Chanel",
+      "apellido": null,
+      "email": "quispe_7@minera.com",
+      "passwordHash": "1a789afeb8a76fb3b28d80ee0dc6cbd255efb405d3b898eb078469a42ed57fb0",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "42084",
+      "puesto": "Técnico de Instrumentación",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6me8u0021b4tpniwcx506",
+      "nombre": "Flores Choque José Alfredo",
+      "apellido": null,
+      "email": "flores_2@minera.com",
+      "passwordHash": "b52468bffb6bbdff5be2de70a9f4387815fee83a004a9521198c567207ca4710",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "68735",
+      "puesto": "Técnico de Instrumentación C",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mirq004ub4tpmwoqvmoq",
+      "nombre": "Torrico Morales Alexander Walby",
+      "apellido": null,
+      "email": "torrico@minera.com",
+      "passwordHash": "c040769d784f43c8c69c39ac235ad381486d59e33e5651b09b108a264f69f172",
+      "rol": 3,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62851",
+      "puesto": "Supervisor de Mantenimiento",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320",
+        "3351"
+      ]
+    },
+    {
+      "id": "cmpu6mj2k0052b4tpuqa49u4i",
+      "nombre": "Viñola Vargas Jose Luis",
+      "apellido": null,
+      "email": "vinola@minera.com",
+      "passwordHash": "2b45cfa1fb85176ad58664f83f58f38075a0e2f753e9df4a14ad08ef7d97a5be",
+      "rol": 3,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "63954",
+      "puesto": "Supervisor de Mantenimiento",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319",
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mdpb001pb4tp9ts0mf6a",
+      "nombre": "Cordova Ramos Felix",
+      "apellido": null,
+      "email": "cordova@minera.com",
+      "passwordHash": "a4a965fabc42e32a9c1e7039b80723422e9ddd2502d6d450a54369477d71ac50",
+      "rol": 4,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "60926",
+      "puesto": "Técnico de Instrumentación B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpwme79w000501pjakerk5ue",
+      "nombre": "Aguilar Altamirano Esteban Richard",
+      "apellido": null,
+      "email": "altamirano@minera.com",
+      "passwordHash": "dcac3bb0d4297779c6f3520ec85bca1efa06bb09a3b634a7c4a55d8b16e7f07c",
+      "rol": 6,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentación",
+      "jde": null,
+      "puesto": "Técnico Instrumentista",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmpu6mbvc000cb4tpa3izht2m",
+      "nombre": "Balladares Rocha Saul Ramiro",
+      "apellido": null,
+      "email": "balladares@minera.com",
+      "passwordHash": "59a5f803c72bd5e05e0ec4d2935b1f7f3aaba5a52f80613b7f7de2f7fa65268f",
+      "rol": 3,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentacion",
+      "jde": "62597",
+      "puesto": "Supervisor de Mantenimiento",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3320",
+        "3351"
+      ]
+    },
+    {
+      "id": "cmpvk3r0y000001nsi7lj7zl7",
+      "nombre": "Yampa Mena Mario Agustin",
+      "apellido": null,
+      "email": "yampa@minera.com",
+      "passwordHash": "1d8a27d5ca2cf68cedd18fba448b43c41e43edf88f19c28242d296aeef37ad62",
+      "rol": 4,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Contratista TESA",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3348"
+      ]
+    },
+    {
+      "id": "cmpwmjt3j000701pju4dtwd05",
+      "nombre": "Duran Vargas Jorge Luis",
+      "apellido": null,
+      "email": "duranva@minera.com",
+      "passwordHash": "4fd8189a235a04a00660498444fc862374fd9ee4e8d004cd54888002d26a097f",
+      "rol": 6,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentación",
+      "jde": null,
+      "puesto": "Supervisor Contratista",
+      "superintendencia": "Superintendencia de Mantenimiento - Electrico e Instrumentación",
+      "esContratista": true,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3351"
+      ]
+    },
+    {
+      "id": "cmpvjt26y000101pjacctd64e",
+      "nombre": "Gómez Velasco Jhonatan",
+      "apellido": null,
+      "email": "velascogo@minera.com",
+      "passwordHash": "c3b9e58b7aa0d7202b9b8b97bd6533418cbd2bd6e93a7d9fa2253257750964ae",
+      "rol": 4,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Contratista TESA",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3348"
+      ]
+    },
+    {
+      "id": "cmpvk8lue000201nsy3h59vkb",
+      "nombre": "Gandarillas Ortiz Javier Brian",
+      "apellido": null,
+      "email": "gandarillas@minera.com",
+      "passwordHash": "2c5336efe1bfe9a2d47a61b7d074c0c15eb5648a45c090e1233bd986214d5e8a",
+      "rol": 4,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Contratista TESA",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3348"
+      ]
+    },
+    {
+      "id": "cmpvjpq3c000001pjcssevq30",
+      "nombre": "López Rojas Camilo",
+      "apellido": null,
+      "email": "rojasc@minera.com",
+      "passwordHash": "c4316b82dd5c707b66b4e3dd98a81bb3e6811983e2b761d5b0a8c0eb73287fae",
+      "rol": 4,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Contratista TESA",
+      "jde": null,
+      "puesto": null,
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3348"
+      ]
+    },
+    {
+      "id": "cmpu6meen0025b4tpetisltpj",
+      "nombre": "Gomez Velasco Limbert",
+      "apellido": null,
+      "email": "gomez@minera.com",
+      "passwordHash": "d1a51908f73eaf59f9238159831d841192a5bcfbf4599be3c26300c6ec291e09",
+      "rol": 3,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62598",
+      "puesto": "Supervisor de Mantenimiento",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6me2w001yb4tp32d1euyu",
+      "nombre": "Espinoza Quispe Esequio",
+      "apellido": null,
+      "email": "espinoza@minera.com",
+      "passwordHash": "ddb659012f1b93290f99adde19e31032e2834d38ab00cb159d1320fc455f9312",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62944",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpvk6ngf000101nsdhlwdju6",
+      "nombre": "Apaza Huanca Gabriel Ruben",
+      "apellido": null,
+      "email": "apazahu@minera.com",
+      "passwordHash": "94e5aac0a35f0cc8cb92b20983b54c78a96a0b1c4ec498a33db72663e28a730e",
+      "rol": 6,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Contratista TESA",
+      "jde": null,
+      "puesto": "Supervisor de Mntenimiento",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2027-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3348"
+      ]
+    },
+    {
+      "id": "cmpu6mf7e002lb4tpml5o1ynx",
+      "nombre": "Hurtado Gutierrez Alcides",
+      "apellido": null,
+      "email": "hurtado@minera.com",
+      "passwordHash": "04b3e188945c36b7c216ba7db6169faa4f0cc623d065e43770d2656bd493c88d",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62705",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mg750030b4tp2w10vp3t",
+      "nombre": "Lopez Mendoza Oscar",
+      "apellido": null,
+      "email": "lopez_2@minera.com",
+      "passwordHash": "9f52bf1c444fd35ad7b91b985dbdfd27c101c9d5a4218a418a3e5fea4a65113b",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62852",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mhp50042b4tp6l5sum76",
+      "nombre": "Quispe Chambi Samuel",
+      "apellido": null,
+      "email": "quispe_5@minera.com",
+      "passwordHash": "b2d2107a7a7951234de463c5c9a2a3644b6d854b6ba83dd462a4cda24568fcae",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62623",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mib2004hb4tpdywz8u7v",
+      "nombre": "Rojas Mamani Roman",
+      "apellido": null,
+      "email": "rojas@minera.com",
+      "passwordHash": "ccfb8028eae398d120f58ebde605402336e07636b588b853937f56722454b187",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "62604",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mixa004yb4tpyzlorgil",
+      "nombre": "Vargas Mondocorre Wilson",
+      "apellido": null,
+      "email": "vargas@minera.com",
+      "passwordHash": "d77c4412bdad9cd1614ba400161ab1d88b567b851ff52b2504109b9312e78cc4",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "60884",
+      "puesto": "Técnico Eléctrico A",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpu6mj680055b4tpyfk33zhy",
+      "nombre": "Yañez Calcina Maximo",
+      "apellido": null,
+      "email": "yanez_3@minera.com",
+      "passwordHash": "57a598c16cc2f168323d539027172362b57f2ca9c7825e5dc843ed49db0a3f37",
+      "rol": 4,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": "10143",
+      "puesto": "Técnico Eléctrico B",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": false,
+      "fechaExpiracion": null,
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmpwmhvtn000601pjpjar3kwr",
+      "nombre": "Colque Mamani Jhonny",
+      "apellido": null,
+      "email": "colquejh@minera.com",
+      "passwordHash": "751190b143bf78bac3561c61265962f6ef81d08ba9f4cad78d31e861c09cdb93",
+      "rol": 6,
+      "disciplina": "INST",
+      "areaTrabajo": "Instrumentación",
+      "jde": null,
+      "puesto": "Técnico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3320"
+      ]
+    },
+    {
+      "id": "cmr6upt7w001501oy6cgulcor",
+      "nombre": "Aquino Blanco Adriana Sheila",
+      "apellido": null,
+      "email": "sheila_a@minera.com",
+      "passwordHash": "869b3315a5d6574a2a6b332e571e0e79090d062dfdd9fcf8b138854b5fd9b688",
+      "rol": 6,
+      "disciplina": "GENERAL",
+      "areaTrabajo": "Electrico",
+      "jde": null,
+      "puesto": "Técnico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmr6wdatn001v01oyrwvmatfz",
+      "nombre": "Chávez Estrada Geronimo",
+      "apellido": null,
+      "email": "chavez@minera.com",
+      "passwordHash": "0f249fce6877e4b5a9b12f2e8a83c09e6d030a27d12e5f5bd39cb41a26e36631",
+      "rol": 6,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Electrico",
+      "jde": null,
+      "puesto": "Técnico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmr6w4ksm001s01oy4sgx8h8b",
+      "nombre": "Ochoa Cruz Rolando",
+      "apellido": null,
+      "email": "ochoa_rc@minera.com",
+      "passwordHash": "0f249fce6877e4b5a9b12f2e8a83c09e6d030a27d12e5f5bd39cb41a26e36631",
+      "rol": 6,
+      "disciplina": "ELEC",
+      "areaTrabajo": null,
+      "jde": null,
+      "puesto": "Tecnico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    },
+    {
+      "id": "cmr6w3seh001r01oyen8n4pw4",
+      "nombre": "Véliz Tito Hector",
+      "apellido": null,
+      "email": "hector_tv@minera.com",
+      "passwordHash": "a244df78bbf3dca9aa93589fe5e24d966c4cdfbbec5466b0b382d3757f70cd17",
+      "rol": 6,
+      "disciplina": "ELEC",
+      "areaTrabajo": "Electrico",
+      "jde": null,
+      "puesto": "Técnico",
+      "superintendencia": "Superintendencia de Mantenimiento - Eléctrico e Instrumentación Planta",
+      "esContratista": true,
+      "fechaExpiracion": "2026-12-31 00:00:00",
+      "activo": true,
+      "areas": [
+        "3319"
+      ]
+    }
+  ]
+}

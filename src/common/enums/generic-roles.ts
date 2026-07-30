@@ -15,6 +15,8 @@ export const GENERIC_ROLES = [
   'planificador',
   'tecnico',
   'contratista',
+  // El más acotado de todos: solo ve lo que se le asigna explícitamente.
+  'inspector_asignado',
 ] as const;
 
 export type GenericRole = (typeof GENERIC_ROLES)[number];

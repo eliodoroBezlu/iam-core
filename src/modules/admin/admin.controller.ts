@@ -196,6 +196,14 @@ export class AdminController {
     return this.adminService.updateSuperintendencia(id, dto);
   }
 
+  @Get('roles')
+  @ApiOperation({
+    summary: 'Catálogo global de roles asignables (unión de todos los servicios)',
+  })
+  async listRoles() {
+    return this.adminService.listRoles();
+  }
+
   @Post('services')
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: 'Registra un nuevo servicio en el IAM' })

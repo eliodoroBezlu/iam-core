@@ -12,6 +12,7 @@ import { User } from '@prisma/client';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto, ChangePasswordDto } from './dto/update-user.dto';
 import { Role } from '../../common/enums/role.enum';
+import { RoleCatalogService } from '../../common/services/role-catalog.service';
 import * as bcrypt from 'bcrypt';
 import { createHash, timingSafeEqual } from 'crypto';
 
@@ -35,6 +36,7 @@ export class UsersService {
   constructor(
     private readonly prisma:  PrismaService,
     private readonly config:  ConfigService,
+    private readonly roleCatalog: RoleCatalogService,
   ) {}
 
   // ────────────────────────────────────────────────────────────────
@@ -44,6 +46,7 @@ export class UsersService {
   async create(dto: CreateUserDto): Promise<SafeUser> {
     await this.assertUsernameAvailable(dto.username);
     if (dto.email) await this.assertEmailAvailable(dto.email);
+    await this.roleCatalog.assertRolesExisten(dto.roles);
 
     // Coercionar a Number: ConfigService.get<number>() es solo type-cast TS;
     // process.env.* siempre es string y bcrypt interpreta strings como salt.
@@ -128,6 +131,14 @@ export class UsersService {
     await this.assertExists(id);
 
     if (dto.email) await this.assertEmailAvailable(dto.email, id);
+
+    if (dto.roles) {
+      const actual = await this.prisma.user.findUnique({
+        where: { id },
+        select: { roles: true },
+      });
+      await this.roleCatalog.assertRolesExisten(dto.roles, actual?.roles ?? []);
+    }
 
     const user = await this.prisma.user.update({
       where: { id },

@@ -13,4 +13,11 @@ export enum Role {
   SUPERINTENDENTE = 'superintendente',
   PLANIFICADOR   = 'planificador',
   CONTRATISTA    = 'contratista',
+  /**
+   * Visibilidad acotada: solo ve sus inspecciones, las plantillas de
+   * Herramientas y Equipos asignadas a su rol (`rolesVisibles`) y los
+   * reportes de esas plantillas. Puede llenar inspecciones, no crear la
+   * estructura de un formulario.
+   */
+  INSPECTOR_ASIGNADO = 'inspector_asignado',
 }

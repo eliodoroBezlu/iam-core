@@ -81,7 +81,9 @@ export class WebAuthnService {
       excludeCredentials,
       authenticatorSelection:  {
         residentKey:       'preferred',
-        userVerification:  'preferred',
+        // 'required' para que coincida con requireUserVerification:true en verify.
+        // Con 'preferred' el autenticador puede omitir UV y la verificación falla.
+        userVerification:  'required',
       },
       supportedAlgorithmIDs: [-7, -257], // ES256, RS256
     });
@@ -187,7 +189,8 @@ export class WebAuthnService {
     const options = await generateAuthenticationOptions({
       rpID:             this.rpId,
       allowCredentials,
-      userVerification: 'preferred',
+      // 'required' para coincidir con requireUserVerification:true en verifyAuthentication.
+      userVerification: 'required',
     });
 
     // Use username as key if provided, else 'passkey' (discoverable)
