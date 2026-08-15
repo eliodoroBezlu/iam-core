@@ -22,6 +22,16 @@ import { ApiKeyGuard } from '../../common/guards/api-key.guard';
 export class RbacController {
   constructor(private readonly prisma: PrismaService) {}
 
+  /**
+   * Catálogo maestro de áreas activas.
+   *
+   * `superintendenciaId` es la clave estable con la que los servicios deben
+   * emparejar. Antes solo se mandaba el nombre denormalizado y cada servicio
+   * casaba por texto: como BackendForm guardaba «Mec. **Planta** Chancado…» y
+   * el IAM manda «Mec. **Plta.** Chancado…», cada sincronización creaba una
+   * superintendencia duplicada. El nombre se sigue enviando —es lo que se
+   * muestra— pero no debe usarse para emparejar.
+   */
   @Get('catalog/areas')
   @Public()
   @SkipThrottle()
@@ -30,9 +40,26 @@ export class RbacController {
     const areas = await this.prisma.area.findMany({
       where:   { activo: true },
       orderBy: { codigo: 'asc' },
-      select:  { codigo: true, nombre: true, superintendencia: true },
+      select:  {
+        codigo:                  true,
+        nombre:                  true,
+        superintendencia:        true,
+        superintendenciaId:      true,
+        superintendenciaEntidad: { select: { id: true, nombre: true } },
+      },
     });
-    return { areas };
+
+    return {
+      areas: areas.map((a) => ({
+        codigo:           a.codigo,
+        nombre:           a.nombre,
+        // Se conserva por compatibilidad con los consumidores que ya lo leen.
+        superintendencia: a.superintendencia,
+        // La entidad maestra manda sobre el texto denormalizado del área.
+        superintendenciaId:     a.superintendenciaEntidad?.id ?? a.superintendenciaId,
+        superintendenciaNombre: a.superintendenciaEntidad?.nombre ?? a.superintendencia,
+      })),
+    };
   }
 
   @Get('services/:key/users')
