@@ -3,6 +3,7 @@ import {
   Req, Res, HttpCode, HttpStatus, UnauthorizedException,
   Delete,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { Throttle, SkipThrottle } from '@nestjs/throttler';
 import { createPublicKey } from 'crypto';
 import { ApiTags, ApiOperation, ApiBearerAuth, ApiCookieAuth } from '@nestjs/swagger';
@@ -34,6 +35,7 @@ export class AuthController {
     private readonly totpService:     TotpService,
     private readonly sessionsService: SessionsService,
     private readonly usersService:    UsersService,
+    private readonly config:          ConfigService,
   ) {}
 
   // ────────────────────────────────────────────────────────────────
@@ -163,10 +165,26 @@ export class AuthController {
   // REFRESH — Rota los tokens
   // ────────────────────────────────────────────────────────────────
 
+  /**
+   * El límite es holgado a propósito. Desde que `ThrottlerPorSesionGuard`
+   * cuenta por sesión, estos 30 son **de cada usuario**, no repartidos entre
+   * todos: un cliente sano rota una vez por ciclo de token —cuatro veces por
+   * hora— así que sobra de largo. El margen cubre lo que se sale de lo sano y
+   * es legítimo: varias instancias de Next, cada una con su propia
+   * coalescencia; un reinicio en caliente que la vacía; una tableta lenta cuya
+   * ráfaga de peticiones se parte en dos.
+   *
+   * Y no protege gran cosa: adivinar un refresh token es adivinar un UUID, y
+   * quien ya tiene uno válido tiene la sesión. Lo único que frena es un cliente
+   * desbocado, y para eso 30 es tan buen freno como 10.
+   *
+   * Lo que sí es estricto de verdad es el límite de `/auth/login`, que sigue
+   * contándose por IP porque ahí todavía no hay sesión.
+   */
   @Post('refresh')
   @Public()
   @HttpCode(HttpStatus.OK)
-  @Throttle({ strict: { limit: 10, ttl: 300_000 } })
+  @Throttle({ strict: { limit: 30, ttl: 300_000 } })
   @ApiOperation({ summary: 'Rota el refresh token y emite nuevos tokens' })
   async refresh(
     @Req() req: any,
@@ -369,6 +387,23 @@ export class AuthController {
     return process.env.COOKIE_DOMAIN || undefined;
   }
 
+  /**
+   * Vida de una cookie en milisegundos, tomada de la misma configuración que
+   * fija la caducidad del token que lleva dentro.
+   *
+   * Antes estaban escritas a mano (`15 * 60 * 1000`, `8 * 60 * 60 * 1000`) y
+   * coincidían con `JWT_ACCESS_EXPIRY` / `JWT_REFRESH_EXPIRY` por casualidad.
+   * En cuanto se tocaba el entorno dejaban de coincidir, y una cookie que vive
+   * más que su token deja al cliente creyendo que tiene sesión mientras el
+   * servidor le responde 401 a todo.
+   *
+   * El `.env` va en segundos; `res.cookie` en milisegundos.
+   */
+  private vidaDeCookieMs(clave: string, porDefectoSegundos: number): number {
+    const segundos = Number(this.config.get(clave)) || porDefectoSegundos;
+    return segundos * 1000;
+  }
+
   private setTokenCookies(res: Response, accessToken: string, refreshToken: string) {
     const isProd = process.env.NODE_ENV === 'production';
     const domain = this.cookieDomain();
@@ -377,7 +412,7 @@ export class AuthController {
       httpOnly: true,
       secure:   isProd,
       sameSite: isProd ? 'strict' : 'lax',
-      maxAge:   15 * 60 * 1000,      // 15 minutos
+      maxAge:   this.vidaDeCookieMs('JWT_ACCESS_EXPIRY', 900),
       path:     '/',
       domain,                         // SSO cross-subdominio si COOKIE_DOMAIN está set
     });
@@ -386,7 +421,7 @@ export class AuthController {
       httpOnly: true,
       secure:   isProd,
       sameSite: isProd ? 'strict' : 'lax',
-      maxAge:   8 * 60 * 60 * 1000,  // 8 horas
+      maxAge:   this.vidaDeCookieMs('JWT_REFRESH_EXPIRY', 28800),
       path:     '/',
       domain,
     });

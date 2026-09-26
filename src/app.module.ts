@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
-import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 
 // Infrastructure
@@ -21,6 +21,7 @@ import { RbacModule }     from './modules/rbac/rbac.module';
 
 // Common
 import { JwtGuard }             from './common/guards/jwt.guard';
+import { ThrottlerPorSesionGuard } from './common/guards/throttler-por-sesion.guard';
 import { HttpExceptionFilter }  from './common/filters/http-exception.filter';
 import { LoggingInterceptor }   from './common/interceptors/logging.interceptor';
 
@@ -77,10 +78,12 @@ import configuration from './config/configuration';
       useClass: JwtGuard,
     },
 
-    // ThrottlerGuard global — rate limiting por IP en todas las rutas
+    // Rate limiting global — por sesión cuando la petición trae una, por IP
+    // cuando no. El refresco de FormNext lo hace su servidor, no el navegador,
+    // así que contar por IP metía a todos los usuarios en el mismo cubo.
     {
       provide:  APP_GUARD,
-      useClass: ThrottlerGuard,
+      useClass: ThrottlerPorSesionGuard,
     },
 
     // Filtro de excepciones global — respuestas de error consistentes

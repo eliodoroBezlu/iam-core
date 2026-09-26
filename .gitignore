@@ -31,3 +31,6 @@ Thumbs.db
 
 # Tests
 coverage/
+
+# Planes y credenciales generados por los scripts — datos personales, nunca al repositorio
+scripts/salida/
