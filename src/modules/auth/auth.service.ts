@@ -41,7 +41,14 @@ export interface Login2FARequired {
   message:     string;
 }
 
-export type LoginResponse = LoginSuccess | Login2FARequired;
+/** La contraseña actual es provisional: hay que elegir una propia antes de entrar. */
+export interface LoginCambioClaveRequerido {
+  requiresPasswordChange: true;
+  tempToken:              string;
+  message:                string;
+}
+
+export type LoginResponse = LoginSuccess | Login2FARequired | LoginCambioClaveRequerido;
 
 // ──────────────────────────────────────────────────────────────────
 
@@ -67,12 +74,22 @@ export class AuthService {
     userAgent: string,
     ip:        string,
   ): Promise<LoginResponse> {
-    // Si tiene 2FA activo → devolver token temporal y esperar segundo factor
     const fullUser = await this.prisma.user.findUnique({
       where:  { id: user.id },
-      select: { totpEnabled: true },
+      select: { totpEnabled: true, mustChangePassword: true },
     });
 
+    // Contraseña provisional (la fijó un admin o se invalidó): antes de cualquier
+    // sesión, elegir una propia. El 2FA, si lo tiene, se pide después.
+    if (fullUser?.mustChangePassword) {
+      return {
+        requiresPasswordChange: true,
+        tempToken: this.token.signTempToken(user.id, 'cambio_clave'),
+        message:   'Debes elegir una contraseña nueva para continuar',
+      };
+    }
+
+    // Si tiene 2FA activo → devolver token temporal y esperar segundo factor
     if (fullUser?.totpEnabled) {
       const tempToken = this.token.signTempToken(user.id);
 
@@ -113,6 +130,64 @@ export class AuthService {
     }
 
     const user = await this.users.findById(found.id);
+    return this.issueTokenPair(user, userAgent, ip);
+  }
+
+  // ────────────────────────────────────────────────────────────────
+  // LOGIN — Cambio de contraseña obligatorio
+  // ────────────────────────────────────────────────────────────────
+
+  /**
+   * Completa el login de una cuenta con contraseña provisional: fija la nueva,
+   * quita la marca y sigue como un login normal (pide 2FA si lo tiene).
+   */
+  async completarCambioClave(
+    tempToken:   string,
+    newPassword: string,
+    userAgent:   string,
+    ip:          string,
+  ): Promise<LoginSuccess | Login2FARequired> {
+    let payload: { sub: string; type: string };
+    try {
+      payload = this.token.verifyTempToken(tempToken);
+    } catch {
+      throw new UnauthorizedException('El paso expiró: inicia sesión de nuevo');
+    }
+    if (payload.type !== 'cambio_clave') {
+      throw new UnauthorizedException('Token temporal inválido');
+    }
+
+    const actual = await this.prisma.user.findUnique({
+      where:  { id: payload.sub },
+      select: { mustChangePassword: true, passwordHash: true, totpEnabled: true, isActive: true },
+    });
+    if (!actual?.isActive) throw new UnauthorizedException('Cuenta no disponible');
+    if (!actual.mustChangePassword) {
+      throw new BadRequestException('Esta cuenta ya no necesita cambiar la contraseña: inicia sesión');
+    }
+    // La provisional pudo circular (CSV, mensaje): la nueva tiene que ser otra.
+    if (await this.users.esSuClaveActual(actual.passwordHash, newPassword)) {
+      throw new BadRequestException('La contraseña nueva debe ser distinta de la provisional');
+    }
+
+    await this.users.changePassword(payload.sub, { newPassword }, true);
+
+    await this.audit.log({
+      userId:    payload.sub,
+      event:     AuditEvent.PASSWORD_CHANGED,
+      ipAddress: ip,
+      userAgent,
+      metadata:  { motivo: 'cambio_obligatorio' },
+    });
+
+    if (actual.totpEnabled) {
+      return {
+        requires2FA: true,
+        tempToken:   this.token.signTempToken(payload.sub, '2fa_pending'),
+        message:     'Ingrese el código de autenticación de dos factores',
+      };
+    }
+    const user = await this.users.findById(payload.sub);
     return this.issueTokenPair(user, userAgent, ip);
   }
 
@@ -159,6 +234,15 @@ export class AuthService {
       ipAddress: ip,
       userAgent,
     });
+
+    // Un admin pudo resetear la contraseña entre el primer y el segundo paso.
+    const marca = await this.prisma.user.findUnique({
+      where:  { id: userId },
+      select: { mustChangePassword: true },
+    });
+    if (marca?.mustChangePassword) {
+      throw new UnauthorizedException('Tu contraseña cambió: inicia sesión de nuevo');
+    }
 
     const user = await this.users.findById(userId);
     return this.issueTokenPair(user, userAgent, ip);

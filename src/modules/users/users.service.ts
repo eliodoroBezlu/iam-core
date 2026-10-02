@@ -156,10 +156,17 @@ export class UsersService {
     return this.toSafe(user);
   }
 
+  /**
+   * @param isAdmin     no pide la contraseña actual.
+   * @param provisional la nueva contraseña la eligió otro (reset de admin): el
+   *                    dueño tendrá que cambiarla al entrar. Cualquier cambio no
+   *                    provisional quita esa obligación.
+   */
   async changePassword(
     userId: string,
     dto: ChangePasswordDto,
     isAdmin = false,
+    provisional = false,
   ): Promise<void> {
     const user = await this.prisma.user.findUnique({ where: { id: userId } });
     if (!user) throw new NotFoundException('Usuario no encontrado');
@@ -180,10 +187,17 @@ export class UsersService {
 
     await this.prisma.user.update({
       where: { id: userId },
-      data:  { passwordHash: newHash },
+      data:  { passwordHash: newHash, mustChangePassword: provisional },
     });
 
     this.logger.log(`Contraseña cambiada para usuario [${userId}]`);
+  }
+
+  /** ¿`password` es la contraseña que guarda `storedHash`? (bcrypt o legacy de Sync) */
+  async esSuClaveActual(storedHash: string, password: string): Promise<boolean> {
+    return storedHash.startsWith(LEGACY_SYNC_PREFIX)
+      ? this.verifyLegacySync(password, storedHash)
+      : bcrypt.compare(password, storedHash);
   }
 
   // ────────────────────────────────────────────────────────────────

@@ -128,7 +128,7 @@ export class OidcService {
       try {
         const claims = this.token.verifyAccessToken(accessToken);
         const user   = await this.users.findById(claims.sub);
-        if (user.isActive) {
+        if (user.isActive && !user.mustChangePassword) {
           return { user, authTime: claims.iat };
         }
       } catch {
@@ -140,6 +140,8 @@ export class OidcService {
       try {
         const session = await this.sessions.findValidSession(refreshToken);
         const user    = await this.users.findById(session.userId);
+        // Contraseña provisional: sin SSO hasta que elija una propia.
+        if (user.mustChangePassword) return null;
         return { user, authTime: Math.floor(Date.now() / 1000) };
       } catch {
         // refresh inválido → no hay sesión

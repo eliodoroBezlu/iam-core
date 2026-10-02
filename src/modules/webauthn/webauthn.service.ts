@@ -226,6 +226,11 @@ export class WebAuthnService {
 
     if (!storedCred) throw new UnauthorizedException('Credencial no encontrada');
     if (!storedCred.user.isActive) throw new UnauthorizedException('Usuario desactivado');
+    // Una llave pudo registrarse con la contraseña que hay que reemplazar:
+    // primero se elige una propia (login con contraseña), después vale la llave.
+    if (storedCred.user.mustChangePassword) {
+      throw new UnauthorizedException('Debes cambiar tu contraseña: entra con usuario y contraseña');
+    }
 
     let verification: VerifiedAuthenticationResponse;
     try {

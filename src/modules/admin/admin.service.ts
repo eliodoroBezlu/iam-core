@@ -56,12 +56,15 @@ export class AdminService {
   }
 
   async resetPassword(userId: string, dto: ChangePasswordDto, actorId: string) {
-    await this.users.changePassword(userId, dto, true); // isAdmin = true → sin verificar password actual
+    // Sin pedir la actual y como provisional: el admin la conoce, así que el
+    // dueño debe elegir otra al entrar. Las sesiones abiertas se cierran.
+    await this.users.changePassword(userId, dto, true, true);
+    await this.sessions.revokeAll(userId);
 
     await this.audit.log({
       userId:   actorId,
       event:    AuditEvent.PASSWORD_CHANGED,
-      metadata: { targetUserId: userId, byAdmin: true },
+      metadata: { targetUserId: userId, byAdmin: true, provisional: true },
     });
   }
 
