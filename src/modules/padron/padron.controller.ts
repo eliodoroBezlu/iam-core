@@ -7,7 +7,7 @@ import { ApiTags, ApiOperation, ApiHeader } from '@nestjs/swagger';
 import type { Request, Response } from 'express';
 import { Public } from '../../common/decorators/public.decorator';
 import { ApiKeyGuard } from '../../common/guards/api-key.guard';
-import { CreateTrabajadorDto } from '../admin/dto/create-trabajador.dto';
+import { CrearTrabajadorServicioDto } from './crear-trabajador-servicio.dto';
 import { UpdateTrabajadorDto } from '../admin/dto/update-trabajador.dto';
 import { PadronService, ContextoServicio } from './padron.service';
 import { CompletarTrabajadorDto } from './completar-trabajador.dto';
@@ -32,7 +32,7 @@ export class PadronController {
     summary: 'Alta de trabajador desde un servicio (idempotente por CI/JDE) — service-to-service',
   })
   async crear(
-    @Body() dto: CreateTrabajadorDto,
+    @Body() dto: CrearTrabajadorServicioDto,
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response,
   ) {

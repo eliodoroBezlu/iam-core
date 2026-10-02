@@ -8,6 +8,8 @@
  * Reglas:
  *  - Alta idempotente: si ya existe alguien con el mismo CI o JDE, se devuelve
  *    ese trabajador (creado: false) en lugar de duplicarlo.
+ *  - Alta para una cuenta (userId): si la cuenta ya tiene ficha se devuelve
+ *    esa; si no, la ficha nace vinculada a la cuenta.
  *  - Los servicios solo editan trabajadores SIN cuenta del IAM. Los que tienen
  *    cuenta se gestionan en el IAM Portal, igual que en la UI de los servicios.
  *  - Cualquier ficha (con o sin cuenta) se puede COMPLETAR: solo se escriben
@@ -18,7 +20,7 @@ import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 import { AuditService } from '../audit/audit.service';
 import { AuditEvent } from '../../common/enums/audit-event.enum';
 import { derivarDeArea } from '../../common/utils/area.util';
-import { CreateTrabajadorDto } from '../admin/dto/create-trabajador.dto';
+import { CrearTrabajadorServicioDto } from './crear-trabajador-servicio.dto';
 import { UpdateTrabajadorDto } from '../admin/dto/update-trabajador.dto';
 import { CompletarTrabajadorDto } from './completar-trabajador.dto';
 import { aTrabajadorPublico, INCLUDE_USUARIO, TrabajadorPublico } from './padron.mapper';
@@ -37,11 +39,34 @@ export class PadronService {
   ) {}
 
   async crear(
-    dto: CreateTrabajadorDto,
+    dto: CrearTrabajadorServicioDto,
     ctx: ContextoServicio,
   ): Promise<{ trabajador: TrabajadorPublico; creado: boolean }> {
+    if (dto.userId) {
+      const cuenta = await this.prisma.user.findUnique({
+        where:  { id: dto.userId },
+        select: { id: true, trabajador: { include: INCLUDE_USUARIO } },
+      });
+      if (!cuenta) throw new NotFoundException('La cuenta indicada no existe en el IAM');
+      if (cuenta.trabajador) return { trabajador: aTrabajadorPublico(cuenta.trabajador), creado: false };
+    }
+
     const existente = await this.buscarExistente(dto);
-    if (existente) return { trabajador: aTrabajadorPublico(existente), creado: false };
+    if (existente) {
+      // La misma persona por CI/JDE: si está libre, se vincula a la cuenta
+      if (dto.userId && !existente.userId) {
+        const vinculado = await this.prisma.trabajador.update({
+          where: { id: existente.id },
+          data:  { userId: dto.userId, tieneAccesoSistema: true },
+          include: INCLUDE_USUARIO,
+        });
+        await this.auditar(AuditEvent.USER_UPDATED, ctx, {
+          accion: 'trabajador_vinculado_por_servicio', trabajadorId: existente.id, userId: dto.userId,
+        });
+        return { trabajador: aTrabajadorPublico(vinculado), creado: false };
+      }
+      return { trabajador: aTrabajadorPublico(existente), creado: false };
+    }
 
     const derived = await derivarDeArea(this.prisma, dto.areaCodigo);
     const t = await this.prisma.trabajador.create({
@@ -60,12 +85,14 @@ export class PadronService {
         noHabitacion:     dto.noHabitacion ?? null,
         residencia:       dto.residencia   ?? null,
         celular:          dto.celular      ?? null,
+        ...(dto.userId ? { userId: dto.userId, tieneAccesoSistema: true } : {}),
       },
       include: INCLUDE_USUARIO,
     });
 
     await this.auditar(AuditEvent.USER_CREATED, ctx, {
       accion: 'trabajador_creado_por_servicio', trabajadorId: t.id, nomina: t.nomina,
+      ...(dto.userId ? { userId: dto.userId } : {}),
     });
     return { trabajador: aTrabajadorPublico(t), creado: true };
   }
@@ -158,7 +185,7 @@ export class PadronService {
   }
 
   /** Mismo CI (único) o, si no hay CI, mismo JDE. Sin ninguno de los dos no se deduplica. */
-  private async buscarExistente(dto: CreateTrabajadorDto) {
+  private async buscarExistente(dto: CrearTrabajadorServicioDto) {
     if (dto.ci) {
       const porCi = await this.prisma.trabajador.findUnique({
         where: { ci: dto.ci }, include: INCLUDE_USUARIO,
