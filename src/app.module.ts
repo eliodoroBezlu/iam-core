@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { pideLimiteStrict } from './common/utils/throttle.util';
 import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 
 // Infrastructure
@@ -53,6 +54,11 @@ import configuration from './config/configuration';
         name:  'strict',
         ttl:   300_000,  // ventana 5 minutos
         limit: 10,       // 10 req/5min por IP — endpoints de auth sensibles
+        // Solo donde se pide con @Throttle({ strict: … }). En throttler v6 cada
+        // limitador con nombre corre en TODAS las rutas: sin esto, /oidc/userinfo
+        // (que el servidor de cada servicio llama en cada login, contado por su
+        // IP) cortaba a todos los usuarios en el 11.º login de cada 5 minutos.
+        skipIf: (ctx) => !pideLimiteStrict(ctx),
       },
     ]),
 
