@@ -34,3 +34,8 @@ coverage/
 
 # Planes y credenciales generados por los scripts — datos personales, nunca al repositorio
 scripts/salida/
+
+# Exports de usuarios (emails, hashes de contraseña) que leen los scripts de
+# migración — datos personales, nunca al repositorio. scripts/sync-export.json
+# llegó a publicarse con 53 hashes y hubo que purgarlo del historial.
+scripts/*.json
