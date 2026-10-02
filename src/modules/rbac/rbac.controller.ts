@@ -107,6 +107,8 @@ export class RbacController {
         serviceRoles: acceso.roles,
         trabajador: acceso.user.trabajador
           ? {
+              // id: clave estable de la persona (el CI puede faltar o corregirse)
+              id: acceso.user.trabajador.id,
               ci: acceso.user.trabajador.ci,
               nomina: acceso.user.trabajador.nomina,
               puesto: acceso.user.trabajador.puesto,
