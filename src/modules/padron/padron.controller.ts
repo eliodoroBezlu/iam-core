@@ -1,5 +1,6 @@
 import {
   Controller, Post, Patch, Body, Param, Req, Res, ParseUUIDPipe, UseGuards,
+  HttpCode, HttpStatus,
 } from '@nestjs/common';
 import { SkipThrottle } from '@nestjs/throttler';
 import { ApiTags, ApiOperation, ApiHeader } from '@nestjs/swagger';
@@ -9,6 +10,7 @@ import { ApiKeyGuard } from '../../common/guards/api-key.guard';
 import { CreateTrabajadorDto } from '../admin/dto/create-trabajador.dto';
 import { UpdateTrabajadorDto } from '../admin/dto/update-trabajador.dto';
 import { PadronService, ContextoServicio } from './padron.service';
+import { CompletarTrabajadorDto } from './completar-trabajador.dto';
 import { ServicioEscribePadronGuard } from './servicio-escribe-padron.guard';
 
 @ApiTags('padron')
@@ -49,6 +51,19 @@ export class PadronController {
     @Req() req: Request,
   ) {
     return this.padron.actualizar(id, dto, this.contexto(req));
+  }
+
+  @Post(':id/completar')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({
+    summary: 'Rellena solo los campos vacíos de una ficha (con o sin cuenta) — service-to-service',
+  })
+  async completar(
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() dto: CompletarTrabajadorDto,
+    @Req() req: Request,
+  ) {
+    return this.padron.completar(id, dto, this.contexto(req));
   }
 
   /** Servicio (ya validado por los guards) y usuario que origina la acción, si lo informa. */

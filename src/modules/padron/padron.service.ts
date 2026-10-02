@@ -10,6 +10,8 @@
  *    ese trabajador (creado: false) en lugar de duplicarlo.
  *  - Los servicios solo editan trabajadores SIN cuenta del IAM. Los que tienen
  *    cuenta se gestionan en el IAM Portal, igual que en la UI de los servicios.
+ *  - Cualquier ficha (con o sin cuenta) se puede COMPLETAR: solo se escriben
+ *    los campos vacíos, nunca se pisa un dato del IAM.
  */
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../../infrastructure/prisma/prisma.service';
@@ -18,6 +20,7 @@ import { AuditEvent } from '../../common/enums/audit-event.enum';
 import { derivarDeArea } from '../../common/utils/area.util';
 import { CreateTrabajadorDto } from '../admin/dto/create-trabajador.dto';
 import { UpdateTrabajadorDto } from '../admin/dto/update-trabajador.dto';
+import { CompletarTrabajadorDto } from './completar-trabajador.dto';
 import { aTrabajadorPublico, INCLUDE_USUARIO, TrabajadorPublico } from './padron.mapper';
 
 /** Quién pide el cambio: el servicio (por su API key) y, si lo informa, su usuario. */
@@ -106,6 +109,52 @@ export class PadronService {
       accion: 'trabajador_actualizado_por_servicio', trabajadorId: id, cambios: { ...dto },
     });
     return { trabajador: aTrabajadorPublico(t) };
+  }
+
+  /**
+   * Rellena los campos vacíos de la ficha con lo que sabe el servicio. Un JDE
+   * que ya usa otra ficha no se copia (sería un duplicado) y se informa.
+   */
+  async completar(
+    id: string,
+    dto: CompletarTrabajadorDto,
+    ctx: ContextoServicio,
+  ): Promise<{ trabajador: TrabajadorPublico; completados: string[]; omitidos: string[] }> {
+    const actual = await this.prisma.trabajador.findUnique({ where: { id } });
+    if (!actual) throw new NotFoundException('Trabajador no encontrado');
+
+    const vacio = (v: string | null) => v === null || v.trim() === '';
+    const lleno = (v: string | undefined): v is string => v !== undefined && v.trim() !== '';
+    const data: Record<string, string> = {};
+    const omitidos: string[] = [];
+
+    if (lleno(dto.disciplina) && vacio(actual.disciplina)) data.disciplina = dto.disciplina.trim();
+    if (lleno(dto.celular)    && vacio(actual.celular))    data.celular    = dto.celular.trim();
+    if (lleno(dto.jde) && vacio(actual.jde)) {
+      const jde = dto.jde.trim();
+      const otro = await this.prisma.trabajador.findFirst({
+        where: { jde, NOT: { id } }, select: { nomina: true },
+      });
+      if (otro) omitidos.push(`jde: ${jde} ya es de "${otro.nomina}"`);
+      else data.jde = jde;
+    }
+    if (lleno(dto.areaCodigo) && vacio(actual.areaCodigo)) {
+      const d = await derivarDeArea(this.prisma, dto.areaCodigo.trim());
+      Object.assign(data, d);
+    }
+
+    const completados = Object.keys(data).filter((k) => k !== 'area' && k !== 'superintendencia');
+    const t = completados.length
+      ? await this.prisma.trabajador.update({ where: { id }, data, include: INCLUDE_USUARIO })
+      : await this.prisma.trabajador.findUniqueOrThrow({ where: { id }, include: INCLUDE_USUARIO });
+
+    if (completados.length) {
+      await this.auditar(AuditEvent.USER_UPDATED, ctx, {
+        accion: 'trabajador_completado_por_servicio', trabajadorId: id,
+        completados: Object.fromEntries(completados.map((k) => [k, data[k]])),
+      });
+    }
+    return { trabajador: aTrabajadorPublico(t), completados, omitidos };
   }
 
   /** Mismo CI (único) o, si no hay CI, mismo JDE. Sin ninguno de los dos no se deduplica. */
