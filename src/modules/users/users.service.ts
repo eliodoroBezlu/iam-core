@@ -96,6 +96,8 @@ export class UsersService {
     search?:   string;
     isActive?: boolean;
     role?:     string;
+    /** Solo cuentas sin ficha de trabajador (para vincularlas a una). */
+    sinFicha?: boolean;
   }): Promise<{ data: SafeUser[]; meta: any }> {
     const page  = params.page  ?? 1;
     const limit = params.limit ?? 20;
@@ -104,6 +106,7 @@ export class UsersService {
     const where: any = {};
     if (params.isActive !== undefined) where.isActive = params.isActive;
     if (params.role)    where.roles = { has: params.role };
+    if (params.sinFicha) where.trabajador = { is: null };
     if (params.search) {
       where.OR = [
         { username: { contains: params.search, mode: 'insensitive' } },

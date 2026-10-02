@@ -1,5 +1,5 @@
 import {
-  IsString, IsEmail, IsOptional, IsArray, IsBoolean,
+  IsString, IsEmail, IsOptional, IsArray, IsBoolean, IsUUID,
   MinLength, MaxLength, Matches,
 } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
@@ -44,4 +44,11 @@ export class AssignUserToTrabajadorDto {
   @IsOptional()
   @IsBoolean()
   grantFormsAccess?: boolean;
+}
+
+/** Vincula una cuenta que ya existe (creada antes de tener ficha) a un trabajador. */
+export class LinkUserToTrabajadorDto {
+  @ApiProperty({ example: '6f1c…' })
+  @IsUUID()
+  userId: string;
 }

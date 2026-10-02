@@ -481,6 +481,43 @@ export class AdminService {
     return { trabajador: updated, user: newUser };
   }
 
+  /**
+   * Vincula una cuenta existente a una ficha. Para cuentas creadas antes de
+   * tener ficha (o desvinculadas por error): no crea nada, solo une ambas.
+   */
+  async linkUserToTrabajador(trabajadorId: string, userId: string, actorId: string) {
+    const trabajador = await this.prisma.trabajador.findUnique({ where: { id: trabajadorId } });
+    if (!trabajador) throw new NotFoundException('Trabajador no encontrado');
+    if (trabajador.userId) {
+      throw new ConflictException('El trabajador ya tiene un usuario vinculado');
+    }
+
+    const user = await this.prisma.user.findUnique({
+      where:  { id: userId },
+      select: { id: true, username: true, trabajador: { select: { id: true, nomina: true } } },
+    });
+    if (!user) throw new NotFoundException('Usuario no encontrado');
+    if (user.trabajador) {
+      throw new ConflictException(
+        `@${user.username} ya está vinculado a ${user.trabajador.nomina}: desvincúlalo primero`,
+      );
+    }
+
+    const updated = await this.prisma.trabajador.update({
+      where:   { id: trabajadorId },
+      data:    { userId, tieneAccesoSistema: true },
+      include: { user: { select: { id: true, username: true, fullName: true } } },
+    });
+
+    await this.audit.log({
+      userId:   actorId,
+      event:    AuditEvent.USER_UPDATED,
+      metadata: { trabajadorId, linkedUserId: userId, action: 'link_user' },
+    });
+
+    return updated;
+  }
+
   async unlinkUserFromTrabajador(trabajadorId: string, actorId: string) {
     const trabajador = await this.prisma.trabajador.findUnique({
       where: { id: trabajadorId },

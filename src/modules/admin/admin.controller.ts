@@ -14,7 +14,7 @@ import { UpdateUserDto, ChangePasswordDto }  from '../users/dto/update-user.dto'
 import { CreateServiceDto }     from './dto/create-service.dto';
 import { UpdateServiceDto }     from './dto/update-service.dto';
 import { GrantServiceAccessDto } from './dto/grant-access.dto';
-import { AssignUserToTrabajadorDto } from './dto/assign-user.dto';
+import { AssignUserToTrabajadorDto, LinkUserToTrabajadorDto } from './dto/assign-user.dto';
 import { UpdateTrabajadorDto } from './dto/update-trabajador.dto';
 import { CreateTrabajadorDto } from './dto/create-trabajador.dto';
 import {
@@ -42,8 +42,11 @@ export class AdminController {
     @Query('search')   search?: string,
     @Query('isActive') isActive?: boolean,
     @Query('role')     role?: string,
+    @Query('sinFicha') sinFicha?: string,
   ) {
-    return this.adminService.listUsers({ page, limit, search, isActive, role });
+    return this.adminService.listUsers({
+      page, limit, search, isActive, role, sinFicha: sinFicha === 'true',
+    });
   }
 
   @Get('users/:userId')
@@ -325,6 +328,17 @@ export class AdminController {
     @CurrentUser('id') actorId: string,
   ) {
     return this.adminService.assignUserToTrabajador(trabajadorId, dto, actorId);
+  }
+
+  @Post('trabajadores/:trabajadorId/link-user')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Vincula una cuenta IAM existente (sin ficha) al trabajador' })
+  async linkUserToTrabajador(
+    @Param('trabajadorId') trabajadorId: string,
+    @Body() dto: LinkUserToTrabajadorDto,
+    @CurrentUser('id') actorId: string,
+  ) {
+    return this.adminService.linkUserToTrabajador(trabajadorId, dto.userId, actorId);
   }
 
   @Delete('trabajadores/:trabajadorId/unlink-user')
