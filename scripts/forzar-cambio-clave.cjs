@@ -18,8 +18,10 @@
  * Idempotente: salta las cuentas que ya tienen la marca, para que re-ejecutar
  * no invalide temporales ya entregadas. --incluir-marcadas las regenera.
  *
- * Uso (desde iam-core; la DB sale del .env de este proyecto):
- *   node scripts/forzar-cambio-clave.cjs [lista.json] [--dry] [--incluir-marcadas]
+ * Uso (desde iam-core):
+ *   node scripts/forzar-cambio-clave.cjs [lista.json] [--dry] [--incluir-marcadas] [--env=archivo]
+ *   --env: archivo con la DATABASE_URL a usar (por defecto el .env de iam-core).
+ *          Para producción, un archivo aparte fuera del repo.
  *   lista.json: { afectados: [{ email, nombre }] }
  *               (por defecto scripts/salida/afectados-filtracion-sync-export.json)
  */
@@ -27,13 +29,18 @@ const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
 
-// La DB del IAM, aunque la terminal tenga exportada la de otro servicio.
-require("dotenv").config({ path: path.join(__dirname, "..", ".env"), override: true });
+const args = process.argv.slice(2);
+
+// La DB sale SIEMPRE de un archivo (.env de iam-core, o el de --env=): una
+// DATABASE_URL exportada en la terminal (p. ej. la de Sync) no debe colarse.
+const envArg = args.find((a) => a.startsWith("--env="));
+const ENV_FILE = envArg ? path.resolve(envArg.slice("--env=".length)) : path.join(__dirname, "..", ".env");
+if (!fs.existsSync(ENV_FILE)) throw new Error(`No existe ${ENV_FILE}`);
+require("dotenv").config({ path: ENV_FILE, override: true });
 
 const { PrismaClient } = require("@prisma/client");
 const bcrypt = require("bcrypt");
 
-const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
 const INCLUIR_MARCADAS = args.includes("--incluir-marcadas");
 const LISTA =
