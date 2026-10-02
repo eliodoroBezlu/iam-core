@@ -272,7 +272,10 @@ model Trabajador {
   id String @id @default(uuid())
 
   // Identidad laboral
-  ci               String  @unique // Cédula de identidad
+  // Cédula de identidad. Opcional: contratistas y personal temporal dados de
+  // alta desde los servicios (ej. sync-msc) pueden no tenerla. Sigue siendo
+  // única cuando existe (Postgres admite varios NULL en un índice único).
+  ci               String? @unique
   nomina           String // Nombre completo (Apellido Nombre)
   puesto           String // Cargo / puesto
   superintendencia String // Nombre denormalizado (display) — se deriva del área

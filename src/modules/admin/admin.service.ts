@@ -18,6 +18,7 @@ import { CreateTrabajadorDto } from './dto/create-trabajador.dto';
 import { Role } from '../../common/enums/role.enum';
 import { RoleCatalogService } from '../../common/services/role-catalog.service';
 import { createHash, randomBytes }  from 'crypto';
+import { derivarDeArea } from '../../common/utils/area.util';
 
 @Injectable()
 export class AdminService {
@@ -344,24 +345,17 @@ export class AdminService {
    * Si se envía areaCodigo, deriva los campos denormalizados (area, superintendencia)
    * desde el catálogo maestro. Devuelve los overrides a aplicar.
    */
-  private async deriveFromArea(areaCodigo?: string): Promise<{
-    areaCodigo?: string; area?: string; superintendencia?: string;
-  }> {
-    if (!areaCodigo) return {};
-    const area = await this.prisma.area.findUnique({ where: { codigo: areaCodigo } });
-    if (!area) throw new BadRequestException(`Área '${areaCodigo}' no existe en el catálogo`);
-    return { areaCodigo: area.codigo, area: area.nombre, superintendencia: area.superintendencia };
-  }
-
   async createTrabajador(dto: CreateTrabajadorDto, actorId: string) {
-    const existing = await this.prisma.trabajador.findUnique({ where: { ci: dto.ci } });
-    if (existing) throw new ConflictException(`Ya existe un trabajador con CI '${dto.ci}'`);
+    if (dto.ci) {
+      const existing = await this.prisma.trabajador.findUnique({ where: { ci: dto.ci } });
+      if (existing) throw new ConflictException(`Ya existe un trabajador con CI '${dto.ci}'`);
+    }
 
-    const derived = await this.deriveFromArea(dto.areaCodigo);
+    const derived = await derivarDeArea(this.prisma, dto.areaCodigo);
 
     const trabajador = await this.prisma.trabajador.create({
       data: {
-        ci:               dto.ci,
+        ci:               dto.ci ?? null,
         nomina:           dto.nomina,
         puesto:           dto.puesto,
         superintendencia: derived.superintendencia ?? dto.superintendencia ?? '',
@@ -391,7 +385,7 @@ export class AdminService {
     const t = await this.prisma.trabajador.findUnique({ where: { id } });
     if (!t) throw new NotFoundException('Trabajador no encontrado');
 
-    const derived = await this.deriveFromArea(dto.areaCodigo);
+    const derived = await derivarDeArea(this.prisma, dto.areaCodigo);
 
     const updated = await this.prisma.trabajador.update({
       where: { id },

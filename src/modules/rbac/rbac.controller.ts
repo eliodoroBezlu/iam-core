@@ -11,6 +11,7 @@ import { ApiTags, ApiOperation, ApiHeader } from '@nestjs/swagger';
 import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 import { Public } from '../../common/decorators/public.decorator';
 import { ApiKeyGuard } from '../../common/guards/api-key.guard';
+import { aTrabajadorPublico, INCLUDE_USUARIO } from '../padron/padron.mapper';
 
 /**
  * Endpoint público de solo lectura del RBAC de un servicio.
@@ -124,7 +125,9 @@ export class RbacController {
   @Get('trabajadores')
   @Public()
   @UseGuards(ApiKeyGuard)
-  @SkipThrottle()
+  // Servicio-a-servicio con API key: no limitar por la IP del servidor que llama.
+  // Hay que nombrar `strict` también; `@SkipThrottle()` a secas solo exime `default`.
+  @SkipThrottle({ default: true, strict: true })
   @ApiHeader({ name: 'X-Api-Key', required: true })
   @ApiOperation({
     summary:
@@ -134,48 +137,11 @@ export class RbacController {
     const trabajadores = await this.prisma.trabajador.findMany({
       where: activo === undefined ? {} : { activo: activo !== 'false' },
       orderBy: { nomina: 'asc' },
-      select: {
-        ci: true,
-        nomina: true,
-        puesto: true,
-        superintendencia: true,
-        area: true,
-        areaCodigo: true,
-        jde: true,
-        disciplina: true,
-        esContratista: true,
-        celular: true,
-        residencia: true,
-        noBloque: true,
-        noHabitacion: true,
-        fechaIngreso: true,
-        tieneAccesoSistema: true,
-        activo: true,
-        user: { select: { username: true } },
-      },
+      include: INCLUDE_USUARIO,
     });
-
-    return {
-      trabajadores: trabajadores.map((t) => ({
-        ci: t.ci,
-        nomina: t.nomina,
-        puesto: t.puesto,
-        superintendencia: t.superintendencia,
-        area: t.area,
-        areaCodigo: t.areaCodigo,
-        jde: t.jde,
-        disciplina: t.disciplina,
-        esContratista: t.esContratista,
-        celular: t.celular,
-        residencia: t.residencia,
-        noBloque: t.noBloque,
-        noHabitacion: t.noHabitacion,
-        fechaIngreso: t.fechaIngreso,
-        tieneAccesoSistema: t.tieneAccesoSistema,
-        activo: t.activo,
-        username: t.user?.username ?? null,
-      })),
-    };
+    // Mismo formato que las altas/ediciones de /rbac/trabajadores (padrón):
+    // incluye `id` (clave estable para los servicios) y `userId`.
+    return { trabajadores: trabajadores.map(aTrabajadorPublico) };
   }
 
   @Get(':serviceKey')

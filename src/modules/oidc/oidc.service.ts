@@ -401,7 +401,9 @@ export class OidcService {
     });
     const trabajador = trab
       ? {
-          ci:               trab.ci,
+          // Clave estable para que los servicios enlacen su copia local de la persona
+          id:               trab.id,
+          ci:               trab.ci ?? undefined,
           jde:              trab.jde ?? undefined,
           nomina:           trab.nomina,
           puesto:           trab.puesto,
