@@ -5,12 +5,15 @@ import {
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateTrabajadorDto {
-  @ApiProperty({ example: '7654321' })
+  // Opcional: contratistas y personal temporal pueden no tener CI. Si viene,
+  // debe ser válido y único.
+  @ApiPropertyOptional({ example: '7654321' })
+  @IsOptional()
   @IsString()
   @MinLength(5)
   @MaxLength(12)
   @Matches(/^[0-9A-Za-z-]+$/, { message: 'CI inválido' })
-  ci: string;
+  ci?: string;
 
   @ApiProperty({ example: 'GOMEZ JUAN' })
   @IsString()
