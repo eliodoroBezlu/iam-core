@@ -46,6 +46,9 @@ export interface AccessTokenClaims {
   exp: number;
 }
 
+/** Propósito del token temporal entre pasos del login. */
+export type TipoTokenTemporal = '2fa_pending' | 'cambio_clave';
+
 @Injectable()
 export class TokenService {
   private readonly logger = new Logger(TokenService.name);
@@ -191,14 +194,16 @@ export class TokenService {
   }
 
   /**
-   * Token temporal para el flujo de 2FA.
-   * Solo contiene el sub — duración 5 minutos.
+   * Token temporal entre pasos del login (sub + propósito) — duración 5 minutos.
+   *   - '2fa_pending':  falta el segundo factor.
+   *   - 'cambio_clave': falta elegir una contraseña propia (mustChangePassword).
+   * Quien lo verifica debe comprobar `type`: uno no sirve por el otro.
    */
-  signTempToken(userId: string): string {
+  signTempToken(userId: string, type: TipoTokenTemporal = '2fa_pending'): string {
     const expiresIn = Number(this.config.get('JWT_TEMP_EXPIRY')) || 300;
 
     return this.jwtService.sign(
-      { sub: userId, type: '2fa_pending' },
+      { sub: userId, type },
       {
         privateKey: this.privateKey,
         algorithm:  'RS256',

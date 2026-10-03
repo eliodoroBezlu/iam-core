@@ -33,6 +33,11 @@ model User {
   isActive Boolean @default(true)
   isAdmin  Boolean @default(false) // Acceso al Admin Console del IAM
 
+  // Debe elegir una contraseña propia antes de usar el sistema: la actual la
+  // fijó un administrador o se invalidó (p. ej. por una filtración). Mientras
+  // esté activa no se emiten sesiones: ni por passkey ni por SSO de servicios.
+  mustChangePassword Boolean @default(false)
+
   // Roles del sistema — compatible con Role enum del forms service
   // String[] para no acoplar el IAM a un enum rígido de Postgres
   // Valores: 'user' | 'admin' | 'moderator' | 'super_admin' |

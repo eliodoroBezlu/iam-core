@@ -18,6 +18,7 @@ import { ApiKeyGuard, SkipApiKey } from '../../common/guards/api-key.guard';
 import { Public }        from '../../common/decorators/public.decorator';
 import { CurrentUser }   from '../../common/decorators/current-user.decorator';
 import { LoginDto }      from './dto/login.dto';
+import { CambiarClaveLoginDto } from './dto/cambiar-clave-login.dto';
 import { Verify2faDto }  from './dto/verify-2fa.dto';
 import { Setup2faDto }   from './dto/setup-2fa.dto';
 import { CreateUserDto }                    from '../users/dto/create-user.dto';
@@ -78,18 +79,41 @@ export class AuthController {
 
     const result = await this.authService.login(user, userAgent, ip);
 
-    // Si requiere 2FA → no setear cookies todavía
-    if ('requires2FA' in result && result.requires2FA) {
-      return {
-        requires2FA: true,
-        tempToken:   result.tempToken,
-        message:     result.message,
-      };
+    // Paso intermedio (contraseña provisional o 2FA) → sin cookies todavía
+    if ('requiresPasswordChange' in result || 'requires2FA' in result) {
+      return result;
     }
 
-    const success = result as any;
-    this.setTokenCookies(res, success.accessToken, success.refreshToken);
-    return { user: success.user };
+    this.setTokenCookies(res, result.accessToken, result.refreshToken);
+    return { user: result.user };
+  }
+
+  // ────────────────────────────────────────────────────────────────
+  // LOGIN — Cambio de contraseña obligatorio
+  // ────────────────────────────────────────────────────────────────
+
+  @Post('login/cambiar-clave')
+  @Public()
+  @SkipApiKey()
+  @HttpCode(HttpStatus.OK)
+  @Throttle({ strict: { limit: 10, ttl: 300_000 } })
+  @ApiOperation({ summary: 'Elige una contraseña propia cuando la actual es provisional (requiere tempToken)' })
+  async cambiarClaveEnLogin(
+    @Body() dto: CambiarClaveLoginDto,
+    @Req() req: any,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const result = await this.authService.completarCambioClave(
+      dto.tempToken,
+      dto.newPassword,
+      this.getUserAgent(req),
+      this.getIp(req),
+    );
+
+    if ('requires2FA' in result) return result;
+
+    this.setTokenCookies(res, result.accessToken, result.refreshToken);
+    return { user: result.user };
   }
 
   // ────────────────────────────────────────────────────────────────
