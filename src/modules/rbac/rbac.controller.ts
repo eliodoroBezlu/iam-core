@@ -87,11 +87,11 @@ export class RbacController {
         serviceId: service.id,
         revokedAt: null,
         OR: [{ expiresAt: null }, { expiresAt: { gt: now } }],
-        // Nota: UserServiceAccess.roles guarda el rol sin prefijo de
-        // servicio (ej. "supervisor", no "forms:supervisor") — confirmado
-        // contra datos reales, aunque el comentario del schema sugiera lo
-        // contrario.
-        ...(role ? { roles: { has: role } } : {}),
+        // El rol es GLOBAL (User.roles), igual que en el token de cada
+        // servicio (`AuthService.getUserServicesDetails`). Antes se filtraba
+        // por UserServiceAccess.roles, que ya no se edita: quien cambiaba de
+        // rol en el portal seguía apareciendo con el viejo.
+        ...(role ? { user: { roles: { has: role } } } : {}),
       },
       include: { user: { include: { trabajador: true } } },
     });
@@ -104,7 +104,7 @@ export class RbacController {
         fullName: acceso.user.fullName,
         email: acceso.user.email,
         globalRoles: acceso.user.roles,
-        serviceRoles: acceso.roles,
+        serviceRoles: acceso.user.roles,
         trabajador: acceso.user.trabajador
           ? {
               // id: clave estable de la persona (el CI puede faltar o corregirse)
