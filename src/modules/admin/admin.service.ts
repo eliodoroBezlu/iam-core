@@ -389,6 +389,9 @@ export class AdminService {
     if (!t) throw new NotFoundException('Trabajador no encontrado');
 
     const derived = await derivarDeArea(this.prisma, dto.areaCodigo);
+    // Un opcional que llega vacío se borra; si no llega, no se toca.
+    const opcional = (v?: string) =>
+      v === undefined ? undefined : v.trim() === '' ? null : v.trim();
 
     const updated = await this.prisma.trabajador.update({
       where: { id },
@@ -396,16 +399,16 @@ export class AdminService {
         nomina:           dto.nomina           ?? undefined,
         puesto:           dto.puesto           ?? undefined,
         superintendencia: derived.superintendencia ?? dto.superintendencia ?? undefined,
-        area:             derived.area ?? dto.area ?? undefined,
+        area:             derived.area ?? opcional(dto.area),
         areaCodigo:       derived.areaCodigo   ?? undefined,
         disciplina:       dto.disciplina       ?? undefined,
         esContratista:    dto.esContratista    ?? undefined,
         fechaIngreso:     dto.fechaIngreso     ? new Date(dto.fechaIngreso) : undefined,
-        jde:              dto.jde              ?? undefined,
-        noBloque:         dto.noBloque         ?? undefined,
-        noHabitacion:     dto.noHabitacion     ?? undefined,
-        residencia:       dto.residencia       ?? undefined,
-        celular:          dto.celular          ?? undefined,
+        jde:              opcional(dto.jde),
+        noBloque:         opcional(dto.noBloque),
+        noHabitacion:     opcional(dto.noHabitacion),
+        residencia:       opcional(dto.residencia),
+        celular:          opcional(dto.celular),
         activo:           dto.activo           ?? undefined,
       },
       include: { user: { select: { id: true, username: true, fullName: true } } },
